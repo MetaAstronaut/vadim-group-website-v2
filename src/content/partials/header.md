@@ -4,33 +4,38 @@ description: "Global navigation and primary call-to-action for The Vadim Group w
 ---
 
 ## [brand]
+
 name: "The Vadim Group"
-logo: null   # update later if logo file or text changes
+logo: null # update later if logo file or text changes
 
 ---
 
 ## [navigation]
+
 items:
   - name: "Home"
-    path: "/"
+    href: "/"
   - name: "Home Repairs"
-    path: "/home-repairs"
+    href: "/home-repairs"
   - name: "Specialized Services"
-    path: "/other-services"
-  - name: "Emergency"
-    path: "/emergency-services"
+    href: "/specialized-services"
+  - name: "Marine & RV"
+    href: "/marine-rv"
+  - name: "Commercial"
+    path: "/commercial"
   - name: "Blog"
-    path: "/blog"
+    href: "/blog"
   - name: "Contact"
-    path: "/contact"
+    href: "/contact"
 
 ---
 
 ## [cta]
+
 desktop:
-  label: "Get a Quote"
-  action: "/contact"  # currently routed via button component
+label: "Get a Quote"
+action: "/contact" # currently routed via button component
 
 mobile:
-  label: "Get a Quote"
-  action: "/contact"
+label: "Get a Quote"
+action: "/contact"

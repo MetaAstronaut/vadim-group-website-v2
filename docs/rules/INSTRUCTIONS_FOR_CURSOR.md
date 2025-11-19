@@ -4,10 +4,10 @@ These instructions describe how AI assistants (Cursor agents) must work with thi
 
 Main goals:
 
-* Keep the codebase stable and predictable
-* Respect the content system and brand
-* Follow the development roadmap
-* Avoid generating new business logic or services without approval
+- Keep the codebase stable and predictable
+- Respect the content system and brand
+- Follow the development roadmap
+- Avoid generating new business logic or services without approval
 
 ---
 
@@ -15,30 +15,26 @@ Main goals:
 
 Before making non-trivial changes, always be aware of these files:
 
-* Product & planning:
+- Product & planning:
+  - `docs/product/ROADMAP.md`
+  - `docs/product/SITE_STRUCTURE.md` (if present)
 
-  * `docs/product/ROADMAP.md`
-  * `docs/product/SITE_STRUCTURE.md` (if present)
+- Rules & constraints:
+  - `docs/rules/PROJECT_RULES.md`
 
-* Rules & constraints:
+- Design:
+  - `docs/design/DESIGN_SYSTEM_EN.md`
 
-  * `docs/rules/PROJECT_RULES.md`
-
-* Design:
-
-  * `docs/design/DESIGN_SYSTEM_EN.md`
-
-* Content system:
-
-  * `src/content/cleaned.md`
-  * `src/content/content-blocks.md`
-  * `src/content/pages/*.md`
+- Content system:
+  - `src/content/cleaned.md`
+  - `src/content/content-blocks.md`
+  - `src/content/pages/*.md`
 
 Do **not** modify these files unless the user explicitly asks you to.
 
 Exceptions:
 
-* You may update checkboxes or short status notes in `docs/product/ROADMAP.md` when a roadmap item is clearly completed and the user expects this.
+- You may update checkboxes or short status notes in `docs/product/ROADMAP.md` when a roadmap item is clearly completed and the user expects this.
 
 ---
 
@@ -56,23 +52,21 @@ Exceptions:
 
 All textual content for the site must come from the content system:
 
-* `src/content/cleaned.md` — main content library
-* `src/content/content-blocks.md` — structured content blocks with IDs
-* `src/content/pages/*.md` — page-level content files
+- `src/content/cleaned.md` — main content library
+- `src/content/content-blocks.md` — structured content blocks with IDs
+- `src/content/pages/*.md` — page-level content files
 
 Rules:
 
 1. **Do not invent new content** (services, claims, features, areas of expertise). You may:
-
-   * rearrange sections
-   * slightly rephrase for clarity
-   * combine existing blocks
+   - rearrange sections
+   - slightly rephrase for clarity
+   - combine existing blocks
      as long as the meaning stays the same.
 
 2. When updating a page:
-
-   * Prefer to reuse existing text from `content-blocks.md`.
-   * If you need a new block, first add it to `content-blocks.md` with a clear ID and only after that insert it into the corresponding page.
+   - Prefer to reuse existing text from `content-blocks.md`.
+   - If you need a new block, first add it to `content-blocks.md` with a clear ID and only after that insert it into the corresponding page.
 
 3. Do not remove SEO-relevant sections unless the user explicitly approves.
 
@@ -84,7 +78,7 @@ Rules:
 
 Design must follow:
 
-* `docs/design/DESIGN_SYSTEM_EN.md`
+- `docs/design/DESIGN_SYSTEM_EN.md`
 
 Guidelines:
 
@@ -93,10 +87,9 @@ Guidelines:
 2. Do not introduce new color variables or font families without user approval.
 
 3. When creating new components:
-
-   * Keep them reusable and clean
-   * Avoid inline styles; use the existing styling approach (Tailwind/CSS variables/etc.)
-   * Ensure spacing and hierarchy match the design system
+   - Keep them reusable and clean
+   - Avoid inline styles; use the existing styling approach (Tailwind/CSS variables/etc.)
+   - Ensure spacing and hierarchy match the design system
 
 4. Do not change the global design system file unless requested.
 
@@ -104,7 +97,7 @@ Guidelines:
 
 ## 5. Working With ROADMAP.md
 
-* File: `docs/product/ROADMAP.md`
+- File: `docs/product/ROADMAP.md`
 
 Behavior:
 
@@ -120,7 +113,7 @@ When you update the roadmap, add a short note in the chat: **"Roadmap has been u
 
 ## 6. Working With PROJECT_RULES.md
 
-* File: `docs/rules/PROJECT_RULES.md`
+- File: `docs/rules/PROJECT_RULES.md`
 
 This file contains high-level project rules. You must:
 
@@ -136,10 +129,10 @@ If something in `PROJECT_RULES.md` conflicts with what the user requests, ask fo
 
 When setting up or editing tooling:
 
-* Prefer using ESLint and Prettier for consistent formatting.
-* Keep configuration minimal and readable.
-* Do not introduce heavy dependencies unless there is a clear benefit.
-* When editing config files, explain to the user what changed and why.
+- Prefer using ESLint and Prettier for consistent formatting.
+- Keep configuration minimal and readable.
+- Do not introduce heavy dependencies unless there is a clear benefit.
+- When editing config files, explain to the user what changed and why.
 
 ---
 
@@ -153,8 +146,22 @@ When setting up or editing tooling:
 
 ## 9. Summary
 
-* Follow roadmap and rules, but always prioritize the explicit user request.
-* Use the content system as the only source of truth for text.
-* Keep design and components aligned with the design system.
-* Make small, safe, explainable changes.
-* Ask for confirmation before large refactors or structural changes.
+- Follow roadmap and rules, but always prioritize the explicit user request.
+- Use the content system as the only source of truth for text.
+- Keep design and components aligned with the design system.
+- Make small, safe, explainable changes.
+- Ask for confirmation before large refactors or structural changes.
+
+---
+description: Core rules for working with this repository
+globs:
+  - "**/*"
+alwaysApply: true
+---
+
+# Roadmap Guidance
+- Always read and follow the steps listed in [ROADMAP.md](mdc:docs/product/ROADMAP.md).
+- Understand which step from ROADMAP.md you are currently executing.
+- If the user request does not match the next roadmap task, complete the request anyway, but still update ROADMAP.md.
+- When a roadmap task is completed, edit ROADMAP.md and mark that item as done.
+- At the end of each response, write which roadmap items were completed (using wording from the roadmap).

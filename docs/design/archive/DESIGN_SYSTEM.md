@@ -48,10 +48,10 @@ Visual Style: Warm, minimal, premium, без “кричащего” марке
 
 ### 3.1. Font Pairing (целевое)
 
-- **Headings (H1–H3):** современный serif или high-contrast sans (например, Playfair Display / DM Serif / или аналогичная)  
+- **Headings (H1–H3):** современный serif или high-contrast sans (например, Playfair Display / DM Serif / или аналогичная)
 - **Body / UI текст:** нейтральный современный sans (например, Inter / IBM Plex Sans / SF UI)
 
-*(Фактический выбор шрифта можно уточнить позже, но важно соблюсти pairing: expressive headings + readable body)*
+_(Фактический выбор шрифта можно уточнить позже, но важно соблюсти pairing: expressive headings + readable body)_
 
 ### 3.2. Иерархия
 

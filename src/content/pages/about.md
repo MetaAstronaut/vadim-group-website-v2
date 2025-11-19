@@ -1,3 +1,14 @@
+---
+title: "About The Vadim Group | European Craftsmanship Orlando"
+description: "Learn about The Vadim Group: European craftsmanship, personal accountability, precision repair work. Serving Orlando homeowners and businesses with reliable, quality service."
+keywords: "about vadim group, european craftsmanship orlando, reliable handyman orlando, professional repair service, licensed contractor orlando"
+og:title: "About The Vadim Group - European Quality in Orlando"
+og:description: "Professional repair services built on European craftsmanship and personal accountability. Serving Orlando with precision and care."
+og:image: "/images/og-about.jpg"
+og:type: "website"
+canonical: "https://thevadimgroup.com/about"
+---
+
 # About The Vadim Group
 
 ## Our Story
@@ -20,11 +31,11 @@ Every project — large or small — is treated with the same level of care, pla
 
 Clients consistently mention:
 
-- punctuality and reliability  
-- detailed, high-skill workmanship  
-- clear, honest communication  
-- thoughtful problem-solving  
-- long-term trust and relationships  
+- punctuality and reliability
+- detailed, high-skill workmanship
+- clear, honest communication
+- thoughtful problem-solving
+- long-term trust and relationships
 
 ---
 

@@ -16,9 +16,9 @@ Fast, reliable, European‑quality repair and restoration for homes, boats, and 
 
 ### HERO-03 — Bullet Benefits
 
-* On‑time arrival and reliable scheduling
-* High‑skill craftsmanship and clean results
-* Transparent communication and fair pricing
+- On‑time arrival and reliable scheduling
+- High‑skill craftsmanship and clean results
+- Transparent communication and fair pricing
 
 ### HERO-04 — CTA Text
 
@@ -30,11 +30,11 @@ Request a Quote
 
 ### USP-01 — Why Clients Choose Vadim Group
 
-* Precision workmanship based on European standards
-* Accurate diagnostics and long‑lasting solutions
-* Fast response for urgent situations
-* Clean, organized workflow and respect for the home
-* Clear estimates with no hidden costs
+- Precision workmanship based on European standards
+- Accurate diagnostics and long‑lasting solutions
+- Fast response for urgent situations
+- Clean, organized workflow and respect for the home
+- Clear estimates with no hidden costs
 
 ### USP-02 — Service Promise
 
@@ -50,36 +50,36 @@ Residential Repairs & Restoration
 
 ### RES-02 — General Repairs List
 
-* Wall and ceiling repair
-* Surface patching and finishing
-* Interior and exterior painting
-* Trim, doors, hardware repair
+- Wall and ceiling repair
+- Surface patching and finishing
+- Interior and exterior painting
+- Trim, doors, hardware repair
 
 ### RES-03 — Structural & Safety
 
-* Light structural corrections
-* Wood rot removal
-* Small framing repairs
-* Reinforcement of weakened areas
+- Light structural corrections
+- Wood rot removal
+- Small framing repairs
+- Reinforcement of weakened areas
 
 ### RES-04 — Water Damage
 
-* Drywall replacement from leaks
-* Moisture diagnostics
-* Bathroom and kitchen leak repairs
+- Drywall replacement from leaks
+- Moisture diagnostics
+- Bathroom and kitchen leak repairs
 
 ### RES-05 — Light Electrical
 
-* Fixture replacement
-* Outlet/switch repair
-* Minor troubleshooting
+- Fixture replacement
+- Outlet/switch repair
+- Minor troubleshooting
 
 ### RES-06 — Exterior Repairs
 
-* Fence repair
-* Deck repair
-* Siding touch‑ups
-* Outdoor fixtures
+- Fence repair
+- Deck repair
+- Siding touch‑ups
+- Outdoor fixtures
 
 ---
 
@@ -95,11 +95,11 @@ Fast, calm, professional handling of urgent home, RV, and marine issues.
 
 ### EM-03 — Common Emergencies
 
-* Active leaks
-* Storm damage (light/moderate)
-* Broken fixtures causing hazards
-* Minor structural concerns
-* RV/boat urgent issues (light scope)
+- Active leaks
+- Storm damage (light/moderate)
+- Broken fixtures causing hazards
+- Minor structural concerns
+- RV/boat urgent issues (light scope)
 
 ---
 
@@ -111,18 +111,18 @@ Marine & RV Repair Services
 
 ### MR-02 — Marine Repairs
 
-* Gelcoat repair
-* Hardware replacement
-* Electrical troubleshooting (light)
-* Deck surface restoration
-* Cabin interior repair
+- Gelcoat repair
+- Hardware replacement
+- Electrical troubleshooting (light)
+- Deck surface restoration
+- Cabin interior repair
 
 ### MR-03 — RV Repairs
 
-* Wall, ceiling, floor repairs
-* Water damage treatment
-* Slide‑out alignment (light)
-* Cabinet and fixture work
+- Wall, ceiling, floor repairs
+- Water damage treatment
+- Slide‑out alignment (light)
+- Cabinet and fixture work
 
 ### MR-04 — Value Note
 
@@ -142,11 +142,11 @@ Quick, clean repair solutions for small business interiors.
 
 ### COM-03 — Commercial Repairs
 
-* Interior surface restoration
-* Minor structural fixes
-* Door and hardware repair
-* Light electrical
-* Office refresh work
+- Interior surface restoration
+- Minor structural fixes
+- Door and hardware repair
+- Light electrical
+- Office refresh work
 
 ---
 
@@ -171,11 +171,11 @@ How Our Repair Process Works
 
 ### TST-01 — Themes
 
-* Punctuality and reliability
-* Clean, high‑skill workmanship
-* Transparent communication
-* Problem‑solving ability
-* Trust and long‑term relationships
+- Punctuality and reliability
+- Clean, high‑skill workmanship
+- Transparent communication
+- Problem‑solving ability
+- Trust and long‑term relationships
 
 ---
 
@@ -183,12 +183,12 @@ How Our Repair Process Works
 
 ### FAQ-01 — Questions
 
-* What repairs do you handle?
-* How fast can you respond?
-* Do you provide estimates?
-* What materials do you use?
-* Do you work with boats and RVs?
-* Are repairs guaranteed?
+- What repairs do you handle?
+- How fast can you respond?
+- Do you provide estimates?
+- What materials do you use?
+- Do you work with boats and RVs?
+- Are repairs guaranteed?
 
 ---
 
@@ -232,10 +232,10 @@ Send details or photos — we usually respond within 2–4 business hours.
 
 ### CNT-03 — Form Labels
 
-* Name
-* Phone
-* Email
-* Description of Issue
+- Name
+- Phone
+- Email
+- Description of Issue
 
 ---
 
@@ -247,12 +247,12 @@ Precision Home, Marine & RV Repairs in Orlando
 
 ### FTR-02 — Footer Links Structure
 
-* Home
-* Repairs & Restoration
-* Marine & RV
-* About
-* Contact
-* Blog
+- Home
+- Repairs & Restoration
+- Marine & RV
+- About
+- Contact
+- Blog
 
 ### FTR-03 — Legal
 
@@ -262,6 +262,6 @@ Precision Home, Marine & RV Repairs in Orlando
 
 ## Usage Notes
 
-* All content edits must originate from this file or cleaned.md.
-* No AI generation outside of approved blocks.
-* Cursor agents must reference Block IDs when updating components.
+- All content edits must originate from this file or cleaned.md.
+- No AI generation outside of approved blocks.
+- Cursor agents must reference Block IDs when updating components.

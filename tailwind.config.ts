@@ -2,7 +2,12 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -69,23 +74,23 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        serif: ['Playfair Display', 'serif'],
+        sans: ["Inter", "sans-serif"],
+        serif: ["Playfair Display", "serif"],
       },
       boxShadow: {
-        'premium': 'var(--shadow-md)',
-        'premium-lg': 'var(--shadow-lg)',
-        'premium-xl': 'var(--shadow-xl)',
-        'inner-premium': 'var(--shadow-inner)',
+        premium: "var(--shadow-md)",
+        "premium-lg": "var(--shadow-lg)",
+        "premium-xl": "var(--shadow-xl)",
+        "inner-premium": "var(--shadow-inner)",
       },
       backgroundImage: {
-        'gradient-primary': 'var(--gradient-primary)',
-        'gradient-primary-alt': 'var(--gradient-primary-alt)',
-        'gradient-secondary': 'var(--gradient-secondary)',
-        'gradient-warm': 'var(--gradient-warm)',
-        'gradient-overlay-dark': 'var(--gradient-overlay-dark)',
-        'gradient-overlay-light': 'var(--gradient-overlay-light)',
-        'texture-noise': 'var(--texture-noise)',
+        "gradient-primary": "var(--gradient-primary)",
+        "gradient-primary-alt": "var(--gradient-primary-alt)",
+        "gradient-secondary": "var(--gradient-secondary)",
+        "gradient-warm": "var(--gradient-warm)",
+        "gradient-overlay-dark": "var(--gradient-overlay-dark)",
+        "gradient-overlay-light": "var(--gradient-overlay-light)",
+        "texture-noise": "var(--texture-noise)",
       },
       borderRadius: {
         lg: "0.25rem",

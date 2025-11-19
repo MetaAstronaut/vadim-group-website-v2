@@ -1,35 +1,25 @@
+---
+title: "Portfolio - Our Work | The Vadim Group Orlando"
+description: "See examples of our repair and restoration work in Orlando. Home repairs, marine projects, RV restoration. Quality craftsmanship, proven results."
+keywords: "repair portfolio orlando, before after repairs, home repair examples, marine repair gallery, rv restoration examples"
+og:title: "Our Work - Portfolio | The Vadim Group"
+og:description: "Browse examples of our repair and restoration projects. Quality work on homes, boats, and RVs throughout Orlando."
+og:image: "/og-portfolio.jpg"
+og:type: "website"
+canonical: "/portfolio"
+status: "hidden"
+reason: "Awaiting real project photos and case studies"
+---
+
 # Portfolio & Recent Projects
 
-## Overview
+## Coming Soon
 
-This section will showcase selected projects to illustrate the quality and style of our work in homes, boats, and RVs.
+We are currently preparing detailed case studies showcasing our work in home repairs, marine restoration, and RV repairs.
 
----
-
-## Example Project: Interior Wall & Ceiling Repair
-
-A homeowner contacted us about visible cracks and damage in their living room walls and ceiling.  
-We inspected the area, repaired the damaged surfaces, refinished them, and repainted the room.  
-The result was a clean, fresh, and even finish that blended with the rest of the home.
+Check back soon to see before-and-after photos and project details.
 
 ---
 
-## Example Project: Deck and Exterior Touch-Up
-
-A client’s deck and exterior trim were worn and weathered.  
-We repaired damaged boards, handled necessary touch-ups, and refreshed the finish to improve both appearance and protection.
-
----
-
-## Example Project: RV Interior Water Damage
-
-An RV owner noticed water damage around a window and along the ceiling.  
-We identified the affected areas, removed damaged materials, and restored the interior so it was safe, solid, and visually clean again.
-
----
-
-## Want to See Similar Results in Your Space?
-
-If you’d like your home, boat, or RV to look and feel like new again, we can discuss your project and recommend the right repair approach.
-
-**Request a Quote** to get started.
+**Need to see examples of our work?**  
+Contact us at info@thevadimgroup.com and we can share relevant project examples directly.

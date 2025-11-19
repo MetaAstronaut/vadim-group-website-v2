@@ -1,0 +1,157 @@
+{
+  "last_updated": "2025-11-17",
+  "company": "The Vadim Group",
+  "tagline": "Expert repair and restoration for homes, marine vessels, and RVs",
+  "location": "Orlando, Florida",
+  "service_categories": [
+    {
+      "category": "Home Repairs",
+      "url": "/home-repairs",
+      "description": "Comprehensive residential repair and restoration services",
+      "services": [
+        {
+          "name": "General Repairs",
+          "items": [
+            "Wall and ceiling repair",
+            "Surface patching and finishing",
+            "Interior and exterior painting",
+            "Trim, doors, and hardware repair"
+          ]
+        },
+        {
+          "name": "Structural & Safety (Light Scope)",
+          "items": [
+            "Light structural corrections",
+            "Wood rot removal and restoration",
+            "Small framing repairs",
+            "Reinforcement of weakened areas"
+          ]
+        },
+        {
+          "name": "Water Damage & Moisture",
+          "items": [
+            "Drywall replacement due to leaks",
+            "Restoration of moisture-affected areas",
+            "Kitchen and bathroom leak-related repairs",
+            "Source identification"
+          ]
+        },
+        {
+          "name": "Light Electrical Work",
+          "items": [
+            "Light fixture replacement",
+            "Outlet and switch repair",
+            "Minor electrical troubleshooting"
+          ]
+        },
+        {
+          "name": "Exterior Repairs",
+          "items": [
+            "Fence and gate repairs",
+            "Deck repairs and refinishing",
+            "Light siding repairs",
+            "Outdoor fixture repair"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Specialized Services",
+      "url": "/specialized-services",
+      "description": "Complex, high-skill repair projects requiring expert craftsmanship",
+      "services": [
+        "Structural repairs",
+        "Water damage and mold restoration",
+        "Insurance-claim related fixes",
+        "Emergency leak detection",
+        "Storm damage restoration",
+        "Crawl space repair",
+        "Deck or dock repair",
+        "Custom carpentry",
+        "High-skill restoration projects"
+      ]
+    },
+    {
+      "category": "Marine & RV Services",
+      "url": "/marine-rv",
+      "description": "Specialized repairs for boats and recreational vehicles",
+      "services": [
+        {
+          "subcategory": "Marine Repairs",
+          "items": [
+            "Gelcoat repair and surface restoration",
+            "Marine hardware replacement",
+            "Light electrical troubleshooting",
+            "Deck surface restoration",
+            "Interior and cabin repairs"
+          ]
+        },
+        {
+          "subcategory": "RV Repairs",
+          "items": [
+            "Wall, ceiling, and floor repairs",
+            "Water damage treatment",
+            "Light slide-out alignment",
+            "Cabinetry and fixture repair",
+            "Light electrical troubleshooting"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Commercial Repairs",
+      "url": "/commercial",
+      "description": "Quick, professional repairs for small business and commercial spaces",
+      "services": [
+        "Interior surface restoration",
+        "Minor structural fixes",
+        "Door and hardware repair",
+        "Light electrical work",
+        "Office or retail refresh",
+        "Emergency business repairs"
+      ]
+    },
+    {
+      "category": "Emergency Repairs",
+      "url": "/#emergency-urgent-repairs",
+      "description": "Priority scheduling for urgent repair situations",
+      "services": [
+        "Active leaks and water intrusion",
+        "Light to moderate storm damage",
+        "Broken fixtures creating safety hazards",
+        "Minor structural concerns",
+        "Urgent RV or boat issues"
+      ]
+    }
+  ],
+  "service_area": {
+    "primary": [
+      "Orlando, FL",
+      "Lake Nona, FL",
+      "Hunters Creek, FL"
+    ],
+    "coverage": "Orange County and surrounding areas"
+  },
+  "contact": {
+    "email": "info@thevadimgroup.com",
+    "website": "https://thevadimgroup.com",
+    "response_time": "2-4 business hours",
+    "whatsapp": "[to be added]"
+  },
+  "unique_value": [
+    "European craftsmanship standards",
+    "Fast response for urgent situations",
+    "Transparent pricing with no hidden costs",
+    "Personal accountability from skilled craftsman",
+    "Multi-environment expertise (home, marine, RV, commercial)"
+  ],
+  "quality_indicators": [
+    "Licensed and insured",
+    "Professional-grade materials",
+    "Clean, organized work sites",
+    "Clear communication throughout process",
+    "Work done correctly the first time"
+  ]
+}
+
+

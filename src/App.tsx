@@ -1,15 +1,15 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
+import { Toaster } from "@/components/archive/ui/toaster";
+import { Toaster as Sonner } from "@/components/archive/ui/sonner";
+import { TooltipProvider } from "@/components/archive/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import HomeRepairs from "./pages/HomeRepairs";
-import OtherServices from "./pages/OtherServices";
-import EmergencyServices from "./pages/EmergencyServices";
-import Contact from "./pages/Contact";
-import Blog from "./pages/Blog";
-import NotFound from "./pages/NotFound";
+import Index from "./pages/archive/Index";
+import HomeRepairs from "./pages/archive/HomeRepairs";
+import OtherServices from "./pages/archive/OtherServices";
+import EmergencyServices from "./pages/archive/EmergencyServices";
+import Contact from "./pages/archive/Contact";
+import Blog from "./pages/archive/Blog";
+import NotFound from "./pages/archive/NotFound";
 
 const queryClient = new QueryClient();
 

@@ -4,20 +4,19 @@ These rules define **how development, AI-assisted editing, and content updates m
 
 The key goals:
 
-* Maintain consistency with the brand and design system
-* Prevent accidental rewriting of approved content
-* Keep development stable and structured
-* Ensure SEO-optimized pages remain intact
+- Maintain consistency with the brand and design system
+- Prevent accidental rewriting of approved content
+- Keep development stable and structured
+- Ensure SEO-optimized pages remain intact
 
 ---
 
 # 1. GENERAL PRINCIPLES
 
 1. **Single Source of Truth** for all content:
-
-   * `cleaned.md`
-   * `content-blocks.md`
-   * page `.md` files under `/src/content/pages/`
+   - `cleaned.md`
+   - `content-blocks.md`
+   - page `.md` files under `/src/content/pages/`
 
 2. **No AI-generated content outside approved blocks.**
    Agents may transform, restructure or adapt — but NOT invent new facts.
@@ -56,9 +55,9 @@ Store content here:
 
 Rules:
 
-* Only `.md` files inside `/src/content/pages/` represent actual website text.
-* These files must NOT contain layout or HTML.
-* Cursor may update text only using blocks from `content-blocks.md`.
+- Only `.md` files inside `/src/content/pages/` represent actual website text.
+- These files must NOT contain layout or HTML.
+- Cursor may update text only using blocks from `content-blocks.md`.
 
 ## 2.2 Design System Files
 
@@ -84,19 +83,19 @@ Rules:
 
 ## 3.1 Allowed Operations
 
-* Insert approved blocks from `content-blocks.md`
-* Restructure order of blocks
-* Combine blocks into a new section with **no new semantic content**
-* Improve grammar, clarity, or readability IF the meaning stays identical
+- Insert approved blocks from `content-blocks.md`
+- Restructure order of blocks
+- Combine blocks into a new section with **no new semantic content**
+- Improve grammar, clarity, or readability IF the meaning stays identical
 
 ## 3.2 Forbidden Operations
 
-* Creating new services
-* Changing meaning of any service description
-* Adding facts not in cleaned.md
-* Generating long paragraphs outside of brand voice
-* Modifying SEO keywords
-* Removing required SEO blocks
+- Creating new services
+- Changing meaning of any service description
+- Adding facts not in cleaned.md
+- Generating long paragraphs outside of brand voice
+- Modifying SEO keywords
+- Removing required SEO blocks
 
 ## 3.3 Adding New Content
 
@@ -122,25 +121,24 @@ When adding a new text block:
 
 ## 5.1 Responsibilities
 
-* Maintain consistency with design system
-* Keep code clean and follow project style
-* Use content-only from approved sources
-* Validate changes before applying
+- Maintain consistency with design system
+- Keep code clean and follow project style
+- Use content-only from approved sources
+- Validate changes before applying
 
 ## 5.2 Interaction Protocol
 
 1. Agent must request confirmation for any major structural change.
 2. When editing a page, the agent SHOULD (when changes are significant) list:
-
-   * Blocks inserted (IDs)
-   * Blocks removed
-   * Any important SEO considerations
+   - Blocks inserted (IDs)
+   - Blocks removed
+   - Any important SEO considerations
 
 ## 5.3 Safety Rules
 
-* Never delete or overwrite page content without explicit permission
-* Never modify DESIGN_SYSTEM_EN.md or cleaned.md automatically
-* Never create components with arbitrary styling
+- Never delete or overwrite page content without explicit permission
+- Never modify DESIGN_SYSTEM_EN.md or cleaned.md automatically
+- Never create components with arbitrary styling
 
 ---
 
@@ -148,10 +146,10 @@ When adding a new text block:
 
 ## 6.1 Code Style
 
-* Follow Prettier & ESLint configs (to be added)
-* Components must be reusable and not page-specific
-* Avoid inline styles
-* Use Tailwind tokens or CSS variables for colors and spacing
+- Follow Prettier & ESLint configs (to be added)
+- Components must be reusable and not page-specific
+- Avoid inline styles
+- Use Tailwind tokens or CSS variables for colors and spacing
 
 ## 6.2 Folder Structure
 
@@ -163,9 +161,9 @@ When adding a new text block:
 
 ## 6.3 Component Rules
 
-* Keep components clean and declarative
-* No business logic inside UI components
-* Use descriptive names
+- Keep components clean and declarative
+- No business logic inside UI components
+- Use descriptive names
 
 ---
 
@@ -180,27 +178,27 @@ Every new page must follow:
 
 Cursor must:
 
-* Build layout first
-* Insert content second
-* Apply SEO third
+- Build layout first
+- Insert content second
+- Apply SEO third
 
 ---
 
 # 8. VERSIONING RULES
 
-* Every major content update requires a commit message referencing Block IDs.
-* DESIGN_SYSTEM_EN.md changes must be versioned carefully.
-* Raw content must remain archived.
+- Every major content update requires a commit message referencing Block IDs.
+- DESIGN_SYSTEM_EN.md changes must be versioned carefully.
+- Raw content must remain archived.
 
 ---
 
 # 9. PROHIBITED ACTIONS
 
-* Generating new service categories
-* Inserting new visual styles
-* Editing brand colors or typography without approval
-* Writing marketing slogans not based on brand voice
-* Replacing structure of pages without confirmation
+- Generating new service categories
+- Inserting new visual styles
+- Editing brand colors or typography without approval
+- Writing marketing slogans not based on brand voice
+- Replacing structure of pages without confirmation
 
 ## 9.1 Protected Files
 
@@ -217,11 +215,11 @@ The following files must NOT be modified by AI agents unless the user explicitly
 
 This project will later include:
 
-* `design-system.json`
-* Component token definitions
-* Full SEO meta system
-* AEO (AI Engine Optimization) pages
-* Portfolio templates
+- `design-system.json`
+- Component token definitions
+- Full SEO meta system
+- AEO (AI Engine Optimization) pages
+- Portfolio templates
 
 These must follow the same rules and reference this file.
 
@@ -229,13 +227,16 @@ These must follow the same rules and reference this file.
 
 description: "Roadmap + rules driven development for The Vadim Group website"
 globs:
-  - "**/*.ts"
-  - "**/*.tsx"
-  - "docs/product/ROADMAP.md"
-  - "docs/rules/PROJECT_RULES.md"
-  - "src/content/**/*.md"
-alwaysApply: true
+
+- "\*_/_.ts"
+- "\*_/_.tsx"
+- "docs/product/ROADMAP.md"
+- "docs/rules/PROJECT_RULES.md"
+- "src/content/\*_/_.md"
+  alwaysApply: true
+
 ---
+
 - Always use [ROADMAP.md](mdc:docs/product/ROADMAP.md) and [PROJECT_RULES.md](mdc:docs/rules/PROJECT_RULES.md) as primary guides.
 - Before big changes, briefly check which roadmap section they belong to.
 - Fulfill the user's request even if it does not follow the roadmap order, but do not rewrite the roadmap because of this.
