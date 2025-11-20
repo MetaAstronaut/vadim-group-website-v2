@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
-import Header from "@/components/archive/Header";
-import Footer from "@/components/archive/Footer";
+/* import Header from "@/components/archive/Header";
+import Footer from "@/components/archive/Footer"; */
 import {
   Card,
   CardContent,
@@ -151,7 +151,7 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
+      {/* <Header /> */}
 
       <main className="flex-1">
         {/* Hero Section */}
@@ -274,7 +274,7 @@ const Blog = () => {
         </section>
       </main>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

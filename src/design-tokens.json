@@ -1,0 +1,346 @@
+{
+  "version": "2.0.0",
+  "description": "Design System V2 - European Precision & Calm Authority",
+  "colors": {
+    "brand": {
+      "primary": {
+        "value": "#0F172A",
+        "description": "Deep Oxford Blue. Trust, Authority, Stability.",
+        "usage": "Primary CTA background, Headers, Dark backgrounds"
+      },
+      "secondary": {
+        "value": "#334155",
+        "description": "Slate Charcoal.",
+        "usage": "Secondary text, icons, less emphasized UI elements"
+      },
+      "accent": {
+        "value": "#C6A778",
+        "description": "Artisan Gold. Craftsmanship, Quality.",
+        "usage": "Highlights, primary conversion actions (sparingly)"
+      },
+      "accent-hover": {
+        "value": "#A68A56",
+        "description": "Deep Gold.",
+        "usage": "Hover state for accent elements"
+      }
+    },
+    "background": {
+      "body": {
+        "value": "#FAFAF9",
+        "description": "Warm Alabaster. Organic, Clean.",
+        "usage": "Main page background, prevents sterility of pure white"
+      },
+      "surface": {
+        "value": "#FFFFFF",
+        "description": "Pure White.",
+        "usage": "Cards, input fields, elevated areas"
+      },
+      "dark": {
+        "value": "#0F172A",
+        "description": "Deep Oxford Blue.",
+        "usage": "High-impact sections (Hero, Footer) for depth/contrast"
+      },
+      "subtle": {
+        "value": "#F1F5F9",
+        "description": "Light Blue-Grey.",
+        "usage": "Secondary sections (FAQ, Features), alternating stripes"
+      },
+      "overlay-light": {
+        "value": "rgba(255, 255, 255, 0.9)",
+        "description": "Light overlay for glassmorphism.",
+        "usage": "Light mode headers, modals"
+      },
+      "overlay-dark": {
+        "value": "rgba(15, 23, 42, 0.9)",
+        "description": "Dark overlay for glassmorphism.",
+        "usage": "Dark mode headers, hero text backdrops"
+      }
+    },
+    "text": {
+      "primary": {
+        "value": "#0F172A",
+        "description": "Deep Oxford Blue.",
+        "usage": "Headings, primary copy"
+      },
+      "secondary": {
+        "value": "#475569",
+        "description": "Slate Grey.",
+        "usage": "Body text, supporting descriptions"
+      },
+      "muted": {
+        "value": "#94A3B8",
+        "description": "Muted Blue-Grey.",
+        "usage": "Meta data, placeholders, disabled text"
+      },
+      "inverse": {
+        "value": "#F8FAFC",
+        "description": "Off-White.",
+        "usage": "Text on dark backgrounds"
+      }
+    },
+    "border": {
+      "light": {
+        "value": "#E2E8F0",
+        "description": "Light Grey.",
+        "usage": "Card borders, dividers"
+      },
+      "focus": {
+        "value": "#0F172A",
+        "description": "Deep Oxford Blue.",
+        "usage": "Input focus states, active borders"
+      },
+      "accent": {
+        "value": "#C6A778",
+        "description": "Artisan Gold.",
+        "usage": "Active/Selected states"
+      }
+    },
+    "semantic": {
+      "success": {
+        "value": "#15803D",
+        "description": "Forest Green.",
+        "usage": "Form success, verified badges"
+      },
+      "error": {
+        "value": "#B91C1C",
+        "description": "Deep Red.",
+        "usage": "Form errors, critical alerts"
+      },
+      "warning": {
+        "value": "#B45309",
+        "description": "Amber.",
+        "usage": "Important notices, warnings"
+      },
+      "info": {
+        "value": "#0369A1",
+        "description": "Ocean Blue.",
+        "usage": "Informational tooltips, links"
+      }
+    }
+  },
+  "typography": {
+    "fontFamily": {
+      "heading": {
+        "value": "\"Playfair Display\", serif",
+        "description": "Serif for elegance and tradition.",
+        "usage": "All Headings (H1-H6)"
+      },
+      "body": {
+        "value": "\"Inter\", sans-serif",
+        "description": "Clean modern sans-serif.",
+        "usage": "Body text, UI elements"
+      },
+      "mono": {
+        "value": "\"JetBrains Mono\", monospace",
+        "description": "Monospace for data.",
+        "usage": "Technical specs, pricing breakdowns"
+      }
+    },
+    "fontSize": {
+      "xs": {
+        "value": "0.75rem",
+        "description": "12px",
+        "usage": "Micro copy"
+      },
+      "sm": {
+        "value": "0.875rem",
+        "description": "14px",
+        "usage": "Labels, Meta"
+      },
+      "base": {
+        "value": "1rem",
+        "description": "16px",
+        "usage": "Standard copy, Body"
+      },
+      "lg": {
+        "value": "1.125rem",
+        "description": "18px",
+        "usage": "Body Large, Intro text"
+      },
+      "xl": {
+        "value": "1.25rem",
+        "description": "20px",
+        "usage": "H4"
+      },
+      "2xl": {
+        "value": "1.5rem",
+        "description": "24px",
+        "usage": "H3, Mobile H2"
+      },
+      "3xl": {
+        "value": "1.875rem",
+        "description": "30px",
+        "usage": "H2, Mobile H1"
+      },
+      "4xl": {
+        "value": "2.25rem",
+        "description": "36px",
+        "usage": "Desktop H2"
+      },
+      "5xl": {
+        "value": "3rem",
+        "description": "48px",
+        "usage": "H1"
+      },
+      "6xl": {
+        "value": "3.75rem",
+        "description": "60px",
+        "usage": "Hero Display"
+      }
+    },
+    "fontWeight": {
+      "regular": {
+        "value": "400",
+        "description": "Regular weight",
+        "usage": "Body text"
+      },
+      "medium": {
+        "value": "500",
+        "description": "Medium weight",
+        "usage": "Labels, Subheaders"
+      },
+      "semibold": {
+        "value": "600",
+        "description": "Semibold weight",
+        "usage": "Headings, Buttons"
+      },
+      "bold": {
+        "value": "700",
+        "description": "Bold weight",
+        "usage": "Hero titles, Emphasis"
+      }
+    },
+    "lineHeight": {
+      "tight": {
+        "value": "1.1",
+        "description": "Tight",
+        "usage": "Display headings"
+      },
+      "snug": {
+        "value": "1.3",
+        "description": "Snug",
+        "usage": "Headings"
+      },
+      "normal": {
+        "value": "1.5",
+        "description": "Normal",
+        "usage": "UI elements"
+      },
+      "relaxed": {
+        "value": "1.6",
+        "description": "Relaxed",
+        "usage": "Body text reading"
+      }
+    },
+    "letterSpacing": {
+      "tight": {
+        "value": "-0.02em",
+        "description": "Tight tracking",
+        "usage": "Headings"
+      },
+      "normal": {
+        "value": "0em",
+        "description": "Normal tracking",
+        "usage": "Body text"
+      },
+      "wide": {
+        "value": "0.05em",
+        "description": "Wide tracking",
+        "usage": "Uppercase labels"
+      }
+    }
+  },
+  "spacing": {
+    "1": { "value": "4px", "description": "Tiny" },
+    "2": { "value": "8px", "description": "Extra Small" },
+    "3": { "value": "12px", "description": "Small" },
+    "4": { "value": "16px", "description": "Base", "usage": "Standard component padding" },
+    "6": { "value": "24px", "description": "Medium", "usage": "Card padding" },
+    "8": { "value": "32px", "description": "Large", "usage": "Section groups" },
+    "12": { "value": "48px", "description": "X-Large", "usage": "Component separation" },
+    "16": { "value": "64px", "description": "2X-Large", "usage": "Mobile section spacing" },
+    "24": { "value": "96px", "description": "3X-Large", "usage": "Desktop section spacing" }
+  },
+  "radius": {
+    "none": { "value": "0px", "description": "Square" },
+    "sm": { "value": "2px", "description": "Sharp", "usage": "Buttons, Inputs" },
+    "md": { "value": "4px", "description": "Base", "usage": "Cards, Modals" },
+    "lg": { "value": "6px", "description": "Large", "usage": "Large containers" },
+    "full": { "value": "9999px", "description": "Round", "usage": "Badges, Avatars" }
+  },
+  "shadows": {
+    "sm": {
+      "value": "0 1px 2px 0 rgb(0 0 0 / 0.05)",
+      "description": "Subtle lift",
+      "usage": "Default state for interactive elements"
+    },
+    "md": {
+      "value": "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",
+      "description": "Medium elevation",
+      "usage": "Hover states, Cards"
+    },
+    "lg": {
+      "value": "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
+      "description": "High elevation",
+      "usage": "Dropdowns, Popovers"
+    },
+    "xl": {
+      "value": "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
+      "description": "Modal elevation",
+      "usage": "Modals, Dialogs"
+    },
+    "2xl": {
+      "value": "0 25px 50px -12px rgb(0 0 0 / 0.25)",
+      "description": "Highest elevation",
+      "usage": "Toast notifications"
+    }
+  },
+  "glassmorphism": {
+    "blur": {
+      "sm": { "value": "4px", "description": "Subtle blur" },
+      "md": { "value": "8px", "description": "Medium blur", "usage": "Standard glass" },
+      "lg": { "value": "12px", "description": "Heavy blur", "usage": "Background overlays" }
+    },
+    "opacity": {
+      "subtle": { "value": "0.9", "description": "High opacity" },
+      "medium": { "value": "0.7", "description": "Medium opacity" },
+      "heavy": { "value": "0.5", "description": "Low opacity" }
+    }
+  },
+  "transitions": {
+    "fast": {
+      "value": "150ms ease-out",
+      "description": "Fast transition",
+      "usage": "Micro-interactions, colors"
+    },
+    "normal": {
+      "value": "300ms ease-out",
+      "description": "Normal transition",
+      "usage": "Hover states, Opacity"
+    },
+    "slow": {
+      "value": "500ms ease-out",
+      "description": "Slow transition",
+      "usage": "Modal enter, Layout shifts"
+    }
+  },
+  "breakpoints": {
+    "sm": { "value": "640px", "description": "Mobile Landscape" },
+    "md": { "value": "768px", "description": "Tablet Portrait" },
+    "lg": { "value": "1024px", "description": "Tablet Landscape" },
+    "xl": { "value": "1280px", "description": "Desktop" },
+    "2xl": { "value": "1536px", "description": "Large Monitors" }
+  },
+  "layout": {
+    "container": {
+      "sm": { "value": "640px", "description": "Blog posts" },
+      "md": { "value": "768px", "description": "Forms" },
+      "lg": { "value": "1024px", "description": "Content with sidebar" },
+      "xl": { "value": "1280px", "description": "Standard Site Width" }
+    },
+    "gutter": {
+      "mobile": { "value": "16px", "description": "Mobile Gutter" },
+      "desktop": { "value": "24px", "description": "Desktop Gutter" }
+    }
+  }
+}

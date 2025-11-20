@@ -14,5 +14,5 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  assetsInclude: ['**/*.md'], // Allow importing .md files as raw strings
+  assetsInclude: ['**/*.md'],
 }));

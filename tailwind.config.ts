@@ -24,6 +24,47 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        
+        // Brand Colors
+        brand: {
+          primary: "var(--color-brand-primary)",
+          secondary: "var(--color-brand-secondary)",
+          accent: {
+            DEFAULT: "var(--color-brand-accent)",
+            hover: "var(--color-brand-accent-hover)",
+          },
+        },
+        
+        // Border Colors
+        "border-light": "var(--color-border-light)",
+        "border-focus": "var(--color-border-focus)",
+        "border-accent": "var(--color-border-accent)",
+        
+        // Background Colors (Custom)
+        surface: {
+          DEFAULT: "var(--color-bg-surface)",
+          body: "var(--color-bg-body)",
+          dark: "var(--color-bg-dark)",
+          subtle: "var(--color-bg-subtle)",
+        },
+
+        // Text Colors
+        text: {
+          primary: "var(--color-text-primary)",
+          secondary: "var(--color-text-secondary)",
+          muted: "var(--color-text-muted)",
+          inverse: "var(--color-text-inverse)",
+        },
+
+        // Semantic Colors
+        semantic: {
+          success: "var(--color-semantic-success)",
+          error: "var(--color-semantic-error)",
+          warning: "var(--color-semantic-warning)",
+          info: "var(--color-semantic-info)",
+        },
+
+        // Keep existing shadcn/ui mappings
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -73,16 +114,80 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
       },
+      
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
-        serif: ["Playfair Display", "serif"],
+        heading: ["var(--font-heading)", "serif"],
+        body: ["var(--font-body)", "sans-serif"],
+        mono: ["var(--font-mono)", "monospace"],
+        sans: ["Inter", "sans-serif"], // Fallback
+        serif: ["Playfair Display", "serif"], // Fallback
       },
+
+      fontSize: {
+        xs: ["var(--text-xs)", { lineHeight: "var(--leading-normal)" }],
+        sm: ["var(--text-sm)", { lineHeight: "var(--leading-normal)" }],
+        base: ["var(--text-base)", { lineHeight: "var(--leading-relaxed)" }],
+        lg: ["var(--text-lg)", { lineHeight: "var(--leading-relaxed)" }],
+        xl: ["var(--text-xl)", { lineHeight: "var(--leading-snug)" }],
+        "2xl": ["var(--text-2xl)", { lineHeight: "var(--leading-snug)" }],
+        "3xl": ["var(--text-3xl)", { lineHeight: "var(--leading-snug)" }],
+        "4xl": ["var(--text-4xl)", { lineHeight: "var(--leading-tight)" }],
+        "5xl": ["var(--text-5xl)", { lineHeight: "var(--leading-tight)" }],
+        "6xl": ["var(--text-6xl)", { lineHeight: "var(--leading-tight)" }],
+      },
+
+      fontWeight: {
+        regular: "var(--weight-regular)",
+        medium: "var(--weight-medium)",
+        semibold: "var(--weight-semibold)",
+        bold: "var(--weight-bold)",
+      },
+
+      letterSpacing: {
+        tight: "var(--tracking-tight)",
+        normal: "var(--tracking-normal)",
+        wide: "var(--tracking-wide)",
+      },
+
+      spacing: {
+        "1": "var(--space-1)",
+        "2": "var(--space-2)",
+        "3": "var(--space-3)",
+        "4": "var(--space-4)",
+        "6": "var(--space-6)",
+        "8": "var(--space-8)",
+        "12": "var(--space-12)",
+        "16": "var(--space-16)",
+        "24": "var(--space-24)",
+      },
+
+      borderRadius: {
+        none: "var(--radius-none)",
+        sm: "var(--radius-sm)",
+        md: "var(--radius-md)",
+        lg: "var(--radius-lg)",
+        full: "var(--radius-full)",
+      },
+
       boxShadow: {
-        premium: "var(--shadow-md)",
-        "premium-lg": "var(--shadow-lg)",
-        "premium-xl": "var(--shadow-xl)",
-        "inner-premium": "var(--shadow-inner)",
+        sm: "var(--shadow-sm)",
+        md: "var(--shadow-md)",
+        lg: "var(--shadow-lg)",
+        xl: "var(--shadow-xl)",
+        "2xl": "var(--shadow-2xl)",
+        premium: "var(--shadow-md)", // Alias
       },
+      
+      transitionDuration: {
+        fast: "150ms",
+        normal: "300ms",
+        slow: "500ms",
+      },
+
+      screens: {
+        "2xl": "1536px",
+      },
+
       backgroundImage: {
         "gradient-primary": "var(--gradient-primary)",
         "gradient-primary-alt": "var(--gradient-primary-alt)",
@@ -92,12 +197,7 @@ export default {
         "gradient-overlay-light": "var(--gradient-overlay-light)",
         "texture-noise": "var(--texture-noise)",
       },
-      borderRadius: {
-        lg: "0.25rem",
-        md: "0.125rem",
-        sm: "0.0625rem",
-        DEFAULT: "0.125rem",
-      },
+      
       keyframes: {
         "accordion-down": {
           from: {

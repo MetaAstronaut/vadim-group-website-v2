@@ -2,58 +2,157 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
 
 @layer base {
   :root {
-    /* Rich, warm background tones */
+    /* --- COLORS --- */
+    
+    /* Brand */
+    --color-brand-primary: #0F172A;
+    --color-brand-secondary: #334155;
+    --color-brand-accent: #C6A778;
+    --color-brand-accent-hover: #A68A56;
+
+    /* Background */
+    --color-bg-body: #FAFAF9;
+    --color-bg-surface: #FFFFFF;
+    --color-bg-dark: #0F172A;
+    --color-bg-subtle: #F1F5F9;
+    --color-bg-overlay-light: rgba(255, 255, 255, 0.9);
+    --color-bg-overlay-dark: rgba(15, 23, 42, 0.9);
+
+    /* Text */
+    --color-text-primary: #0F172A;
+    --color-text-secondary: #475569;
+    --color-text-muted: #94A3B8;
+    --color-text-inverse: #F8FAFC;
+
+    /* Border */
+    --color-border-light: #E2E8F0;
+    --color-border-focus: #0F172A;
+    --color-border-accent: #C6A778;
+
+    /* Semantic */
+    --color-semantic-success: #15803D;
+    --color-semantic-error: #B91C1C;
+    --color-semantic-warning: #B45309;
+    --color-semantic-info: #0369A1;
+
+    /* --- TYPOGRAPHY --- */
+
+    /* Font Families */
+    --font-heading: "Playfair Display", serif;
+    --font-body: "Inter", sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
+
+    /* Font Sizes */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    --text-4xl: 2.25rem;
+    --text-5xl: 3rem;
+    --text-6xl: 3.75rem;
+
+    /* Font Weights */
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+
+    /* Line Heights */
+    --leading-tight: 1.1;
+    --leading-snug: 1.3;
+    --leading-normal: 1.5;
+    --leading-relaxed: 1.6;
+
+    /* Letter Spacing */
+    --tracking-tight: -0.02em;
+    --tracking-normal: 0em;
+    --tracking-wide: 0.05em;
+
+    /* --- SPACING --- */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-6: 24px;
+    --space-8: 32px;
+    --space-12: 48px;
+    --space-16: 64px;
+    --space-24: 96px;
+
+    /* --- RADIUS --- */
+    --radius-none: 0px;
+    --radius-sm: 2px;
+    --radius-md: 4px;
+    --radius-lg: 6px;
+    --radius-full: 9999px;
+
+    /* --- SHADOWS --- */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+
+    /* --- GLASSMORPHISM --- */
+    --blur-sm: 4px;
+    --blur-md: 8px;
+    --blur-lg: 12px;
+    
+    --opacity-subtle: 0.9;
+    --opacity-medium: 0.7;
+    --opacity-heavy: 0.5;
+
+    /* --- TRANSITIONS --- */
+    --transition-fast: 150ms ease-out;
+    --transition-normal: 300ms ease-out;
+    --transition-slow: 500ms ease-out;
+
+    /* --- LAYOUT --- */
+    --container-sm: 640px;
+    --container-md: 768px;
+    --container-lg: 1024px;
+    --container-xl: 1280px;
+    
+    --gutter-mobile: 16px;
+    --gutter-desktop: 24px;
+
+    /* Rich, warm background tones (shadcn/ui compatibility) */
     --background: 38 22% 96%;
     --foreground: 215 35% 12%;
-
-    /* Elevated cards with subtle warmth */
     --card: 0 0% 100%;
     --card-foreground: 215 35% 12%;
     --card-border: 35 18% 85%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 215 35% 12%;
-
-    /* Deep charcoal with blue undertones */
     --primary: 215 38% 15%;
     --primary-foreground: 38 25% 97%;
     --primary-light: 215 30% 25%;
     --primary-dark: 215 45% 8%;
-
-    /* Refined bronze/copper accents */
     --secondary: 28 48% 52%;
     --secondary-foreground: 0 0% 100%;
     --secondary-light: 32 55% 62%;
     --secondary-dark: 24 45% 42%;
     --secondary-glow: 35 65% 68%;
-
-    /* Rich tertiary earth tones */
     --tertiary: 18 35% 45%;
     --tertiary-foreground: 0 0% 100%;
-
-    /* Sophisticated neutrals with warmth */
     --muted: 38 18% 92%;
     --muted-foreground: 215 18% 45%;
     --accent: 35 25% 88%;
     --accent-foreground: 215 35% 15%;
-
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 100%;
-
-    /* Refined borders */
     --border: 35 15% 86%;
     --border-light: 35 12% 90%;
     --input: 35 18% 90%;
     --ring: 28 48% 52%;
     --radius: 0.25rem;
-
-    /* Sidebar */
     --sidebar-background: 38 15% 97%;
     --sidebar-foreground: 215 35% 12%;
     --sidebar-primary: 215 38% 15%;
@@ -63,45 +162,13 @@ All colors MUST be HSL.
     --sidebar-border: 35 15% 86%;
     --sidebar-ring: 28 48% 52%;
 
-    /* Premium shadows with warmth */
-    --shadow-sm: 0 2px 4px 0 rgb(60 50 40 / 0.06);
-    --shadow-md: 0 6px 16px -2px rgb(60 50 40 / 0.1);
-    --shadow-lg: 0 24px 32px -8px rgb(60 50 40 / 0.12);
-    --shadow-xl: 0 32px 64px -12px rgb(60 50 40 / 0.18);
-    --shadow-inner: inset 0 2px 8px 0 rgb(60 50 40 / 0.08);
-
     /* Rich gradients */
-    --gradient-primary: linear-gradient(
-      135deg,
-      hsl(215 38% 15%) 0%,
-      hsl(215 30% 25%) 100%
-    );
-    --gradient-primary-alt: linear-gradient(
-      120deg,
-      hsl(215 38% 15%) 0%,
-      hsl(215 30% 22%) 50%,
-      hsl(215 35% 18%) 100%
-    );
-    --gradient-secondary: linear-gradient(
-      135deg,
-      hsl(28 48% 52%) 0%,
-      hsl(32 55% 62%) 100%
-    );
-    --gradient-warm: linear-gradient(
-      135deg,
-      hsl(35 25% 88%) 0%,
-      hsl(38 22% 96%) 100%
-    );
-    --gradient-overlay-dark: linear-gradient(
-      180deg,
-      hsl(215 38% 15% / 0.5) 0%,
-      hsl(215 45% 8% / 0.85) 100%
-    );
-    --gradient-overlay-light: linear-gradient(
-      180deg,
-      transparent 0%,
-      hsl(38 22% 96% / 0.6) 100%
-    );
+    --gradient-primary: linear-gradient(135deg, hsl(215 38% 15%) 0%, hsl(215 30% 25%) 100%);
+    --gradient-primary-alt: linear-gradient(120deg, hsl(215 38% 15%) 0%, hsl(215 30% 22%) 50%, hsl(215 35% 18%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(28 48% 52%) 0%, hsl(32 55% 62%) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(35 25% 88%) 0%, hsl(38 22% 96%) 100%);
+    --gradient-overlay-dark: linear-gradient(180deg, hsl(215 38% 15% / 0.5) 0%, hsl(215 45% 8% / 0.85) 100%);
+    --gradient-overlay-light: linear-gradient(180deg, transparent 0%, hsl(38 22% 96% / 0.6) 100%);
 
     /* Subtle texture overlay */
     --texture-noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
@@ -133,7 +200,6 @@ All colors MUST be HSL.
     --border: 215 25% 24%;
     --border-light: 215 20% 28%;
     --input: 215 28% 20%;
-
     --sidebar-background: 215 40% 10%;
     --sidebar-foreground: 38 25% 95%;
     --sidebar-primary: 38 25% 95%;
@@ -142,17 +208,8 @@ All colors MUST be HSL.
     --sidebar-accent-foreground: 38 25% 95%;
     --sidebar-border: 215 25% 24%;
     --sidebar-ring: 28 48% 52%;
-
-    --gradient-primary: linear-gradient(
-      135deg,
-      hsl(215 38% 18%) 0%,
-      hsl(215 30% 28%) 100%
-    );
-    --gradient-secondary: linear-gradient(
-      135deg,
-      hsl(28 48% 48%) 0%,
-      hsl(32 55% 58%) 100%
-    );
+    --gradient-primary: linear-gradient(135deg, hsl(215 38% 18%) 0%, hsl(215 30% 28%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(28 48% 48%) 0%, hsl(32 55% 58%) 100%);
     --shadow-sm: 0 2px 8px -2px hsl(0 0% 0% / 0.4);
     --shadow-md: 0 6px 20px -4px hsl(0 0% 0% / 0.5);
     --shadow-lg: 0 12px 40px -8px hsl(0 0% 0% / 0.6);
@@ -167,77 +224,46 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
-    font-family:
-      "Inter",
-      -apple-system,
-      BlinkMacSystemFont,
-      "Segoe UI",
-      sans-serif;
-    font-size: 17px;
-    line-height: 1.75;
-    font-weight: 400;
-    letter-spacing: -0.01em;
+    @apply bg-surface-body text-text-primary antialiased;
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+    font-weight: var(--weight-regular);
+    letter-spacing: var(--tracking-normal);
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply text-foreground;
-    font-family: "Playfair Display", Georgia, serif;
-    font-weight: 600;
-    letter-spacing: -0.025em;
-    line-height: 1.15;
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-text-primary;
+    font-family: var(--font-heading);
+    font-weight: var(--weight-semibold);
+    letter-spacing: var(--tracking-tight);
+    line-height: var(--leading-tight);
   }
 
-  h1 {
-    @apply text-6xl md:text-7xl lg:text-8xl;
-    font-weight: 700;
-    letter-spacing: -0.035em;
-  }
-
-  h2 {
-    @apply text-5xl md:text-6xl;
-    font-weight: 700;
-    letter-spacing: -0.03em;
-  }
-
-  h3 {
-    @apply text-4xl md:text-5xl;
-    font-weight: 600;
-    letter-spacing: -0.025em;
-  }
-
-  h4 {
-    @apply text-2xl md:text-3xl;
-    font-weight: 500;
-  }
-
-  h5 {
-    @apply text-xl md:text-2xl;
-    font-weight: 500;
-  }
-
-  h6 {
-    @apply text-lg md:text-xl;
-    font-weight: 500;
-  }
-
-  p {
-    letter-spacing: -0.011em;
-  }
+  h1 { @apply text-5xl md:text-6xl; font-weight: var(--weight-bold); }
+  h2 { @apply text-4xl md:text-5xl; font-weight: var(--weight-bold); }
+  h3 { @apply text-3xl md:text-4xl; font-weight: var(--weight-semibold); }
+  h4 { @apply text-2xl md:text-3xl; font-weight: var(--weight-medium); }
+  h5 { @apply text-xl md:text-2xl; font-weight: var(--weight-medium); }
+  h6 { @apply text-lg md:text-xl; font-weight: var(--weight-medium); }
 }
 
 @layer components {
   .card-premium {
-    @apply transition-all duration-500 hover:shadow-xl hover:-translate-y-1;
+    @apply bg-surface transition-all duration-500 hover:shadow-md border border-border-light rounded-md;
+    border-color: var(--color-border-light);
+  }
+  
+  .card-premium:hover {
+    border-color: rgba(198, 167, 120, 0.5); /* brand-accent with 50% opacity */
   }
 
   .btn-premium {
-    @apply relative overflow-hidden transition-all duration-300;
+    @apply bg-brand-primary text-white relative overflow-hidden transition-all duration-300 rounded-sm px-6 py-3 font-semibold hover:shadow-md hover:-translate-y-0.5 active:translate-y-0;
+  }
+  
+  .btn-premium:hover {
+    background-color: #0A1520;
   }
 
   .btn-premium::before {
@@ -248,28 +274,35 @@ All colors MUST be HSL.
   .btn-premium:hover::before {
     @apply translate-x-full;
   }
+  
+  .btn-secondary {
+    @apply bg-transparent text-brand-primary border border-brand-primary relative overflow-hidden transition-all duration-300 rounded-sm px-6 py-3 font-semibold;
+  }
+  
+  .btn-secondary:hover {
+    background-color: rgba(15, 23, 42, 0.05); /* brand-primary with 5% opacity */
+  }
+  
+  .btn-accent {
+    @apply bg-brand-accent text-brand-primary relative overflow-hidden transition-all duration-300 rounded-sm px-6 py-3 font-semibold hover:shadow-md;
+  }
+  
+  .btn-accent:hover {
+    background-color: var(--color-brand-accent-hover);
+  }
 
   .section-padding {
-    @apply py-24 md:py-32 lg:py-40;
+    @apply py-16 md:py-24;
   }
 
   .container-custom {
-    @apply max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16;
+    @apply max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8;
   }
 
   .text-gradient {
-    background: linear-gradient(
-      to right,
-      hsl(var(--secondary)),
-      hsl(var(--secondary-light)),
-      hsl(var(--secondary-glow))
-    );
+    background: linear-gradient(to right, var(--color-brand-secondary), var(--color-brand-accent));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-  }
-
-  .divider-elegant {
-    @apply w-24 h-[2px] bg-gradient-to-r from-transparent via-secondary to-transparent mx-auto my-8;
   }
 }
