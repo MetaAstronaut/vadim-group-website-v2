@@ -1,28 +1,27 @@
 ---
 component: "header"
-description: "Global navigation and primary call-to-action for The Vadim Group website."
+description: "Global header navigation and primary WhatsApp CTA for The Vadim Group."
 ---
 
 ## [brand]
 
 name: "The Vadim Group"
-logo: null # update later if logo file or text changes
+logo-alt: "The Vadim Group logo"
+href: "/"
 
 ---
 
-## [navigation]
+## [nav]
 
 items:
   - name: "Home"
     href: "/"
   - name: "Home Repairs"
     href: "/home-repairs"
-  - name: "Specialized Services"
-    href: "/specialized-services"
   - name: "Marine & RV"
     href: "/marine-rv"
-  - name: "Commercial"
-    path: "/commercial"
+  - name: "About"
+    href: "/about"
   - name: "Blog"
     href: "/blog"
   - name: "Contact"
@@ -32,10 +31,20 @@ items:
 
 ## [cta]
 
-desktop:
-label: "Get a Quote"
-action: "/contact" # currently routed via button component
+label: "Get Free Estimate"
+subLabel: "via WhatsApp"
+type: "whatsapp"
+href: "https://wa.me/YOUR_WHATSAPP_NUMBER"
 
-mobile:
-label: "Get a Quote"
-action: "/contact"
+sticky: true
+show-on-scroll: true
+show-whatsapp-icon: true
+
+---
+
+## [mobile-menu]
+
+enabled: true
+hamburger-icon: true
+close-icon: true
+overlay: true

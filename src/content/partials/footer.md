@@ -3,35 +3,26 @@ component: "footer"
 description: "Global footer content for The Vadim Group website."
 ---
 
-## [company]
+## [brand]
 
-name: "The Vadim Group"
-tagline: "Premium repair services for homes, businesses and marine vessels throughout the Orlando area"
-
-social-links:
-
-- name: "Facebook"
-  href: "#"
-- name: "Instagram"
-  href: "#"
-- name: "LinkedIn"
-  href: "#"
+logo-alt: "The Vadim Group logo"
+tagline: "Premium repair services for homes, boats, and RVs across the Orlando area. Trusted craftsmanship, honest communication, and results built to last."
 
 ---
 
 ## [quick-links]
+
+title: "Quick Links"
 
 items:
   - name: "Home"
     href: "/"
   - name: "Home Repairs"
     href: "/home-repairs"
-  - name: "Specialized Services"
-    href: "/specialized-services"
   - name: "Marine & RV"
     href: "/marine-rv"
-  - name: "Commercial"
-    path: "/commercial"
+  - name: "About"
+    href: "/about"
   - name: "Blog"
     href: "/blog"
   - name: "Contact"
@@ -41,26 +32,49 @@ items:
 
 ## [contact]
 
-title: "Contact"
+title: "Contact & Service Area"
 
-email:
-label: "Email"
-value: "info@thevadimgroup.com"
-href: "mailto:info@thevadimgroup.com"
+whatsapp-label: "WhatsApp: Message Us"
+whatsapp-href: "https://wa.me/YOUR_WHATSAPP_NUMBER"
 
-location:
-label: "Service Area"
-text: "Orlando, Lake Nona, Hunters Creek & surrounding areas"
+email-label: "Email"
+email-href: "mailto:info@thevadimgroup.com"
+
+service-area:
+  - "Orlando, FL"
+  - "Lake Nona, FL"
+  - "Hunters Creek, FL"
+  - "Winter Park, FL"
+  - "Lake Mary, FL"
+  - "Kissimmee, FL"
+  - "Surrounding areas"
+
+hours: "Mon–Sat: 9:00 AM – 6:00 PM"
 
 ---
 
-## [bottom]
+## [social]
 
-copyright-template: "© {year} The Vadim Group. All rights reserved."
+title: "Follow Us"
 
-links:
+items:
+  - name: "Facebook"
+    href: "https://facebook.com/thevadimgroup"
+    icon: "facebook"
+  - name: "Instagram"
+    href: "https://instagram.com/thevadimgroup"
+    icon: "instagram"
 
-- name: "Privacy Policy"
-  href: "#"
-- name: "Terms of Service"
-  href: "#"
+---
+
+## [legal]
+
+title: "Legal"
+
+items:
+  - name: "Privacy Policy"
+    href: "/privacy-policy"
+  - name: "Terms of Service"
+    href: "/terms-of-service"
+
+copyright-template: "© 2025 The Vadim Group. All rights reserved."

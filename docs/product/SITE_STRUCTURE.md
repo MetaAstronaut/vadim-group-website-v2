@@ -1,8 +1,11 @@
 # SITE STRUCTURE — The Vadim Group
 
 ## Purpose
+Defines the structure, hierarchy, and content logic of the website.
 
-This document defines the full information architecture, navigation logic, page goals, and CTA flow for The Vadim Group website.
+The Vadim Group website is a premium, service-focused platform presenting residential repair and marine/RV repair services with clear navigation, strong value communication, SEO-oriented structure, and WhatsApp-based conversion flow.
+
+---
 
 Each page must support:
 
@@ -13,32 +16,45 @@ Each page must support:
 
 ---
 
-## 1. Core Navigation
+# 1. NAVIGATION (HEADER)
 
-### Top-level Navbar:
+## Header Items:
+1. **Home** → `/`
+2. **Home Repairs** → `/home-repairs`
+3. **Marine & RV** → `/marine-rv`
+4. **About** → `/about` (includes portfolio)
+5. **Blog** → `/blog`
 
-- Home (`/`)
-- Home Repairs (`/home-repairs`)
-- Specialized Services (`/specialized-services`)
-- Marine & RV (`/marine-rv`)
-- Commercial (`/commercial`)
-- Blog (`/blog`)
-- Contact (`/contact`)
-- **[CTA Button]** Get a Quote → `/contact`
-- **[Secondary CTA]** WhatsApp Business Chat
+### Not in header:
+- Contact (handled via CTA WhatsApp button + footer)
+- FAQ (integrated inside pages)
+- Commercial (removed)
+- Specialized Services (removed)
 
-### Footer Links:
+## CTA in Header:
+Primary CTA: **WhatsApp — “Get Free Estimate”**
 
-**Primary Navigation:**
-- Home (`/`)
-- Home Repairs (`/home-repairs`)
-- Specialized Services (`/specialized-services`)
-- Marine & RV (`/marine-rv`)
-- Commercial (`/commercial`)
-- About (`/about`)
-- Blog (`/blog`)
-- Contact (`/contact`)
-- FAQ (`/faq`)
+---
+
+# 2. FOOTER STRUCTURE
+
+## Footer Columns:
+**Column 1: Brand**
+- The Vadim Group
+- Orlando, FL
+- “High-quality home, boat, and RV repair services.”
+
+**Column 2: Pages**
+- Home  
+- Home Repairs  
+- Marine & RV  
+- About  
+- Blog  
+
+**Column 4: Contact**
+- WhatsApp CTA  
+- Email (optional)  
+- Hours: Mon–Sat, 9am–6pm 
 
 **Legal:**
 - Privacy Policy (`/privacy`)

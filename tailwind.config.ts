@@ -27,12 +27,29 @@ export default {
         
         // Brand Colors
         brand: {
-          primary: "var(--color-brand-primary)",
-          secondary: "var(--color-brand-secondary)",
+          primary: "#0F172A",
+          secondary: "#334155",
           accent: {
-            DEFAULT: "var(--color-brand-accent)",
-            hover: "var(--color-brand-accent-hover)",
+            DEFAULT: "#C6A778",
+            hover: "#A68A56",
           },
+        },
+        
+        // Design System V2 Aliases & Shadcn Primary
+        primary: {
+          ...require("tailwindcss/colors").slate, // Fallback/Base
+          900: "#0F172A", // Deep Oxford Blue
+          700: "#334155", // Slate Charcoal
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+          light: "hsl(var(--primary-light))",
+          dark: "hsl(var(--primary-dark))",
+        },
+        accent: {
+          500: "#C6A778", // Artisan Gold
+          600: "#A68A56", // Deep Gold
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
         },
         
         // Border Colors
@@ -65,12 +82,6 @@ export default {
         },
 
         // Keep existing shadcn/ui mappings
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-          light: "hsl(var(--primary-light))",
-          dark: "hsl(var(--primary-dark))",
-        },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
@@ -89,10 +100,6 @@ export default {
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",

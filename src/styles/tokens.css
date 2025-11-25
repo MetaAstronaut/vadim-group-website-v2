@@ -1,29 +1,31 @@
 :root {
   /* --- COLORS --- */
+  /* Design System V2.2 Tokens */
   
-  /* Brand */
-  --color-brand-primary: #0F172A;
-  --color-brand-secondary: #334155;
-  --color-brand-accent: #C6A778;
-  --color-brand-accent-hover: #A68A56;
+  /* Brand - Primary Palette */
+  --color-brand-primary: #0F172A; /* Deep Oxford Blue - Trust, Authority */
+  --color-brand-secondary: #334155; /* Slate Charcoal */
+  --color-brand-accent: #C6A778; /* Artisan Gold - Craftsmanship */
+  --color-brand-accent-hover: #A68A56; /* Deep Gold */
 
   /* Background */
-  --color-bg-body: #FAFAF9;
-  --color-bg-surface: #FFFFFF;
-  --color-bg-dark: #0F172A;
-  --color-bg-subtle: #F1F5F9;
+  --color-bg-body: #FAFAF9; /* Warm Alabaster */
+  --color-bg-surface: #FFFFFF; /* Pure White */
+  --color-bg-dark: #0F172A; /* Deep Oxford Blue */
+  --color-bg-subtle: #F1F5F9; /* Light Blue-Grey */
   --color-bg-overlay-light: rgba(255, 255, 255, 0.9);
   --color-bg-overlay-dark: rgba(15, 23, 42, 0.9);
 
   /* Text */
-  --color-text-primary: #0F172A;
-  --color-text-secondary: #475569;
-  --color-text-muted: #94A3B8;
-  --color-text-inverse: #F8FAFC;
+  --color-text-primary: #0F172A; /* Oxford Blue - Headings */
+  --color-text-secondary: #475569; /* Body text */
+  --color-text-muted: #94A3B8; /* Meta data */
+  --color-text-inverse: #F8FAFC; /* On dark backgrounds */
+  --color-text-accent: #C6A778; /* Gold for section labels */
 
   /* Border */
-  --color-border-light: #E2E8F0;
-  --color-border-focus: #0F172A;
+  --color-border-light: #E2E8F0; /* Card borders, dividers */
+  --color-border-focus: #C6A778; /* Input focus (gold) */
   --color-border-accent: #C6A778;
 
   /* Semantic */
@@ -69,6 +71,7 @@
   --tracking-wide: 0.05em;
 
   /* --- SPACING --- */
+  /* 4px baseline grid */
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
@@ -76,8 +79,9 @@
   --space-6: 24px;
   --space-8: 32px;
   --space-12: 48px;
-  --space-16: 64px;
-  --space-24: 96px;
+  --space-16: 64px; /* Section spacing mobile */
+  --space-20: 80px; /* Section spacing tablet */
+  --space-24: 96px; /* Section spacing desktop */
 
   /* --- RADIUS --- */
   --radius-none: 0px;
@@ -112,8 +116,22 @@
   --container-md: 768px;
   --container-lg: 1024px;
   --container-xl: 1280px;
+  --container-2xl: 1440px;
   
   --gutter-mobile: 16px;
-  --gutter-desktop: 24px;
+  --gutter-tablet: 24px;
+  --gutter-desktop: 40px;
+
+  /* --- ICON SIZES (Design System v2.2 Section 6.7) --- */
+  --icon-xs: 16px;
+  --icon-sm: 20px;
+  --icon-md: 24px;
+  --icon-lg: 32px;
+  --icon-xl: 48px;
+  --icon-2xl: 64px;
+
+  /* --- TIMELINE/PROCESS BADGES --- */
+  --badge-size-mobile: 48px;
+  --badge-size-desktop: 56px;
 }
 

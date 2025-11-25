@@ -23,7 +23,7 @@ export const Layout = ({
       <main 
         className={cn(
           "flex-1 flex flex-col", 
-          !hideHeader && "pt-[88px] lg:pt-[96px]", // Offset fixed header height
+          !hideHeader && "pt-20", // Reduced top padding to match header height (80px/5rem = 20)
           className
         )} 
         {...props}
