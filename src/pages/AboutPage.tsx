@@ -4,10 +4,190 @@ import { PageTemplate } from "@/components/PageTemplate";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
+import { Badge } from "@/components/ui/badge";
 import { ArrowRight, HeartHandshake, Award, Users } from "lucide-react";
 
 import aboutContentRaw from "@/content/pages/about.md?raw";
 import heroBg from "@/assets/vadim-portrait.jpg";
+
+// Portfolio projects data
+const portfolioProjects = {
+  homeRepairs: [
+    {
+      title: "Water Damage Restoration",
+      category: "Home Repair",
+      description: "Complete drywall repair and repainting after bathroom leak",
+      image: heroBg,
+    },
+    {
+      title: "Kitchen Cabinet Repair",
+      category: "Home Repair",
+      description: "Cabinet door adjustment and hardware replacement",
+      image: heroBg,
+    },
+    {
+      title: "Deck Restoration",
+      category: "Home Repair",
+      description: "Complete deck sanding, staining, and weatherproofing",
+      image: heroBg,
+    },
+    {
+      title: "Basement Ceiling Repair",
+      category: "Home Repair",
+      description: "Drywall replacement and professional finishing",
+      image: heroBg,
+    },
+    {
+      title: "Window Frame Restoration",
+      category: "Home Repair",
+      description: "Rotted frame replacement and weather sealing",
+      image: heroBg,
+    },
+    {
+      title: "Interior Door Installation",
+      category: "Home Repair",
+      description: "New door installation with precise fitting",
+      image: heroBg,
+    },
+  ],
+  marineRV: [
+    {
+      title: "Boat Gelcoat Repair",
+      category: "Marine Service",
+      description: "Seamless hull restoration with color matching",
+      image: heroBg,
+    },
+    {
+      title: "RV Interior Rebuild",
+      category: "RV Service",
+      description: "Water damage repair and panel replacement",
+      image: heroBg,
+    },
+    {
+      title: "Marine Electrical Work",
+      category: "Marine Service",
+      description: "Complete lighting system installation and testing",
+      image: heroBg,
+    },
+    {
+      title: "RV Bathroom Restoration",
+      category: "RV Service",
+      description: "Water damage repair with proper sealing",
+      image: heroBg,
+    },
+    {
+      title: "Boat Deck Restoration",
+      category: "Marine Service",
+      description: "Non-slip surface repair and refinishing",
+      image: heroBg,
+    },
+    {
+      title: "RV Cabinet Repair",
+      category: "RV Service",
+      description: "Structural repair and refinishing",
+      image: heroBg,
+    },
+  ],
+};
+
+// Portfolio Tabs Component
+const PortfolioTabs = () => {
+  const [activeTab, setActiveTab] = React.useState<'all' | 'home' | 'marine'>('all');
+  
+  const allProjects = [...portfolioProjects.homeRepairs, ...portfolioProjects.marineRV];
+  
+  const displayProjects = 
+    activeTab === 'all' ? allProjects :
+    activeTab === 'home' ? portfolioProjects.homeRepairs :
+    portfolioProjects.marineRV;
+
+  return (
+    <div className="space-y-8">
+      {/* Tabs */}
+      <div className="flex flex-wrap justify-center gap-3 mb-8">
+        <button
+          onClick={() => setActiveTab('all')}
+          className={`
+            px-6 py-3 rounded-lg font-medium transition-all duration-300
+            ${activeTab === 'all' 
+              ? 'bg-brand-accent text-brand-primary shadow-md' 
+              : 'bg-white border-2 border-border-light text-text-secondary hover:border-brand-accent/50'
+            }
+          `}
+        >
+          All Projects
+        </button>
+        <button
+          onClick={() => setActiveTab('home')}
+          className={`
+            px-6 py-3 rounded-lg font-medium transition-all duration-300
+            ${activeTab === 'home' 
+              ? 'bg-brand-accent text-brand-primary shadow-md' 
+              : 'bg-white border-2 border-border-light text-text-secondary hover:border-brand-accent/50'
+            }
+          `}
+        >
+          Home Repairs
+        </button>
+        <button
+          onClick={() => setActiveTab('marine')}
+          className={`
+            px-6 py-3 rounded-lg font-medium transition-all duration-300
+            ${activeTab === 'marine' 
+              ? 'bg-brand-accent text-brand-primary shadow-md' 
+              : 'bg-white border-2 border-border-light text-text-secondary hover:border-brand-accent/50'
+            }
+          `}
+        >
+          Marine & RV
+        </button>
+      </div>
+
+      {/* Projects Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {displayProjects.map((project, i) => (
+          <div 
+            key={i}
+            className="
+              group
+              bg-white 
+              rounded-lg 
+              overflow-hidden
+              border border-border-light
+              shadow-sm
+              hover:shadow-md
+              hover:-translate-y-1
+              transition-all duration-300
+            "
+          >
+            {/* Image Container */}
+            <div className="aspect-[4/3] overflow-hidden bg-gray-100">
+              <img 
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+            
+            {/* Content */}
+            <div className="p-5">
+              <Badge variant="outline" className="mb-3 text-brand-accent border-brand-accent/30">
+                {project.category}
+              </Badge>
+              <h3 className="font-heading text-xl font-semibold text-brand-primary mb-2">
+                {project.title}
+              </h3>
+              <p className="text-text-secondary text-sm">
+                {project.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export const AboutPage = () => {
   return (
@@ -90,6 +270,25 @@ export const AboutPage = () => {
                   </div>
                 ))}
               </div>
+            </Container>
+          </Section>
+
+          {/* --- PORTFOLIO --- */}
+          <Section spacing="lg">
+            <Container>
+              <div className="text-center max-w-3xl mx-auto mb-12">
+                <span className="text-brand-accent font-semibold tracking-[0.08em] text-base uppercase block mb-3">
+                  OUR PORTFOLIO
+                </span>
+                <h2 className="font-heading text-4xl md:text-5xl font-bold text-brand-primary mb-4">
+                  Recent Projects
+                </h2>
+                <p className="text-xl text-text-secondary">
+                  Quality craftsmanship across homes, boats, and RVs
+                </p>
+              </div>
+
+              <PortfolioTabs />
             </Container>
           </Section>
 

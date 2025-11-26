@@ -21,7 +21,7 @@ items:
     href: "/home-repairs"
   - name: "Marine & RV"
     href: "/marine-rv"
-  - name: "About"
+  - name: "Our Work"
     href: "/about"
   - name: "Blog"
     href: "/blog"

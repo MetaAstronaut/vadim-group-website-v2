@@ -178,45 +178,68 @@ Diagnosed a failed fuse panel connection, repaired wiring, tested all outlets an
 ---
 
 ### HOW WE WORK
-# Our Repair Process
+
+## How Our Repair Process Works
+
 A clean, organized workflow for dependable results.
 
-1. **Consultation & Assessment**  
-2. **Detailed Estimate**  
-3. **Scheduling & Preparation**  
-4. **Expert Execution**  
-5. **Inspection & Quality Check**  
-6. **Cleanup & Interior Protection**  
-7. **Warranty & Follow-Up Support**
+1. **Consultation & Estimate** — We assess needs, review photos, and provide clear estimates with no hidden fees
+2. **Scheduling & Planning** — Flexible scheduling with realistic timelines. We respect your time
+3. **Expert Execution** — Professional work with quality materials and attention to detail
+4. **Inspection & Cleanup** — Thorough inspection and complete cleanup of your space
+5. **Walkthrough & Warranty** — Final review, questions answered, and warranty-backed work
 
 ---
 
-### FAQ
-# Marine & RV Questions & Answers
+### QUESTIONS & ANSWERS
+# Marine & RV Repair FAQs
 
-**Do you repair engines?**  
-Yes — light mechanical and minor engine repairs only. We do not perform full engine servicing or rebuilds.
+**Do you repair marine or RV engines?**  
+We provide light mechanical work and minor engine-related repairs, such as diagnostics, starting issues, and accessory replacements.
+We do not perform full engine servicing, overhauls, or rebuilds.
 
-**Can you repair water-damaged interiors?**  
-Yes. We restore panels, flooring, ceiling sections, cabinets, and moisture-affected areas.
+**Can you repair water-damaged RV or boat interiors?**  
+Yes — we restore wall panels, flooring, ceilings, cabinetry, and moisture-affected areas.
+We also perform moisture diagnostics to identify hidden damage.
 
-**Do you work with fiberglass?**  
-Yes — light fiberglass patching and gelcoat repair.
+**Do you handle fiberglass or gelcoat repairs?**  
+Yes — we perform light fiberglass patching, gelcoat correction, small crack repairs, and color-matched finishing for boats and RV exterior areas.
 
-**Do you repair electrical issues?**  
-Yes — lights, wiring checks, battery/fuse issues, and small onboard systems.
+**Do you repair electrical issues on boats or RVs?**  
+Yes — we handle lighting, switches, wiring checks, battery/fuse issues, and basic onboard electrical systems.
+We do not service high-voltage or complex engine-control electronics.
 
-**Can you fix RV slide-outs?**  
-Light adjustment and alignment only (no major structural rebuilds).
+**Can you repair or adjust RV slide-outs?**  
+Yes — we perform light slide-out alignment, lubrication, and minor adjustment.
+Major structural rebuilds or hydraulic system replacements are referred to specialists.
 
-**Do you provide mobile service?**  
-Yes — depending on location and job type. Some repairs require workshop conditions.
+**Do you offer mobile RV or boat repair service?**  
+Yes — mobile service is available in Orlando, Lake Nona, Winter Park, Lake Mary, and nearby areas, depending on the job type.
+Some repairs require workshop conditions for proper materials, tools, and curing.
 
 **Do you work on all RV brands and boat types?**  
-Yes — we handle most standard RV and small-to-mid-size boats.
+Yes — we repair most common RV brands and small-to-mid-size boats, including fiberglass, pontoon, and bowrider types.
+For large vessels or specialized builds, we’ll confirm scope before scheduling.
 
-**Can I send photos for diagnosis?**  
-Absolutely. WhatsApp is the fastest way to get an estimate.
+**Can I send photos or videos for a repair estimate?**  
+Absolutely — WhatsApp is the fastest way to send photos or short videos.
+We typically reply with an estimate within a few business hours.
+
+**Do you repair soft spots, floor rot, or delamination?**  
+We handle light soft-spot repairs, minor delamination areas, and panel replacement.
+Severe structural rot or major rebuilds require a full marine specialist.
+
+**Can you repair roof leaks or exterior sealant issues on RVs?**  
+Yes — we repair roof leaks, reseal exterior joints, replace damaged trim, and fix water-intrusion points.
+
+**Do you fix trailer wiring or lighting issues?**  
+Yes — we repair basic trailer wiring, lights, connectors, and fuse problems.
+
+**Do you offer cosmetic restoration for boats or RVs?**  
+Yes — including gelcoat touch-ups, scratch repair, surface refinishing, and cabinet/floor restoration.
+
+**Can you help diagnose unusual noises, vibration, or electrical faults?**  
+Yes — we provide diagnostics for mechanical noises, electrical faults, and operational issues and guide you toward the correct repair path.
 
 ---
 

@@ -275,8 +275,8 @@ export function getHomePageData(): HomePageData {
   const aboutSection = sections[5];
   const aboutTag = findLine(aboutSection, '### ');
   const aboutTitle = findLine(aboutSection, '## ');
-  const aboutQuote = findLine(aboutSection, '> ').replace(/\*\*/g, '');
-  const aboutDesc = aboutSection.split('>')[1]?.split('###')[0]?.trim().split('\n').filter(l => l.trim().length > 0).join(' ') || '';
+  const aboutQuote = findLine(aboutSection, '> ').replace(/\*\*/g, '').replace(/_/g, '');
+  const aboutDesc = aboutSection.split('>')[1]?.split('###')[0]?.trim().split('\n').filter(l => l.trim().length > 0).slice(1).join(' ') || '';
   const aboutPromiseTitle = findLine(aboutSection.split('### Our Promise')[1] || '', '### ');
   const aboutPromiseItems = parseList(aboutSection);
   const aboutClosing = aboutSection.split('\n').reverse().find(l => l.trim().length > 0 && !l.startsWith('-'))?.trim() || '';
@@ -285,11 +285,11 @@ export function getHomePageData(): HomePageData {
   const faqSection = sections[6];
   const faqTag = findLine(faqSection, '### ');
   const faqTitle = findLine(faqSection, '## ');
-  const faqItems = faqSection.match(/\*\*(.*?)\*\*\n([\s\S]*?)(?=(?:\*\*|$))/g)?.map(item => {
+  const faqItems = faqSection.match(/\*\*(.*?)\*\*\n([\s\S]*?)(?=(?:\*\*|If you don't|$))/g)?.map(item => {
     const lines = item.split('\n');
     return { question: lines[0].replace(/\*\*/g, '').trim(), answer: lines.slice(1).join(' ').trim() };
   }) || [];
-  const faqClosing = faqSection.split('\n').reverse().find(l => l.trim().length > 0 && !l.startsWith('If'))?.trim() || '';
+  const faqClosing = faqSection.split('\n').reverse().find(l => l.trim().startsWith('If you don\'t see'))?.trim() || '';
 
   // 7: CTA
   const ctaSection = sections[7];
@@ -512,7 +512,7 @@ export interface MarineRVPageData {
   whyChooseUs: { tag: string; title: string; bullets: string[]; };
   reviews: { tag: string; title: string; items: Array<{ quote: string; author: string }>; };
   projects: { tag: string; title: string; items: Array<{ title: string; description: string }> };
-  process: { tag: string; title: string; description: string; steps: string[]; };
+  process: { tag: string; title: string; description: string; steps: Array<{ title: string; description: string }>; };
   faq: { tag: string; title: string; items: Array<{ question: string; answer: string }> };
   cta: { tag: string; title: string; description: string; whatsappText: string; whatsappLink: string; emailText: string; emailLink: string; };
 }
@@ -615,9 +615,10 @@ export function getMarineRVPageData(): MarineRVPageData {
   const processTag = findLine(processSection, '### ');
   const processTitle = findLine(processSection, '# ');
   const processDesc = findParagraph(processSection);
-  const processSteps = parseList(processSection.split('1.')[1] ? '1.' + processSection.split('1.')[1] : processSection).map(l => l.replace(/^\d+\.\s/, '').trim());
-  // Fix simple list parsing for numbered items if parseList doesn't catch them
-  const processStepsNumbered = processSection.match(/\d+\.\s\*\*(.*?)\*\*/g)?.map(l => l.replace(/\d+\.\s\*\*(.*?)\*\*/, '$1').trim()) || [];
+  const processSteps = processSection.match(/\d+\.\s\*\*(.*?)\*\*\s+[-—]\s+(.*)/g)?.map(step => {
+    const [_, title, desc] = step.match(/\d+\.\s\*\*(.*?)\*\*\s+[-—]\s+(.*)/) || [];
+    return { title: title?.trim() || '', description: desc?.trim() || '' };
+  }) || [];
 
   // 9: FAQ
   const faqSection = sections[9];
@@ -653,7 +654,7 @@ export function getMarineRVPageData(): MarineRVPageData {
     whyChooseUs: { tag: whyTag, title: whyTitle, bullets: whyBullets },
     reviews: { tag: reviewsTag, title: reviewsTitle, items: reviewsItems },
     projects: { tag: projectsTag, title: projectsTitle, items: projectsItems },
-    process: { tag: processTag, title: processTitle, description: processDesc, steps: processStepsNumbered },
+    process: { tag: processTag, title: processTitle, description: processDesc, steps: processSteps },
     faq: { tag: faqTag, title: faqTitle, items: faqItems },
     cta: {
       tag: ctaTag,

@@ -194,51 +194,57 @@ Replaced damaged posts, reinforced the gate, sealed joints, and ensured smooth, 
 ---
 
 ### HOW WE WORK
-# Our Repair Process
+
+## How Our Repair Process Works
+
 A transparent, step-by-step workflow designed to deliver consistent, high-quality results.
 
-1. **Consultation & Assessment** — We review the problem, inspect the area, and discuss your goals.  
-2. **Detailed Estimate** — Clear, itemized pricing with no hidden fees.  
-3. **Scheduling & Planning** — Flexible scheduling, punctual arrival, efficient preparation.  
-4. **Expert Execution** — Clean, precise work using proper materials and methods.  
-5. **Inspection & Cleanup** — We check our work thoroughly and leave the space clean.  
-6. **Final Walkthrough** — Review results together and answer any questions.  
-7. **Warranty & Follow-Up** — We stand behind our work and remain available if anything arises.
+1. **Consultation & Estimate** — We assess needs, review photos, and provide clear estimates with no hidden fees
+2. **Scheduling & Planning** — Flexible scheduling with realistic timelines. We respect your time
+3. **Expert Execution** — Professional work with quality materials and attention to detail
+4. **Inspection & Cleanup** — Thorough inspection and complete cleanup of your space
+5. **Walkthrough & Warranty** — Final review, questions answered, and warranty-backed work
 
 ---
 
-### FAQ
-# Frequently Asked Questions
+### QUESTIONS & ANSWERS
+# Home Repair FAQs
 
-**How quickly can you respond to a repair request?**  
-Most standard home repairs are scheduled within a few business days. For urgent issues, we offer priority scheduling and respond as fast as possible.
+**How quickly can you respond to a home repair request in the Orlando area?**  
+Most standard home repairs in the Orlando and Lake Nona area are scheduled within a few business days.
+For urgent issues (leaks, water damage, safety concerns), we offer priority scheduling and aim to respond as quickly as possible.
 
-**Do you provide free estimates?**  
-Yes. You can send photos and a short description via WhatsApp, and we’ll provide a free estimate within 2–4 business hours.
+**Do you provide free home repair estimates?**  
+Yes — free estimates are available. Send photos and a short description via WhatsApp, and we typically respond within a few business hours with a clear estimate.
 
-**Can you help if we’re not sure what the problem is?**  
-Absolutely. Many clients contact us unsure of the root cause. We diagnose the issue, explain the options, and recommend the best solution.
+**Can you help diagnose a home repair issue if we’re not sure what’s wrong?**  
+Yes. Many homeowners contact us unsure of the root cause.
+We handle diagnostics, explain the issue clearly, and recommend the best repair plan.
 
-**What types of repairs do you specialize in?**  
-We handle interior repairs (drywall, ceilings, flooring), kitchen & bathroom repairs, structural (light scope), exterior repairs, and water-damage restoration.
+**What types of home repair services do you specialize in?**  
+We handle interior repairs (drywall, ceilings, flooring), kitchen & bathroom fixes, light structural repairs, exterior work, and water-damage restoration for homeowners in the Orlando area.
 
-**Do you repair small jobs or only large projects?**  
-We handle projects of all sizes — from small fixes to full-area restoration.
+**Do you repair small handyman jobs, or only larger home projects?**  
+We handle projects of all sizes — from quick fixes to full-area restoration.
 
-**Are your repairs long-lasting?**  
-Yes. We focus on permanent repairs, not temporary patches. Our work includes warranty support and follow-up if needed.
+**Are your home repairs long-lasting?**  
+Yes — we focus on permanent solutions, not temporary patches.
+All work includes workmanship support and follow-up if needed.
 
-**Do you handle mold or moisture-related issues?**  
-We perform moisture diagnostics, replace affected materials, and restore damaged surfaces. Severe mold remediation (industrial-level) is referred to specialists.
+**Do you repair moisture or mold-related issues?**  
+We perform moisture diagnostics, replace affected materials, and restore damaged surfaces.
+Severe or industrial-level mold remediation is referred to licensed specialists.
 
-**Do you work with older homes?**  
-Yes. Older homes often need more precise restoration due to settling, outdated materials, and previous work done incorrectly. We specialize in careful, clean repairs.
+**Do you repair older homes in the Orlando area?**  
+Yes. Older homes often require more precise restoration due to settling, outdated materials, or previous incorrect work.
+We specialize in careful, clean repairs.
 
-**Are structural repairs safe without full engineering?**  
-We handle light structural work that does not require engineering. Anything requiring engineering review is communicated clearly before work begins.
+**Do you handle light structural repairs?**  
+Yes — we perform light structural work that does not require an engineer.
+If a repair requires engineering review, we’ll explain it clearly before any work begins.
 
-**Can you match textures, paint colors, or materials?**  
-Yes — texture matching and color blending are part of our standard services.
+**Can you match drywall textures, paint colors, or materials?**  
+Yes — texture matching, paint blending, and material restoration are standard parts of our repair services.
 
 ---
 

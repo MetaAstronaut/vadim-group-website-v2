@@ -26,13 +26,19 @@ const AccordionTrigger = React.forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180",
+        "flex flex-1 items-center justify-between py-4 font-medium transition-all duration-300",
+        // Remove underline hover, keep text color consistent
+        "hover:no-underline",
+        // Chevron styling: gold color and scale when open (increased size by 25%)
+        "[&[data-state=open]>svg]:rotate-180 [&[data-state=open]>svg]:text-brand-accent [&[data-state=open]>svg]:scale-125",
         className,
       )}
       {...props}
+      aria-expanded={props["aria-expanded"]}
     >
       {children}
-      <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
+      {/* Increased base size from h-4 w-4 to h-5 w-5 (25% larger), thicker stroke for premium feel */}
+      <ChevronDown className="h-5 w-5 shrink-0 transition-all duration-300 ease-out text-text-muted" strokeWidth={2.5} />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ));
@@ -47,7 +53,8 @@ const AccordionContent = React.forwardRef<
     className="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
     {...props}
   >
-    <div className={cn("pb-4 pt-0", className)}>{children}</div>
+    {/* Increased padding-top to 18px for better spacing between question and answer */}
+    <div className={cn("pb-4 pt-[18px]", className)}>{children}</div>
   </AccordionPrimitive.Content>
 ));
 

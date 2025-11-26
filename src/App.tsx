@@ -32,7 +32,12 @@ const App = () => {
       <HelmetProvider>
         <TooltipProvider>
           <Toaster />
-          <BrowserRouter>
+          <BrowserRouter
+            future={{
+              v7_startTransition: true,
+              v7_relativeSplatPath: true,
+            }}
+          >
             <ScrollToTopWrapper />
             <Routes>
               {/* Main Routes */}

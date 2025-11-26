@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/container";
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { getFooterData } from "@/utils/contentParsers";
 import { cn } from "@/lib/utils";
+import vgLogo from "@/assets/VG_logo_main2.png";
 
 const iconMap: Record<string, any> = {
   facebook: Facebook,
@@ -17,32 +18,56 @@ export const Footer = () => {
   const copyrightText = legal.copyrightTemplate.replace('{year}', currentYear.toString());
 
   return (
-    <footer className="relative bg-primary-900 text-text-inverse pt-32 pb-12 overflow-hidden">
-      {/* Background Watermark/Logo */}
-      <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 opacity-[0.03] pointer-events-none select-none">
-         <span className="text-[40rem] leading-none font-heading font-bold text-white">V</span>
+    <footer className="relative bg-primary-900 text-text-inverse border-t-2 border-accent-500/20 pt-32 pb-12 overflow-hidden">
+      {/* Background Watermark/Logo - VG */}
+      <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/3 opacity-[0.03] pointer-events-none select-none">
+         <span className="text-[40rem] leading-none font-heading font-bold text-white tracking-tight">VG</span>
       </div>
 
       <Container className="relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-20">
           
           {/* Brand Column (Span 4) */}
-          <div className="lg:col-span-4 space-y-8">
-            <div className="flex flex-col space-y-2">
-              <span className="font-heading font-bold text-4xl text-white tracking-tight" aria-label={brand.logoAlt}>
-                {brand.name}
-              </span>
-              <div className="h-1 w-12 bg-accent-500 rounded-full" />
-              <span className="text-xs uppercase tracking-[0.2em] text-accent-500 font-medium pt-2">
-                Craftsmanship & Restoration
-              </span>
+          <div className="lg:col-span-4 space-y-6">
+            {/* Logo + Brand Name with Full Descriptor */}
+            <div className="flex items-start gap-3">
+              <img 
+                src={vgLogo} 
+                alt="The Vadim Group Logo" 
+                className="w-12 h-12 shrink-0"
+              />
+              <div className="flex flex-col">
+                <span className="font-heading font-bold text-xl text-white tracking-tight leading-tight" aria-label={brand.logoAlt}>
+                  The Vadim Group
+                </span>
+                <span className="text-[9px] uppercase tracking-[0.15em] text-accent-500 font-semibold mt-1">
+                  Premium Repair & Restoration
+                </span>
+                <span className="text-[8px] uppercase tracking-wider text-white/60 font-medium mt-0.5">
+                  Home • Marine • RV
+                </span>
+              </div>
             </div>
-            <p className="text-text-inverse/70 leading-relaxed text-base max-w-sm font-light">
-              {brand.tagline}
+            
+            {/* SEO-Optimized Description - 3 lines max */}
+            <p className="text-text-inverse/70 leading-relaxed text-sm max-w-md">
+            Professional repair and restoration services for homes, boats, and RVs in Orlando and nearby areas.
+            Reliable repair work, clear pricing, and service you can trust.
             </p>
             
+            {/* Service Areas - SEO Keywords */}
+            <div>
+              <span className="text-xs font-medium text-white/40 uppercase tracking-wider block mb-2">
+                Service Area
+              </span>
+              <p className="text-text-inverse/60 text-xs leading-relaxed">
+                Orlando • Lake Nona • Hunters Creek<br />
+                Winter Park • Lake Mary • Kissimmee
+              </p>
+            </div>
+            
             {/* Social Icons - Gold Circles */}
-            <div className="flex items-center gap-4 pt-4">
+            <div className="flex items-center gap-4">
               {social.items.map((item) => {
                 const Icon = iconMap[item.icon.toLowerCase()] || Facebook;
                 return (
@@ -62,18 +87,18 @@ export const Footer = () => {
           </div>
 
           {/* Quick Links (Span 2) */}
-          <div className="lg:col-span-2 lg:col-start-6 space-y-8">
-            <h4 className="text-xl font-heading font-medium text-white border-b border-white/10 pb-4 inline-block">
+          <div className="lg:col-span-2 lg:col-start-6 space-y-6">
+            <h4 className="text-lg font-heading font-semibold text-white border-b border-white/10 pb-3 inline-block">
               {quickLinks.title}
             </h4>
-            <ul className="space-y-4">
+            <ul className="space-y-3">
               {quickLinks.items.map((item) => (
                 <li key={item.name}>
                   <Link
                     to={item.href}
                     className="text-text-inverse/70 hover:text-accent-500 transition-colors text-sm tracking-wide hover:translate-x-1 inline-block duration-200"
                   >
-                    {item.name}
+                    {item.name === "About" ? "Our Work" : item.name}
                   </Link>
                 </li>
               ))}
@@ -81,11 +106,11 @@ export const Footer = () => {
           </div>
 
           {/* Contact Info (Span 3) */}
-          <div className="lg:col-span-3 space-y-8">
-            <h4 className="text-xl font-heading font-medium text-white border-b border-white/10 pb-4 inline-block">
+          <div className="lg:col-span-3 space-y-6">
+            <h4 className="text-lg font-heading font-semibold text-white border-b border-white/10 pb-3 inline-block">
               {contact.title}
             </h4>
-            <ul className="space-y-6">
+            <ul className="space-y-5">
               <li className="flex items-start gap-4 group">
                 <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-accent-500/10 transition-colors">
                   <Phone className="h-4 w-4 text-accent-500" />
@@ -95,12 +120,12 @@ export const Footer = () => {
                     {contact.whatsappLabel}
                   </span>
                   <a 
-                    href={contact.whatsappHref}
+                    href={`${contact.whatsappHref}?text=${encodeURIComponent("Hi, I'd like to get a free estimate for my repair project.")}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white/90 hover:text-accent-500 transition-colors font-medium"
+                    className="text-white/90 hover:text-accent-500 transition-colors text-sm"
                   >
-                    Chat on WhatsApp
+                    Get Free Estimate on WhatsApp
                   </a>
                 </div>
               </li>
@@ -115,7 +140,7 @@ export const Footer = () => {
                   </span>
                   <a 
                     href={contact.emailHref} 
-                    className="text-white/90 hover:text-accent-500 transition-colors font-medium"
+                    className="text-white/90 hover:text-accent-500 transition-colors text-sm break-all"
                   >
                     {contact.emailHref.replace('mailto:', '')}
                   </a>
@@ -128,22 +153,22 @@ export const Footer = () => {
                 </div>
                 <div className="space-y-1">
                   <span className="text-xs font-medium text-white/40 uppercase tracking-wider block">
-                    Service Area
+                    Business Hours
                   </span>
-                  <p className="text-white/90 text-sm leading-relaxed">
-                    {contact.serviceArea.join(", ")}
+                  <p className="text-white/90 text-sm">
+                    {contact.hours}
                   </p>
                 </div>
               </li>
             </ul>
           </div>
 
-          {/* Legal / Extra (Span 2) */}
-          <div className="lg:col-span-2 space-y-8">
-            <h4 className="text-xl font-heading font-medium text-white border-b border-white/10 pb-4 inline-block">
+          {/* Legal (Span 2) */}
+          <div className="lg:col-span-2 space-y-6">
+            <h4 className="text-lg font-heading font-semibold text-white border-b border-white/10 pb-3 inline-block">
               {legal.title}
             </h4>
-            <ul className="space-y-4">
+            <ul className="space-y-3">
               {legal.items.map((item) => (
                 <li key={item.name}>
                   <Link
@@ -155,27 +180,14 @@ export const Footer = () => {
                 </li>
               ))}
             </ul>
-            <div className="pt-6 border-t border-white/5">
-                <span className="text-xs font-medium text-white/40 uppercase tracking-wider block mb-2">
-                    Business Hours
-                </span>
-                <span className="text-white/80 text-sm font-light">
-                    {contact.hours}
-                </span>
-            </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-white/10 pt-8">
           <p className="text-text-inverse/40 text-xs tracking-wide">
             {copyrightText}
           </p>
-          <div className="flex items-center gap-2 text-text-inverse/40 text-xs tracking-wide">
-            <span>Designed with</span>
-            <span className="h-px w-4 bg-accent-500/50"></span>
-            <span className="text-accent-500/80 font-heading italic">precision</span>
-          </div>
         </div>
       </Container>
     </footer>

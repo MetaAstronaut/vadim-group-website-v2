@@ -20,7 +20,7 @@ items:
     href: "/home-repairs"
   - name: "Marine & RV"
     href: "/marine-rv"
-  - name: "About"
+  - name: "Our Work"
     href: "/about"
   - name: "Blog"
     href: "/blog"
@@ -31,7 +31,7 @@ items:
 
 ## [cta]
 
-label: "Get Free Estimate"
+label: "Free WhatsApp Estimate"
 subLabel: "via WhatsApp"
 type: "whatsapp"
 href: "https://wa.me/YOUR_WHATSAPP_NUMBER"

@@ -7,8 +7,14 @@ import {
   Anchor, 
   Siren, 
   Phone, 
-  Star
+  Star,
+  ChevronDown
 } from "lucide-react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
@@ -94,8 +100,10 @@ const CityRotator = () => {
       style={{ 
         width: maxWidth ? `${maxWidth}px` : 'auto',
         minWidth: '200px',
-        height: '1.2em',
-        verticalAlign: 'bottom'
+        height: '1.17em',
+        verticalAlign: 'bottom',
+        letterSpacing: '0.02em',
+        lineHeight: '1.17'
       }}
     >
       {/* Hidden measurement span to calculate max width */}
@@ -103,6 +111,7 @@ const CityRotator = () => {
         ref={measureRef}
         className="opacity-0 pointer-events-none absolute whitespace-nowrap font-bold"
         aria-hidden="true"
+        style={{ letterSpacing: '0.02em' }}
       >
         {longestCity}
       </span>
@@ -119,6 +128,7 @@ const CityRotator = () => {
           }
         `}
         aria-live="polite"
+        style={{ letterSpacing: '0.02em' }}
       >
         {cities[index]}
       </span>
@@ -133,9 +143,11 @@ const CityRotator = () => {
 
 export const HomePage = () => {
   const data = React.useMemo(() => getHomePageData(), []);
+  
+  // FAQ state - must be at component top level (Rules of Hooks)
+  const [showAllFAQ, setShowAllFAQ] = useState(false);
 
   const serviceIcons = [Hammer, Anchor, Siren];
-  const mockDates = ["2 weeks ago", "1 month ago", "2 months ago"];
 
   return (
     <Layout>
@@ -150,7 +162,10 @@ export const HomePage = () => {
       </Helmet>
 
       {/* --- HERO SECTION --- */}
-      <div className="relative h-[calc(100vh-80px)] min-h-[600px] flex items-center justify-center overflow-hidden">
+      <div 
+        className="relative h-[calc(100vh-80px)] min-h-[600px] flex items-center justify-center overflow-hidden"
+        data-hero-section
+      >
         <div 
           className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroBg})` }}
@@ -166,11 +181,11 @@ export const HomePage = () => {
         />
 
         <Container className="relative z-10 h-full flex flex-col justify-center py-16 md:py-24">
-          <MotionDiv className="max-w-4xl mx-auto text-center space-y-6 md:space-y-8">
-            <h1 className="font-heading font-bold text-[36px] md:text-6xl lg:text-7xl text-white tracking-tight flex flex-col items-center gap-1 md:gap-3" style={{ textShadow: '0 2px 16px rgba(0, 0, 0, 0.3)' }}>
+          <MotionDiv className="max-w-6xl mx-auto text-center space-y-6 md:space-y-8">
+            <h1 className="font-heading font-bold text-[36px] md:text-6xl lg:text-7xl text-white flex flex-col items-center gap-1 md:gap-3" style={{ textShadow: '0 2px 16px rgba(0, 0, 0, 0.3)', letterSpacing: '0.02em', lineHeight: '1.17' }}>
               <span className="block">Home Repair, Marine & RV</span>
               <span className="block">Services in</span>
-              <div className="flex justify-center items-center h-[1.2em] overflow-visible">
+              <div className="flex justify-center items-center h-[1.17em] overflow-visible">
                  <CityRotator />
               </div>
             </h1>
@@ -197,7 +212,7 @@ export const HomePage = () => {
                   <span className="w-6 h-6 flex items-center justify-center">
                     <WhatsAppIcon />
                   </span>
-                  Free WhatsApp Quote
+                  Get Free Estimate on WhatsApp
                 </a>
               </Button>
 
@@ -219,7 +234,7 @@ export const HomePage = () => {
 
       {/* --- SERVICES SECTION --- */}
       {/* Design System v2.2: Section 6.2 - Service Cards with equal heights */}
-      <Section className="bg-bg-subtle py-12 md:py-20">
+      <Section className="bg-surface-subtle py-12 md:py-20">
         <Container>
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-12">
@@ -325,12 +340,12 @@ export const HomePage = () => {
       </Section>
 
       {/* --- PROCESS SECTION --- */}
-      {/* Design System v2.2: Section 6.8 - Timeline/Process Visualization */}
-      <Section className="bg-brand-primary text-white py-24 md:py-32">
+      {/* Design System v2.2: Horizontal Cards Layout */}
+      <Section className="bg-brand-primary text-white py-20 px-10">
         <Container>
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-brand-accent font-medium tracking-[0.08em] text-sm uppercase block mb-4">
+            <span className="text-brand-accent font-semibold tracking-[0.08em] text-base uppercase block mb-3">
               {data.process.tag}
             </span>
             <h2 className="font-heading text-4xl md:text-5xl font-bold text-white mb-6">
@@ -338,45 +353,57 @@ export const HomePage = () => {
             </h2>
           </div>
 
-          {/* Timeline: Vertical layout with connector line - DS v2.2 Section 6.8 */}
-          <div className="relative max-w-3xl mx-auto">
-            {/* Connector Line: 2px gold line at 40% opacity */}
-            <div 
-              className="absolute left-6 md:left-7 top-0 bottom-0 w-0.5 bg-brand-accent/40" 
-              aria-hidden="true"
-            />
-
-            {/* Process Steps */}
-            <div className="space-y-12 md:space-y-16 relative z-10">
+          {/* Horizontal Cards Grid */}
+          <div className="relative max-w-7xl mx-auto">
+            {/* Process Cards Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-6 relative z-10">
               {data.process.steps.map((step, i) => (
                 <div 
                   key={i}
-                  className="flex gap-6 md:gap-8 items-start"
+                  className="
+                    group
+                    bg-white/5
+                    border border-[rgba(198,167,120,0.2)]
+                    rounded-xl
+                    p-6 md:p-8
+                    md:h-[320px]
+                    flex flex-col
+                    transition-all duration-300 ease-out
+                    hover:border-brand-accent
+                    hover:-translate-y-1.5
+                    hover:shadow-[0_8px_24px_rgba(198,167,120,0.25)]
+                  "
+                  style={{
+                    animation: `fadeInLeft 600ms ease-out ${i * 100}ms both`
+                  }}
                 >
-                  {/* Step Number Badge: 48px mobile, 56px desktop - DS v2.2 Section 6.8 */}
+                  {/* Step Number Badge: 56px circle */}
                   <div className="
-                    w-12 h-12 md:w-14 md:h-14 
+                    w-14 h-14
                     rounded-full 
                     bg-brand-accent 
                     text-brand-primary 
                     font-bold 
                     flex items-center justify-center 
-                    text-xl md:text-2xl 
-                    shrink-0 
-                    relative z-10
-                    shadow-[0_0_0_4px] shadow-brand-primary
+                    text-2xl
+                    mb-5
+                    mx-auto md:mx-0
+                    shrink-0
+                    transition-transform duration-300 ease-out
+                    group-hover:scale-105
                   ">
                     {i + 1}
                   </div>
                   
                   {/* Step Content */}
-                  <div className="flex-1 pt-1 md:pt-2">
-                    {/* Title: Playfair Display, gold on dark - DS v2.2 Section 6.8 */}
-                    <h3 className="font-heading text-2xl md:text-3xl font-semibold text-brand-accent mb-3">
+                  <div className="flex-1 flex flex-col text-center md:text-left">
+                    {/* Title: Playfair Display, 20px, bold, gold - with min-height for alignment */}
+                    <h3 className="font-heading text-xl font-bold text-brand-accent mb-3 leading-tight md:min-h-[56px]">
                       {step.title}
                     </h3>
-                    {/* Description: Body text, light gray */}
-                    <p className="text-gray-300 text-base md:text-lg leading-relaxed max-w-xl">
+                    
+                    {/* Description: 14px, light gray, 3-4 lines max */}
+                    <p className="text-gray-300 text-sm leading-relaxed line-clamp-4">
                       {step.description}
                     </p>
                   </div>
@@ -385,128 +412,515 @@ export const HomePage = () => {
             </div>
           </div>
         </Container>
+
+        {/* Keyframe animation for fade-in effect */}
+        <style>{`
+          @keyframes fadeInLeft {
+            from {
+              opacity: 0;
+              transform: translateX(-30px);
+            }
+            to {
+              opacity: 1;
+              transform: translateX(0);
+            }
+          }
+
+          /* Disable animation on mobile for performance */
+          @media (max-width: 767px) {
+            @keyframes fadeInLeft {
+              from, to {
+                opacity: 1;
+                transform: translateX(0);
+              }
+            }
+          }
+        `}</style>
       </Section>
 
       {/* --- TESTIMONIALS --- */}
-      {/* Design System v2.2: Section 6.9 - Testimonial Cards */}
-      <Section className="bg-bg-surface py-24 md:py-32">
-        <Container>
+      {/* Design System v2.2: Section 6.9 - Testimonial Cards with Carousel */}
+      <Section className="bg-surface-subtle py-20 md:py-24 overflow-hidden" style={{ isolation: 'isolate' }}>
+        <Container className="overflow-visible">
           {/* Section Header */}
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-brand-accent font-medium tracking-[0.08em] text-sm uppercase block mb-4">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className="text-brand-accent font-semibold tracking-[0.08em] text-base uppercase block mb-3">
               {data.reviews.tag}
             </span>
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-brand-primary">
+            <h2 className="font-heading text-4xl md:text-5xl font-bold text-brand-primary mb-4">
               {data.reviews.title}
             </h2>
-            <p className="mt-6 text-lg text-text-secondary">
-              Verified reviews from Google Business
-            </p>
+            {/* Google Verification Badge - Moved to Header */}
+            <div className="flex items-center justify-center gap-2 text-text-secondary">
+              <GoogleLogo />
+              <span className="text-base">Verified reviews from Google Business</span>
+            </div>
           </div>
 
-          {/* Review Cards Grid - DS v2.2 Section 6.9: Equal heights enforced */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {data.reviews.items.map((review, i) => (
-              <div 
-                key={i}
-                className="
-                  bg-white rounded-md p-6 md:p-8 
-                  border border-border-light 
-                  shadow-sm 
-                  hover:border-brand-accent hover:shadow-md hover:-translate-y-1
-                  transition-all duration-300 
-                  flex flex-col
-                  min-h-[320px]
-                "
-              >
-                {/* Header: 5-Star Rating + Google Logo */}
-                <div className="flex justify-between items-start mb-4 shrink-0">
-                  {/* Star Rating: 20px gold stars - DS v2.2 Section 6.9 */}
-                  <div className="flex gap-1" role="img" aria-label="Rated 5 out of 5 stars">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <Star 
-                        key={star} 
-                        className="w-5 h-5 fill-brand-accent text-brand-accent" 
-                        aria-hidden="true"
-                      />
-                    ))}
-                  </div>
-                  {/* Google Verification Badge */}
-                  <GoogleLogo />
-                </div>
+          {/* Reviews Data with Avatars */}
+          {(() => {
+            const reviewsData = [
+              {
+                id: 1,
+                name: "Jason M.",
+                initials: "JM",
+                avatarColor: "#E8F4F8",
+                rating: 5,
+                text: "Vadim was on time, very professional, and extremely clean with his work. He fixed a hidden leak inside our bathroom wall and restored the drywall perfectly — you can't even tell anything happened.",
+                date: "2 weeks ago"
+              },
+              {
+                id: 2,
+                name: "Maria L.",
+                initials: "ML",
+                avatarColor: "#FFF4E6",
+                rating: 5,
+                text: "Fantastic experience. Vadim showed up exactly when he said he would, fixed our broken cabinet, and even adjusted two other doors without charging extra. Super polite, clean, and honest.",
+                date: "1 month ago"
+              },
+              {
+                id: 3,
+                name: "Daniel S.",
+                initials: "DS",
+                avatarColor: "#F0E8FF",
+                rating: 5,
+                text: "We had water damage under our kitchen sink. The issue was diagnosed quickly, the damaged panel was replaced, everything sealed correctly, and the space was left spotless.",
+                date: "2 months ago"
+              },
+              {
+                id: 4,
+                name: "Robert K.",
+                initials: "RK",
+                avatarColor: "#E8F4F8",
+                rating: 5,
+                text: "Fixed gelcoat damage on our boat hull. The repair is seamless and the color match is perfect. Very impressed with the attention to detail and craftsmanship.",
+                date: "3 weeks ago"
+              },
+              {
+                id: 5,
+                name: "Sarah T.",
+                initials: "ST",
+                avatarColor: "#FFF4E6",
+                rating: 5,
+                text: "Our RV had electrical issues that no one else could diagnose. Vadim found and fixed the problem in one visit. Excellent technical knowledge and fair pricing.",
+                date: "1 month ago"
+              },
+              {
+                id: 6,
+                name: "Michael B.",
+                initials: "MB",
+                avatarColor: "#F0E8FF",
+                rating: 5,
+                text: "Repaired water damage in our RV bathroom. The work was done professionally, everything sealed properly, and looks brand new. Highly recommend for RV repairs.",
+                date: "2 weeks ago"
+              },
+              {
+                id: 7,
+                name: "Jennifer W.",
+                initials: "JW",
+                avatarColor: "#E8F4F8",
+                rating: 5,
+                text: "Called for emergency deck repair before guests arrived. Vadim responded quickly, completed quality work on time, and left everything clean. True professional.",
+                date: "3 months ago"
+              },
+              {
+                id: 8,
+                name: "Thomas R.",
+                initials: "TR",
+                avatarColor: "#FFF4E6",
+                rating: 5,
+                text: "Marine electrical work on our cabin cruiser. All lighting and switches work perfectly now. Clean installation and thorough testing. Great service!",
+                date: "1 month ago"
+              }
+            ];
 
-                {/* Quote Text: Italic, line-clamp max 6 lines */}
-                <blockquote className="
-                  text-text-primary 
-                  italic 
-                  text-base 
-                  leading-relaxed 
-                  mb-6 
-                  flex-grow
-                  line-clamp-6
-                ">
-                  "{review.quote}"
-                </blockquote>
+            return (
+              <div className="relative reviews-carousel-wrapper md:px-8 lg:px-12 max-w-full py-2" style={{ minHeight: '480px' }}>
+                <Swiper
+                  modules={[Autoplay, Pagination, Navigation]}
+                  spaceBetween={20}
+                  slidesPerView={1}
+                  breakpoints={{
+                    640: { slidesPerView: 2, spaceBetween: 20 },
+                    1024: { slidesPerView: 3, spaceBetween: 24 }
+                  }}
+                  autoplay={{ 
+                    delay: 5000, 
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true
+                  }}
+                  pagination={{ 
+                    clickable: true,
+                    bulletClass: 'swiper-pagination-bullet reviews-bullet',
+                    bulletActiveClass: 'swiper-pagination-bullet-active reviews-bullet-active',
+                    el: '.reviews-pagination',
+                    dynamicBullets: false
+                  }}
+                  navigation={{
+                    prevEl: '.reviews-button-prev',
+                    nextEl: '.reviews-button-next'
+                  }}
+                  loop={true}
+                  watchSlidesProgress={true}
+                  grabCursor={true}
+                  touchRatio={1}
+                  touchAngle={45}
+                  threshold={5}
+                  simulateTouch={true}
+                  allowTouchMove={true}
+                  keyboard={{
+                    enabled: true,
+                    onlyInViewport: true
+                  }}
+                  a11y={{
+                    prevSlideMessage: 'Previous review',
+                    nextSlideMessage: 'Next review',
+                    paginationBulletMessage: 'Go to review {{index}}'
+                  }}
+                  className="reviews-swiper"
+                >
+                  {reviewsData.map((review) => (
+                    <SwiperSlide key={review.id}>
+                      <div 
+                        className="
+                          bg-white rounded-md p-6 md:p-7
+                          border border-border-light 
+                          shadow-sm 
+                          hover:border-brand-accent hover:shadow-lg
+                          transition-all duration-300 
+                          flex flex-col
+                          h-full
+                          w-full
+                        "
+                      >
+                        {/* Star Rating: 18px gold stars with enhanced contrast */}
+                        <div className="flex gap-1 mb-5 shrink-0" role="img" aria-label="Rated 5 out of 5 stars">
+                          {[1, 2, 3, 4, 5].map((star) => (
+                            <Star 
+                              key={star} 
+                              className="w-[18px] h-[18px] fill-[#B8935A] text-[#B8935A] drop-shadow-sm" 
+                              aria-hidden="true"
+                            />
+                          ))}
+                        </div>
 
-                {/* Footer: Author + Timestamp */}
-                <div className="mt-auto border-t border-border-light pt-4 flex flex-col gap-1 shrink-0">
-                  <div className="font-semibold text-brand-primary">
-                    {review.author}
-                  </div>
-                  <div className="text-sm text-text-muted">
-                    {mockDates[i % mockDates.length]}
-                  </div>
-                </div>
+                        {/* Quote Text: Italic, properly clamped with ellipsis */}
+                        <blockquote 
+                          className="
+                            text-text-primary 
+                            italic 
+                            text-[15px] md:text-base
+                            leading-[1.6]
+                            mb-6 
+                            flex-grow
+                            review-text-clamp
+                          "
+                        >
+                          "{review.text}"
+                        </blockquote>
+
+                        {/* Footer: Avatar + Name + Date */}
+                        <div className="mt-auto flex items-center gap-3 shrink-0">
+                          {/* Avatar with Initials */}
+                          <div 
+                            className="
+                              w-12 h-12 
+                              rounded-full 
+                              flex items-center justify-center
+                              shrink-0
+                            "
+                            style={{ backgroundColor: review.avatarColor }}
+                          >
+                            <span className="text-brand-primary font-semibold text-base">
+                              {review.initials}
+                            </span>
+                          </div>
+                          
+                          {/* Name and Date */}
+                          <div className="flex flex-col">
+                            <div className="font-semibold text-brand-primary">
+                              {review.name}
+                            </div>
+                            <div className="text-sm text-text-muted">
+                              {review.date}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+
+                {/* Custom Navigation Buttons - Outside carousel */}
+                <button 
+                  className="reviews-button-prev hidden md:flex"
+                  aria-label="View previous review"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                  </svg>
+                </button>
+                <button 
+                  className="reviews-button-next hidden md:flex"
+                  aria-label="View next review"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
+
+                {/* Pagination Dots */}
+                <div className="reviews-pagination"></div>
+
+                {/* Custom Swiper Styles */}
+                <style>{`
+                  /* Carousel wrapper with proper padding and overflow control */
+                  .reviews-carousel-wrapper {
+                    padding-bottom: 64px;
+                    padding-top: 8px;
+                    position: relative;
+                    overflow: visible;
+                  }
+
+                  /* Swiper container - FIXED HEIGHT to prevent layout shift */
+                  .reviews-swiper {
+                    overflow: hidden;
+                    padding: 0 !important;
+                    height: 360px !important;
+                  }
+
+                  .reviews-swiper .swiper-wrapper {
+                    display: flex;
+                    align-items: flex-start;
+                    height: 100%;
+                  }
+
+                  .reviews-swiper .swiper-slide {
+                    height: 100%;
+                    padding: 8px 0;
+                    display: flex;
+                  }
+
+                  /* Text clamping for review quotes - proper ellipsis */
+                  .review-text-clamp {
+                    display: -webkit-box !important;
+                    -webkit-line-clamp: 4 !important;
+                    -webkit-box-orient: vertical !important;
+                    overflow: hidden !important;
+                    text-overflow: ellipsis !important;
+                    word-wrap: break-word;
+                    word-break: break-word;
+                    max-height: calc(1.6em * 4);
+                  }
+
+                  /* Navigation Buttons - Positioned outside, hidden on mobile */
+                  .reviews-button-prev,
+                  .reviews-button-next {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(calc(-50% - 32px));
+                    width: 44px;
+                    height: 44px;
+                    background: rgba(198, 167, 120, 0.12);
+                    border-radius: 50%;
+                    color: #B8935A;
+                    border: none;
+                    cursor: pointer;
+                    z-index: 10;
+                    align-items: center;
+                    justify-content: center;
+                    transition: all 0.3s ease;
+                    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+                  }
+                  
+                  .reviews-button-prev {
+                    left: -8px;
+                  }
+                  
+                  .reviews-button-next {
+                    right: -8px;
+                  }
+                  
+                  .reviews-button-prev:hover,
+                  .reviews-button-next:hover {
+                    background: #C6A778;
+                    color: white;
+                    box-shadow: 0 4px 12px rgba(198, 167, 120, 0.3);
+                    transform: translateY(calc(-50% - 32px)) scale(1.05);
+                  }
+
+                  .reviews-button-prev:disabled,
+                  .reviews-button-next:disabled {
+                    opacity: 0.3;
+                    cursor: not-allowed;
+                  }
+                  
+                  /* Pagination Dots - Visible on all devices - FIXED SIZE */
+                  .reviews-pagination {
+                    display: flex !important;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 8px;
+                    margin-top: 32px;
+                    position: relative;
+                    height: 16px;
+                    min-height: 16px;
+                  }
+                  
+                  .reviews-bullet {
+                    width: 12px !important;
+                    height: 12px !important;
+                    background: transparent;
+                    border: 2px solid #C6A778;
+                    opacity: 0.6;
+                    transition: opacity 0.3s ease, background 0.3s ease;
+                    cursor: pointer;
+                    display: inline-block;
+                    flex-shrink: 0;
+                  }
+
+                  .reviews-bullet:hover {
+                    opacity: 1;
+                  }
+                  
+                  .reviews-bullet-active {
+                    background: #C6A778 !important;
+                    opacity: 1 !important;
+                  }
+
+                  /* Mobile optimization */
+                  @media (max-width: 767px) {
+                    .reviews-carousel-wrapper {
+                      padding-bottom: 56px;
+                      padding-top: 8px;
+                      overflow: visible;
+                    }
+
+                    .reviews-swiper {
+                      cursor: grab;
+                      overflow: hidden;
+                      height: 400px !important;
+                    }
+
+                    .reviews-swiper:active {
+                      cursor: grabbing;
+                    }
+
+                    .reviews-pagination {
+                      margin-top: 24px;
+                    }
+
+                    /* Hide navigation buttons on mobile */
+                    .reviews-button-prev,
+                    .reviews-button-next {
+                      display: none !important;
+                    }
+                  }
+
+                  /* Tablet optimization */
+                  @media (min-width: 640px) and (max-width: 1023px) {
+                    .reviews-button-prev {
+                      left: -4px;
+                    }
+                    
+                    .reviews-button-next {
+                      right: -4px;
+                    }
+                  }
+
+                  /* Desktop */
+                  @media (min-width: 1024px) {
+                    .reviews-button-prev {
+                      left: -8px;
+                    }
+                    
+                    .reviews-button-next {
+                      right: -8px;
+                    }
+                  }
+
+                  /* Large desktop */
+                  @media (min-width: 1280px) {
+                    .reviews-button-prev {
+                      left: -12px;
+                    }
+                    
+                    .reviews-button-next {
+                      right: -12px;
+                    }
+                  }
+                `}</style>
               </div>
-            ))}
-          </div>
+            );
+          })()}
         </Container>
       </Section>
 
       {/* --- ABOUT US --- */}
       {/* Design System v2.2: Standard section with image layout */}
-      <Section className="bg-bg-subtle py-24 md:py-32">
+      <Section className="bg-surface py-24 md:py-32">
         <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Content Column */}
-            <div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-14 items-center">
+            {/* Content Column - 50% width with balanced padding */}
+            <div className="lg:pr-6">
                {/* Eyebrow Label */}
-               <span className="text-brand-accent font-medium tracking-[0.08em] text-sm uppercase block mb-4">
+               <span className="text-brand-accent font-semibold tracking-[0.08em] text-base uppercase block mb-3">
                  {data.about.tag}
                </span>
                
                {/* H2 Title: Playfair Display, Oxford Blue */}
-               <h2 className="font-heading text-4xl md:text-5xl font-bold text-brand-primary mb-6">
+               <h2 className="font-heading text-4xl md:text-5xl font-bold text-brand-primary mb-4">
                  {data.about.title}
                </h2>
                
-               {/* Lead Quote */}
+               {/* Lead Quote - reduced gap from title */}
                <p className="text-lg text-text-secondary mb-6 font-semibold italic">
                  {data.about.quote}
                </p>
                
-               {/* Body Description */}
-               <p className="text-text-secondary mb-8 leading-relaxed">
+               {/* Body Description - optimized line-height */}
+               <p className="text-text-secondary mb-10 leading-[1.65]">
                  {data.about.description}
                </p>
                
-               {/* Promise List */}
-               <div className="space-y-4">
-                 <h3 className="font-heading text-xl font-semibold text-brand-primary mb-4">
+               {/* Promise List - Enhanced spacing and markers */}
+               <div className="space-y-6">
+                 <h3 className="font-heading text-xl font-semibold text-brand-primary mb-6">
                    {data.about.promiseTitle}
                  </h3>
                  {data.about.promiseItems.map((item, i) => (
-                   <div key={i} className="flex items-start gap-3">
-                     {/* Gold bullet point */}
-                     <div className="h-2 w-2 rounded-full bg-brand-accent mt-2 shrink-0" />
-                     <span className="text-text-secondary">{item}</span>
+                   <div key={i} className="flex items-start gap-4">
+                     {/* Enhanced Gold bullet point */}
+                     <div className="h-2.5 w-2.5 rounded-full bg-brand-accent mt-2.5 shrink-0" />
+                     <span className="text-text-secondary text-[15px] md:text-base leading-[1.7]">{item}</span>
                    </div>
                  ))}
                </div>
+               
+               {/* CTA Button - See Our Work with increased spacing */}
+               <div className="mt-12">
+                 <Button 
+                   asChild 
+                   variant="outline"
+                   className="
+                     border-[1.5px] border-brand-accent 
+                     text-brand-accent 
+                     hover:bg-brand-accent hover:text-brand-primary hover:-translate-y-0.5
+                     font-medium
+                     py-3 px-6
+                     transition-all duration-300
+                   "
+                 >
+                   <Link to="/our-work" className="inline-flex items-center justify-center gap-2">
+                     See Our Work
+                     <ArrowRight className="h-4 w-4" />
+                   </Link>
+                 </Button>
+               </div>
             </div>
             
-            {/* Image Column */}
-            <div className="relative">
+            {/* Image Column - 50% width with balanced padding */}
+            <div className="relative lg:pl-6">
               <div className="aspect-[4/5] rounded-md overflow-hidden bg-brand-primary/5 relative group">
                  <img 
                    src={vadimPortrait} 
@@ -517,9 +931,9 @@ export const HomePage = () => {
                  <div className="absolute inset-0 bg-brand-primary/10" />
               </div>
               
-              {/* Quote Overlay Card */}
-              <div className="absolute -bottom-6 -left-6 bg-brand-primary text-white p-8 max-w-xs shadow-xl hidden lg:block rounded-sm">
-                <p className="font-heading text-xl italic leading-relaxed">
+              {/* Quote Overlay Card - Further reduced visual weight */}
+              <div className="absolute -bottom-5 -left-5 bg-brand-primary/85 backdrop-blur-sm text-white p-5 max-w-[240px] shadow-md hidden lg:block rounded-sm">
+                <p className="font-heading text-base italic leading-[1.65] opacity-95">
                   "{data.about.closing}"
                 </p>
               </div>
@@ -529,12 +943,12 @@ export const HomePage = () => {
       </Section>
 
       {/* --- FAQ --- */}
-      {/* Design System v2.2: Section 6.10 - FAQ Accordion */}
-      <Section className="bg-bg-surface py-24 md:py-32">
+      {/* Design System v2.2: Section 6.10 - FAQ Accordion with Show More */}
+      <Section className="bg-surface-subtle py-24 md:py-32">
         <Container max-width="container-md">
            {/* Section Header */}
            <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-brand-accent font-medium tracking-[0.08em] text-sm uppercase block mb-4">
+            <span className="text-brand-accent font-semibold tracking-[0.08em] text-base uppercase block mb-3">
               {data.faq.tag}
             </span>
             <h2 className="font-heading text-4xl md:text-5xl font-bold text-brand-primary">
@@ -542,94 +956,130 @@ export const HomePage = () => {
             </h2>
           </div>
 
-          {/* FAQ Accordion - DS v2.2 Section 6.10 */}
+          {/* FAQ Accordion - DS v2.2 Section 6.10 - Enhanced UX with Show More */}
           <div className="max-w-3xl mx-auto">
-            <Accordion type="single" collapsible className="w-full space-y-4">
-              {data.faq.items.map((item, i) => (
-                <AccordionItem 
-                  key={i} 
-                  value={`item-${i}`}
-                  className="
-                    bg-white 
-                    border border-border-light 
-                    rounded-md 
-                    px-6 py-2
-                    hover:border-brand-accent/50
-                    transition-colors duration-200
-                  "
-                >
-                  {/* Question Button - Playfair Display, 18-20px */}
-                  <AccordionTrigger className="
-                    text-left 
-                    text-lg md:text-xl 
-                    font-heading 
-                    font-semibold 
-                    text-brand-primary
-                    hover:text-brand-primary
-                    py-4
-                    [&[data-state=open]]:text-brand-accent
-                  ">
-                    {item.question}
-                  </AccordionTrigger>
-                  
-                  {/* Answer Panel - Body text, gray */}
-                  <AccordionContent className="
-                    text-text-secondary 
-                    text-base 
-                    leading-relaxed
-                    pb-4
-                  ">
-                    {item.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-            
-            {/* Closing Text */}
-            <p className="text-center mt-12 text-text-secondary leading-relaxed">
-              {data.faq.closing}
-            </p>
+            {/* FAQ Logic - moved useState to component top level */}
+            {(() => {
+              const initialCount = 5;
+              const displayedItems = showAllFAQ ? data.faq.items : data.faq.items.slice(0, initialCount);
+              const hasMore = data.faq.items.length > initialCount;
+
+              return (
+                <>
+                  <Accordion type="single" collapsible className="w-full space-y-4">
+                    {displayedItems.map((item, i) => (
+                      <AccordionItem 
+                        key={i} 
+                        value={`item-${i}`}
+                        className="
+                          group
+                          bg-white 
+                          border border-border-light 
+                          rounded-md 
+                          px-6 py-2
+                          transition-all duration-300 ease-out
+                          hover:border-brand-accent/40 hover:bg-brand-accent/[0.02]
+                          data-[state=open]:border-brand-accent data-[state=open]:shadow-sm
+                        "
+                        style={{ 
+                          animation: showAllFAQ && i >= initialCount ? `fadeIn 400ms ease-out ${(i - initialCount) * 80}ms both` : 'none' 
+                        }}
+                      >
+                        {/* Question Button - Playfair Display, 18-20px - Text stays black when open */}
+                        <AccordionTrigger 
+                          className="
+                            text-left 
+                            text-lg md:text-xl 
+                            font-heading 
+                            font-semibold 
+                            text-brand-primary/90
+                            hover:text-brand-primary
+                            py-4
+                          "
+                        >
+                          {item.question}
+                        </AccordionTrigger>
+                        
+                        {/* Answer Panel - Softer contrast, improved readability */}
+                        <AccordionContent className="
+                          text-text-secondary/80
+                          text-[15px]
+                          leading-[1.65]
+                          pb-4
+                        ">
+                          {item.answer}
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+
+                  {/* Show More/Less Button */}
+                  {hasMore && (
+                    <div className="flex justify-center mt-8">
+                      <button
+                        onClick={() => setShowAllFAQ(!showAllFAQ)}
+                        className="
+                          inline-flex items-center gap-2
+                          text-brand-accent hover:text-brand-accent-hover
+                          font-medium text-base
+                          py-3 px-6
+                          border border-brand-accent/30 hover:border-brand-accent
+                          rounded-md
+                          transition-all duration-300
+                          hover:bg-brand-accent/5
+                        "
+                      >
+                        {showAllFAQ ? 'Show Less Questions' : `Show ${data.faq.items.length - initialCount} More Questions`}
+                        <ChevronDown 
+                          className={`h-4 w-4 transition-transform duration-300 ${showAllFAQ ? 'rotate-180' : ''}`}
+                          strokeWidth={2.5}
+                        />
+                      </button>
+                    </div>
+                  )}
+
+                  {/* Fade-in animation for new questions */}
+                  <style>{`
+                    @keyframes fadeIn {
+                      from {
+                        opacity: 0;
+                        transform: translateY(-10px);
+                      }
+                      to {
+                        opacity: 1;
+                        transform: translateY(0);
+                      }
+                    }
+                  `}</style>
+                </>
+              );
+            })()}
           </div>
         </Container>
       </Section>
 
       {/* --- FINAL CTA --- */}
-      {/* Design System v2.2: Section 6.6 - CTA Block with hierarchy */}
+      {/* Design System v2.2: Section 6.6 - Simplified CTA with single focus */}
       <div id="contact"></div>
       <Section className="bg-brand-primary text-white py-24 md:py-32 text-center relative overflow-hidden">
         <Container className="relative z-10">
+          {/* Tag: FREE ESTIMATE */}
+          <span className="text-brand-accent font-semibold tracking-[0.08em] text-base uppercase block mb-6">
+            FREE ESTIMATE
+          </span>
+          
           {/* CTA Headline: H2, white on dark */}
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-white mb-6">
-            {data.cta.title}
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-white mb-8">
+            Let's Fix the Problem — Fast and Professionally
           </h2>
-          
-          {/* Value Proposition: Body Lg */}
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
-            {data.cta.description}
-          </p>
-          
-          {/* Info Box: Glassmorphism card */}
-          <div className="
-            bg-white/5 
-            p-8 
-            rounded-md 
-            max-w-2xl 
-            mx-auto 
-            border border-white/10 
-            backdrop-blur-sm 
-            mb-10
-          ">
-            <h3 className="text-brand-accent font-bold text-xl mb-2">
-              {data.cta.footerText}
-            </h3>
-            <p className="text-gray-300 leading-relaxed">
-              {data.cta.footerSubtext}
-            </p>
-          </div>
 
-          {/* CTA Buttons: Primary (Gold) + Secondary (White outline) - DS v2.2 Section 6.6 */}
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-            {/* PRIMARY CTA: Gold button */}
+          {/* Trust statement before CTA - softer color to not compete with button */}
+          <p className="text-lg md:text-xl text-gray-400 font-medium mb-8">
+            Free Estimate — No Pressure. No Hidden Fees.
+          </p>
+
+          {/* PRIMARY CTA: Gold WhatsApp button with icon - ENLARGED */}
+          <div className="flex flex-col items-center gap-4">
             <Button 
               asChild 
               className="
@@ -637,45 +1087,44 @@ export const HomePage = () => {
                 hover:bg-brand-accent-hover 
                 text-brand-primary 
                 font-semibold 
-                text-lg 
-                h-14 
-                px-8 
-                min-w-[200px]
+                text-xl
+                h-[72px]
+                px-12
+                min-w-[320px]
                 shadow-lg
                 hover:shadow-xl
                 hover:-translate-y-0.5
                 transition-all duration-300
               "
             >
-               <a 
-                 href={data.cta.whatsappLink} 
-                 target="_blank" 
-                 rel="noopener noreferrer"
-                 className="inline-flex items-center gap-2"
-               >
-                 <Phone className="h-5 w-5" />
-                 {data.cta.whatsappText.replace(/\[.*?\]/, '').trim()}
-               </a>
+              <a 
+                href={`${data.cta.whatsappLink}?text=${encodeURIComponent("Hi, I'd like to get a free estimate for my repair project.")}`}
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3"
+              >
+                <span className="w-[28px] h-[28px] flex items-center justify-center">
+                  <WhatsAppIcon />
+                </span>
+                Get Free Estimate on WhatsApp
+              </a>
             </Button>
             
-            {/* SECONDARY CTA: White outline */}
-            <Button 
-              asChild 
-              variant="outline" 
+            {/* Secondary text link */}
+            <Link 
+              to="/contact"
               className="
-                border-2 border-white/40 
-                text-white 
-                hover:bg-white/10 
-                hover:border-white/60
-                text-lg 
-                h-14 
-                px-8
-                min-w-[200px]
-                transition-all duration-300
+                text-gray-300 
+                hover:text-white 
+                text-base
+                inline-flex items-center gap-2
+                transition-colors duration-200
+                group
               "
             >
-               <Link to="/contact">Use Contact Form</Link>
-            </Button>
+              Or email us your project details
+              <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
+            </Link>
           </div>
         </Container>
       </Section>

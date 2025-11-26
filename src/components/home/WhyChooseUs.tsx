@@ -36,7 +36,7 @@ export const WhyChooseUs = ({ data }: WhyChooseUsProps) => {
   ];
 
   return (
-    <Section className="bg-bg-surface py-12 md:py-20 relative overflow-hidden">
+    <Section className="bg-surface py-12 md:py-20 relative overflow-hidden">
       {/* Subtle Background Pattern - Updated gold color to match v2.2 */}
       <div className="absolute inset-0 bg-[radial-gradient(#C6A778_1px,transparent_1px)] [background-size:20px_20px] opacity-[0.03] pointer-events-none" />
       
