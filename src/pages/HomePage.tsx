@@ -100,10 +100,11 @@ const CityRotator = () => {
       style={{ 
         width: maxWidth ? `${maxWidth}px` : 'auto',
         minWidth: '200px',
-        height: '1.17em',
+        height: '1.5em', // Increased to accommodate descenders
         verticalAlign: 'bottom',
         letterSpacing: '0.02em',
-        lineHeight: '1.17'
+        lineHeight: '1.5',
+        paddingBottom: '0.15em' // Extra space for descenders
       }}
     >
       {/* Hidden measurement span to calculate max width */}
@@ -111,24 +112,25 @@ const CityRotator = () => {
         ref={measureRef}
         className="opacity-0 pointer-events-none absolute whitespace-nowrap font-bold"
         aria-hidden="true"
-        style={{ letterSpacing: '0.02em' }}
+        style={{ letterSpacing: '0.02em', lineHeight: '1.5' }}
       >
         {longestCity}
       </span>
 
-      {/* Animated city name with absolute positioning - NO glow effect */}
+      {/* Animated city name with absolute positioning */}
       <span 
         className={`
-          absolute left-0 right-0 top-0 text-center
-          whitespace-nowrap text-white font-bold
-          transition-transform duration-[600ms] ease-out
-          ${isExiting 
-            ? '-translate-y-full' 
-            : 'translate-y-0'
-          }
+          absolute whitespace-nowrap text-white font-bold
+          transition-transform duration-700 ease-out
         `}
         aria-live="polite"
-        style={{ letterSpacing: '0.02em' }}
+        style={{ 
+          letterSpacing: '0.02em',
+          lineHeight: '1.5',
+          left: '50%',
+          top: 0,
+          transform: isExiting ? 'translateX(-50%) translateY(-100%)' : 'translateX(-50%) translateY(0)'
+        }}
       >
         {cities[index]}
       </span>
@@ -185,7 +187,7 @@ export const HomePage = () => {
             <h1 className="font-heading font-bold text-[36px] md:text-6xl lg:text-7xl text-white flex flex-col items-center gap-1 md:gap-3" style={{ textShadow: '0 2px 16px rgba(0, 0, 0, 0.3)', letterSpacing: '0.02em', lineHeight: '1.17' }}>
               <span className="block">Home Repair, Marine & RV</span>
               <span className="block">Services in</span>
-              <div className="flex justify-center items-center h-[1.17em] overflow-visible">
+              <div className="flex justify-center items-center h-[1.5em] overflow-hidden">
                  <CityRotator />
               </div>
             </h1>
@@ -583,7 +585,7 @@ export const HomePage = () => {
                     <SwiperSlide key={review.id}>
                       <div 
                         className="
-                          bg-white rounded-md p-6 md:p-7
+                          bg-white rounded-md p-5 md:p-7
                           border border-border-light 
                           shadow-sm 
                           hover:border-brand-accent hover:shadow-lg
@@ -594,7 +596,7 @@ export const HomePage = () => {
                         "
                       >
                         {/* Star Rating: 18px gold stars with enhanced contrast */}
-                        <div className="flex gap-1 mb-5 shrink-0" role="img" aria-label="Rated 5 out of 5 stars">
+                        <div className="flex gap-1 mb-4 md:mb-5 shrink-0" role="img" aria-label="Rated 5 out of 5 stars">
                           {[1, 2, 3, 4, 5].map((star) => (
                             <Star 
                               key={star} 
@@ -611,13 +613,16 @@ export const HomePage = () => {
                             italic 
                             text-[15px] md:text-base
                             leading-[1.6]
-                            mb-6 
+                            mb-4 md:mb-5 
                             flex-grow
                             review-text-clamp
                           "
                         >
                           "{review.text}"
                         </blockquote>
+
+                        {/* Divider - Visual separator between review and author */}
+                        <div className="border-t border-border-light mb-4 md:mb-5 pt-4 md:pt-5"></div>
 
                         {/* Footer: Avatar + Name + Date */}
                         <div className="mt-auto flex items-center gap-3 shrink-0">
@@ -686,7 +691,7 @@ export const HomePage = () => {
                   .reviews-swiper {
                     overflow: hidden;
                     padding: 0 !important;
-                    height: 360px !important;
+                    height: 340px !important;
                   }
 
                   .reviews-swiper .swiper-wrapper {
@@ -799,7 +804,7 @@ export const HomePage = () => {
                     .reviews-swiper {
                       cursor: grab;
                       overflow: hidden;
-                      height: 400px !important;
+                      height: 320px !important;
                     }
 
                     .reviews-swiper:active {
@@ -878,10 +883,25 @@ export const HomePage = () => {
                  {data.about.quote}
                </p>
                
-               {/* Body Description - optimized line-height */}
-               <p className="text-text-secondary mb-10 leading-[1.65]">
-                 {data.about.description}
-               </p>
+               {/* Body Description - split into two paragraphs */}
+               {(() => {
+                 const splitPoint = "We listen first";
+                 const desc = data.about.description;
+                 const splitIndex = desc.indexOf(splitPoint);
+                 if (splitIndex > 0) {
+                   const firstPara = desc.substring(0, splitIndex).trim();
+                   const secondPara = desc.substring(splitIndex).trim();
+                   return (
+                     <div className="space-y-4 mb-10">
+                       <p className="text-text-secondary leading-[1.65]">{firstPara}</p>
+                       <p className="text-text-secondary leading-[1.65]">{secondPara}</p>
+                     </div>
+                   );
+                 }
+                 return (
+                   <p className="text-text-secondary mb-10 leading-[1.65]">{desc}</p>
+                 );
+               })()}
                
                {/* Promise List - Enhanced spacing and markers */}
                <div className="space-y-6">

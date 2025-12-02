@@ -4,8 +4,6 @@ import { HelmetProvider } from "react-helmet-async";
 import App from "./App.tsx";
 import "./index.css";
 
-console.log("Initializing App..."); // Debug log
-
 try {
   const rootElement = document.getElementById("root");
   if (!rootElement) {
@@ -19,7 +17,6 @@ try {
       </HelmetProvider>
     </StrictMode>
   );
-  console.log("App rendered successfully"); // Debug log
 } catch (error) {
   console.error("Failed to render app:", error);
 }

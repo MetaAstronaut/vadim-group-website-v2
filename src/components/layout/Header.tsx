@@ -36,12 +36,19 @@ export const Header = () => {
   }, [location]);
 
   // Intersection Observer for Hero section
+  // On pages with hero: show CTA after scrolling past hero
+  // On pages without hero (Our Work, Contact, About): always show CTA
   React.useEffect(() => {
     const heroSection = document.querySelector('[data-hero-section]');
     
+    // If no hero section exists on this page, always show the CTA button
     if (!heroSection) {
+      setShowCTA(true);
       return;
     }
+
+    // Reset showCTA when navigating to a page with hero
+    setShowCTA(false);
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -129,7 +136,7 @@ export const Header = () => {
           {cta.showOnScroll && (
             <div
               className={cn(
-                "transition-all duration-[400ms] ease-out",
+                "transition-all duration-500 ease-out",
                 showCTA 
                   ? "opacity-100 translate-y-0 pointer-events-auto" 
                   : "opacity-0 -translate-y-2 pointer-events-none"
@@ -208,7 +215,7 @@ export const Header = () => {
               <div className="pt-8">
                 <div
                   className={cn(
-                    "transition-all duration-[400ms] ease-out",
+                    "transition-all duration-500 ease-out",
                     showCTA 
                       ? "opacity-100 translate-y-0" 
                       : "opacity-0 -translate-y-2"

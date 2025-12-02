@@ -117,20 +117,20 @@ Priority scheduling for urgent repairs that can't wait. We respond quickly to he
 
 ## How Our Repair Process Works
 
-1. **Consultation & Estimate**  
-   We assess needs, review photos, and provide clear estimates with no hidden fees
+1. **Quick Repair Estimate**  
+   Tell us what's going on, and we'll give you a clear, simple quote — fast
 
-2. **Scheduling & Planning**  
-   Flexible scheduling with realistic timelines. We respect your time
+2. **Schedule Your Repair**  
+   We agree on a time that works for you — and we stick to it
 
-3. **Expert Execution**  
-   Professional work with quality materials and attention to detail
+3. **Professional Repair Work**  
+   Clean, careful, and precise work from start to finish
 
-4. **Inspection & Cleanup**  
-   Thorough inspection and complete cleanup of your space
+4. **Final Review & Cleanup**  
+   You check everything, and we leave your space spotless
 
-5. **Walkthrough & Warranty**  
-   Final review, questions answered, and warranty-backed work
+5. **Follow-Up Support**  
+   If anything needs attention later, we're here to help
 
 ---
 
@@ -170,16 +170,18 @@ Real homeowners and RV owners across Orlando trust The Vadim Group for careful, 
 
 ## About The Vadim Group
 
-> _Precision. Passion. Perfection._
+> _Care, respect, and craftsmanship_
 
-The Vadim Group is built on a simple idea: repairs should be done correctly the first time.  
-Vadim personally handles every project — from home repairs to complex marine and RV restoration — ensuring clean results, responsible workmanship, and clear communication from start to finish.
+The Vadim Group provides home, marine, and RV repair services in the Orlando area, built on a simple idea: repairs should be done properly, without stress, mess, or inflated pricing. Vadim personally handles each project — from home repairs to boat and RV restoration — bringing years of hands-on experience and a calm, responsible approach to every job.
 
-### Our Promise
-- We listen first to understand your needs and goals  
-- We work with precision — on time, on budget, and with respect for your property  
-- We deliver long-lasting results, not temporary fixes  
-- We stand behind our work with clear warranties and ongoing support  
+
+We listen first, explain everything clearly, and treat your place with the same respect we'd want for our own. No shortcuts, no pressure — just clean, precise work done the right way.
+
+### What We Stand For
+- Respect for your home, time, and budget  
+- Clear communication from start to finish  
+- Long-lasting results, not temporary fixes  
+- A clean, careful approach to every repair
 
 Clients choose us because they value professionalism, trust, and a calm, solution-driven approach to every repair.
 

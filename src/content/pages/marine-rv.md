@@ -11,9 +11,7 @@ canonical: "https://thevadimgroup.com/marine-rv"
 
 # Marine & RV Repair Services in Orlando
 
-## Professional Restoration for Boats and RVs
-
-Boats and recreational vehicles require specialized handling. The Vadim Group provides careful, detail-oriented repair and restoration for marine and RV owners who want work they can rely on.
+## Specialized repair and restoration for boats and RVs — delivered with clean workmanship, honest pricing, and reliable, stress-free service in the Orlando area
 
 From structural repairs to interior restoration, electrical troubleshooting, and engine/mechanical work, we help keep your boat or RV safe, functional, and ready for the road (or water).
 
@@ -21,7 +19,7 @@ From structural repairs to interior restoration, electrical troubleshooting, and
 
 ### OUR SERVICES
 # Marine & RV Repair Categories
-Explore the main repair categories below to find the service you need.
+Explore the main repair categories below to find the service you need
 
 ## Structural & Body Repairs
 Restoring structural integrity, comfort, and safety.
@@ -183,11 +181,11 @@ Diagnosed a failed fuse panel connection, repaired wiring, tested all outlets an
 
 A clean, organized workflow for dependable results.
 
-1. **Consultation & Estimate** — We assess needs, review photos, and provide clear estimates with no hidden fees
-2. **Scheduling & Planning** — Flexible scheduling with realistic timelines. We respect your time
-3. **Expert Execution** — Professional work with quality materials and attention to detail
-4. **Inspection & Cleanup** — Thorough inspection and complete cleanup of your space
-5. **Walkthrough & Warranty** — Final review, questions answered, and warranty-backed work
+1. **Quick Repair Estimate** — Tell us what's going on, and we'll give you a clear, simple quote — fast
+2. **Schedule Your Repair** — We agree on a time that works for you — and we stick to it
+3. **Professional Repair Work** — Clean, careful, and precise work from start to finish
+4. **Final Review & Cleanup** — You check everything, and we leave your space spotless
+5. **Follow-Up Support** — If anything needs attention later, we're here to help
 
 ---
 

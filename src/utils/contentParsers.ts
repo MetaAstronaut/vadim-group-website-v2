@@ -335,11 +335,23 @@ export function getHomePageData(): HomePageData {
 export interface HomeRepairsPageData {
   seo: { title: string; description: string; keywords: string; ogTitle: string; ogDescription: string; ogImage: string; };
   hero: { title: string; description: string; };
-  services: { tag: string; title: string; description: string; categories: Array<{ title: string; description: string; features: string[]; }> };
-  emergency: { tag: string; title: string; description: string; priorityDescription: string; features: string[]; footer: string; };
+  services: { 
+    tag: string; 
+    title: string; 
+    description: string; 
+    categories: Array<{ 
+      title: string; 
+      brief: string; 
+      preview: string;
+      subcategories: Array<{ 
+        title: string; 
+        items: string[]; 
+      }>; 
+    }> 
+  };
   education: { tag: string; title: string; description: string; causesTitle: string; causes: string[]; costTitle: string; costDesc: string; };
   maintenance: { tag: string; title: string; description: string; tasks: { monthly: string[]; quarterly: string[]; annual: string[]; periodic: string[]; } };
-  whyChooseUs: { tag: string; title: string; bullets: string[]; };
+  whyChooseUs: { tag: string; title: string; description: string; bullets: Array<{ title: string; description: string }>; };
   reviews: { tag: string; title: string; items: Array<{ quote: string; author: string }>; };
   projects: { tag: string; title: string; items: Array<{ title: string; description: string }> };
   process: { tag: string; title: string; description: string; steps: Array<{ title: string; description: string }> };
@@ -363,32 +375,70 @@ export function getHomeRepairsPageData(): HomeRepairsPageData {
   const servicesTag = findLine(servicesSection, '### ');
   const servicesTitle = findLine(servicesSection, '# ');
   const servicesDesc = findParagraph(servicesSection);
-  const servicesCategories = servicesSection.split(/^## /m).slice(1).map(raw => {
+  
+  // Parse categories with subcategories (new accordion structure)
+  const servicesCategories = servicesSection.split(/^## /m).slice(1).map((raw, index) => {
     const lines = raw.split('\n');
     const title = lines[0].trim();
-    const description = lines.find(l => !l.startsWith('-') && l.trim().length > 0 && l !== title)?.trim() || '';
-    const features = lines.filter(l => l.trim().startsWith('-')).map(l => l.replace(/^- (\*\*.*?\*\*: )?/, '').replace(/^- /, '').replace(/\*\*/g, '').trim());
-    return { title, description, features };
+    const brief = lines.find(l => !l.startsWith('-') && !l.startsWith('###') && !l.startsWith('**') && l.trim().length > 0 && l !== title)?.trim() || '';
+    
+    // Parse subcategories (### headings)
+    const subcategories: Array<{ title: string; items: string[] }> = [];
+    let currentSubcategory: { title: string; items: string[] } | null = null;
+    
+    for (const line of lines) {
+      if (line.startsWith('### ')) {
+        // Save previous subcategory if exists
+        if (currentSubcategory) {
+          subcategories.push(currentSubcategory);
+        }
+        // Start new subcategory
+        currentSubcategory = { 
+          title: line.replace('### ', '').trim(), 
+          items: [] 
+        };
+      } else if (line.trim().startsWith('-') && currentSubcategory) {
+        currentSubcategory.items.push(line.replace(/^- /, '').trim());
+      }
+    }
+    
+    // Save last subcategory
+    if (currentSubcategory && currentSubcategory.items.length > 0) {
+      subcategories.push(currentSubcategory);
+    }
+    
+    // Generate preview text - short keywords for readability
+    let preview = '';
+    
+    if (index === 0) { // Interior Repairs & Drywall Services
+      preview = 'Drywall • Ceiling • Painting • Trim';
+    } else if (index === 1) { // Kitchen & Bathroom Repairs
+      preview = 'Plumbing • Cabinets • Tile • Fixtures';
+    } else if (index === 2) { // Structural & Safety Repairs
+      preview = 'Wood Rot • Subfloor • Framing • Foundation';
+    } else if (index === 3) { // Exterior Home Repairs
+      preview = 'Fence • Deck • Siding • Doors';
+    } else if (index === 4) { // Water Damage Repairs
+      preview = 'Drywall • Moisture • Leak Repairs • Restoration';
+    }
+    
+    return { title, brief, preview, subcategories };
   });
 
-  // 2: Emergency
-  const emergencySection = sections[2];
-  const emergencyTag = findLine(emergencySection, '### ');
-  const emergencyTitle = findLine(emergencySection, '# ');
-  const emergencyDesc = findParagraph(emergencySection);
-  const emergencyPriorityDesc = emergencySection.split('We prioritize urgent repairs')[1]?.split('We can help with:')[0]?.trim() || "We prioritize urgent repairs...";
-  const emergencyFeatures = parseList(emergencySection);
-  const emergencyFooter = emergencySection.split('Emergency cases receive priority scheduling')[1]?.trim().replace(/—/, '').trim() || "";
-
+  // 2: Priority Services (new section - not parsed, handled directly in component)
+  // This section is read directly by PriorityServicesSection component from markdown
+  
   // 3: Education
   const educationSection = sections[3];
   const eduTag = findLine(educationSection, '### ');
   const eduTitle = findLine(educationSection, '# ');
-  const eduDesc = findParagraph(educationSection);
-  const eduCausesTitle = findLine(educationSection, 'Common Causes of Home Repair Needs:');
-  const eduCauses = educationSection.match(/\d+\.\s\*\*(.*?)\*\*(.*)/g)?.map(l => l.replace(/^\d+\.\s/, '').trim()) || [];
+  // Get description - everything between title and "The Cost of Waiting"
+  const eduDescMatch = educationSection.split(eduTitle)[1]?.split('**The Cost of Waiting:**')[0];
+  const eduDesc = eduDescMatch?.trim() || findParagraph(educationSection);
+  const eduCausesTitle = "Common Reasons Homes Need Repairs";
+  const eduCauses = educationSection.match(/\d+\.\s\*\*(.*?)\*\*\s*-\s*(.*)/g)?.map(l => l.replace(/^\d+\.\s/, '').trim()) || [];
   const eduCostTitle = "The Cost of Waiting:";
-  const eduCostDesc = educationSection.split('**The Cost of Waiting:**')[1]?.trim() || "";
+  const eduCostDesc = educationSection.split('**The Cost of Waiting:**')[1]?.split('**Common Reasons')[0]?.trim() || "";
 
   // 4: Maintenance
   const maintSection = sections[4];
@@ -416,7 +466,16 @@ export function getHomeRepairsPageData(): HomeRepairsPageData {
   const whySection = sections[5];
   const whyTag = findLine(whySection, '### ');
   const whyTitle = findLine(whySection, '# ');
-  const whyBullets = parseList(whySection);
+  const whyDescription = findParagraph(whySection);
+  // Parse bullets with bold titles: "**Title** — Description"
+  const whyBulletsRaw = parseList(whySection);
+  const whyBullets = whyBulletsRaw.map(bullet => {
+    const match = bullet.match(/\*\*(.*?)\*\*\s*[-—]\s*(.*)/);
+    if (match) {
+      return { title: match[1].trim(), description: match[2].trim() };
+    }
+    return { title: bullet, description: '' };
+  });
 
   // 6: Reviews
   const reviewsSection = sections[6];
@@ -480,10 +539,9 @@ export function getHomeRepairsPageData(): HomeRepairsPageData {
     },
     hero: { title: heroTitle, description: heroDesc },
     services: { tag: servicesTag, title: servicesTitle, description: servicesDesc, categories: servicesCategories },
-    emergency: { tag: emergencyTag, title: emergencyTitle, description: emergencyDesc, priorityDescription: emergencyPriorityDesc, features: emergencyFeatures, footer: emergencyFooter },
     education: { tag: eduTag, title: eduTitle, description: eduDesc, causesTitle: eduCausesTitle, causes: eduCauses, costTitle: eduCostTitle, costDesc: eduCostDesc },
     maintenance: { tag: maintTag, title: maintTitle, description: maintDesc, tasks: { monthly, quarterly, annual, periodic } },
-    whyChooseUs: { tag: whyTag, title: whyTitle, bullets: whyBullets },
+    whyChooseUs: { tag: whyTag, title: whyTitle, description: whyDescription, bullets: whyBullets },
     reviews: { tag: reviewsTag, title: reviewsTitle, items: reviewsItems },
     projects: { tag: projectsTag, title: projectsTitle, items: projectsItems },
     process: { tag: processTag, title: processTitle, description: processDesc, steps: processSteps },
