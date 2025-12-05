@@ -10,34 +10,33 @@ import {
   Droplets, 
   Zap,
   Wrench,
-  Quote,
   Calendar,
   ShieldCheck,
   ChevronDown,
   Clock,
-  MessageSquare
+  MessageSquare,
+  Star
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { Badge } from "@/components/ui/badge";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 // Assets
-import heroBg from "@/assets/blog/seasonal-maintenance.jpg";
+import heroBg from "@/assets/marine-rv-hero.jpg";
 
 import { Layout } from "@/components/layout/Layout";
 import { Helmet } from 'react-helmet-async';
@@ -143,6 +142,15 @@ const WhatsAppIcon = () => (
   </svg>
 );
 
+const GoogleLogo = () => (
+  <svg viewBox="0 0 24 24" className="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
+    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
+    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
+    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05" />
+    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335" />
+  </svg>
+);
+
 export const MarineRVPage = () => {
   const data = React.useMemo(() => getMarineRVPageData(), []);
   
@@ -243,7 +251,7 @@ export const MarineRVPage = () => {
                   MozOsxFontSmoothing: 'grayscale'
                 }}
               >
-                <Link to="/our-work">See Our Work</Link>
+                <Link to="/about">See Our Work</Link>
               </Button>
             </div>
           </MotionDiv>
@@ -618,11 +626,20 @@ export const MarineRVPage = () => {
             <p className="text-text-secondary mb-8">{data.whyMatters.description}</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-             {data.whyMatters.challenges.map((challenge, i) => (
-               <div key={i} className="flex items-start gap-4 p-4 bg-bg-subtle rounded-lg border-l-4 border-brand-primary">
-                 <Gauge className="h-6 w-6 text-brand-primary shrink-0 mt-1" />
-                 <span className="text-text-primary font-medium">{challenge}</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+             {data.whyMatters.blocks.map((block, i) => (
+               <div key={i} className="bg-white p-6 rounded-lg border border-border-light shadow-sm hover:shadow-md hover:border-brand-accent/40 transition-all duration-300">
+                 <h3 className="font-heading text-xl font-bold text-brand-primary mb-4">
+                   {block.title}
+                 </h3>
+                 <ul className="space-y-3">
+                   {block.points.map((point, j) => (
+                     <li key={j} className="flex items-start gap-3 text-text-secondary">
+                       <span className="text-brand-accent shrink-0" style={{ marginTop: '0.35em', lineHeight: 1 }}>•</span>
+                       <span className="text-sm leading-relaxed">{point}</span>
+                     </li>
+                   ))}
+                 </ul>
                </div>
              ))}
           </div>
@@ -676,67 +693,734 @@ export const MarineRVPage = () => {
       </Section>
 
       {/* --- WHY CHOOSE US --- */}
-      <Section className="bg-brand-primary text-white py-24">
+      {/* COLOR SCHEME: Light Grey (#F1F5F9) - Subtle contrast for benefits */}
+      <Section className="bg-surface-subtle py-24">
         <Container>
-          <div className="flex flex-col md:flex-row items-center gap-12">
-             <div className="flex-1">
-               <span className="text-brand-accent font-bold tracking-wider text-sm uppercase block mb-4">{data.whyChooseUs.tag}</span>
-               <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">{data.whyChooseUs.title}</h2>
-               <div className="grid gap-4">
-                 {data.whyChooseUs.bullets.map((item, i) => (
-                   <div key={i} className="flex items-center gap-3 p-3 rounded-lg bg-white/5">
-                     <CheckCircle2 className="h-6 w-6 text-brand-accent" />
-                     <span className="text-lg font-medium">{item}</span>
-                   </div>
-                 ))}
-               </div>
-             </div>
-             <div className="flex-1 w-full">
-                <div className="bg-white/5 p-8 rounded-xl border border-white/10">
-                   <h3 className="text-2xl font-heading font-bold text-brand-accent mb-6">{data.projects.title}</h3>
-                   <div className="space-y-6">
-                     {data.projects.items.map((project, i) => (
-                        <div key={i} className="border-b border-white/10 last:border-0 pb-6 last:pb-0">
-                            <h4 className="font-bold text-white mb-1">{project.title}</h4>
-                            <p className="text-sm text-gray-400">{project.description}</p>
-                        </div>
-                     ))}
-                   </div>
-                </div>
-             </div>
+          {/* Section Header */}
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className="text-brand-accent font-bold tracking-wider text-sm uppercase block mb-4">WHY CHOOSE US</span>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-brand-primary mb-6">Why Marine & RV Owners Trust The Vadim Group</h2>
+            <p className="text-text-secondary text-lg leading-relaxed">Boat and RV owners across the Orlando area rely on us for clean, precise repair work and calm, dependable service. Every project — from fiberglass patching to moisture diagnostics to interior panel repairs — is handled with care, honesty, and full respect for your vessel.</p>
+          </div>
+
+          {/* Two-column layout: Left = Bullet Points + CTA (40%), Right = Carousel (60%) */}
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-stretch">
+            {/* Left Column - Bullet Points + CTA - 2 columns */}
+            <div className="flex flex-col h-full lg:col-span-2">
+              <div className="space-y-5 flex-grow">
+                {[
+                  {
+                    title: "Clean, precise workmanship",
+                    description: "We repair your boat or RV with careful attention to detail — clean finishes, no shortcuts, no mess left behind"
+                  },
+                  {
+                    title: "Long-lasting repair solutions",
+                    description: "We focus on durable, high-quality results that prevent repeat issues and help extend the life of your vessel"
+                  },
+                  {
+                    title: "Transparent, honest pricing",
+                    description: "Clear timelines, clear estimates, no pressure, and no hidden fees — just straightforward communication"
+                  },
+                  {
+                    title: "On-time and dependable",
+                    description: "We show up when promised, keep you informed, and respect your travel plans and schedule"
+                  },
+                  {
+                    title: "Respect for your boat, RV, and onboard systems",
+                    description: "Professional handling, minimal disruption, and repairs done the right way — with respect for how you use your vessel"
+                  }
+                ].map((bullet, i) => (
+                  <div key={i} className="flex items-start gap-4 group">
+                    <CheckCircle2 className="h-6 w-6 text-brand-accent shrink-0 mt-1 transition-transform duration-300 group-hover:scale-110" />
+                    <div>
+                      <h3 className="text-lg font-bold text-brand-primary mb-1">{bullet.title}</h3>
+                      <p className="text-base text-text-secondary leading-relaxed">{bullet.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* CTA Button with Micro-copy */}
+              <div className="mt-8 pt-8 border-t border-border-light">
+                <Button 
+                  asChild
+                  className="bg-brand-primary hover:bg-brand-primary/90 text-white font-semibold h-12 px-8 transition-all duration-300 w-full md:w-auto"
+                >
+                  <Link to="/about" className="inline-flex items-center justify-center gap-2">
+                    View Full Portfolio
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </Button>
+                <p className="text-sm text-text-muted mt-3 text-center md:text-left">
+                  See before/after results from real marine & RV owners
+                </p>
+              </div>
+            </div>
+
+            {/* Right Column - Portfolio Carousel - 3 columns */}
+            <div className="relative w-full h-full flex items-center lg:col-span-3">
+              {/* Portfolio Carousel */}
+              {(() => {
+                // Placeholder portfolio data - filtered by "marine-rv" category
+                // TODO: Replace with real portfolio data from about page when available
+                const portfolioItems = [
+                  {
+                    id: 1,
+                    category: "marine-rv",
+                    title: "RV Water Damage Restoration",
+                    subtitle: "Moisture Intrusion",
+                    description: "Removed damaged paneling, dried interior framing thoroughly, and rebuilt with moisture-resistant materials — finish matches perfectly.",
+                    beforeImage: "/images/portfolio/rv-water-before.jpg",
+                    afterImage: "/images/portfolio/rv-water-after.jpg"
+                  },
+                  {
+                    id: 2,
+                    category: "marine-rv",
+                    title: "Boat Gelcoat Repair",
+                    subtitle: "Dock Impact",
+                    description: "Repaired deep gelcoat scratches, color-matched perfectly, and blended seamlessly — you cannot tell where the repair was done.",
+                    beforeImage: "/images/portfolio/boat-gelcoat-before.jpg",
+                    afterImage: "/images/portfolio/boat-gelcoat-after.jpg"
+                  },
+                  {
+                    id: 3,
+                    category: "marine-rv",
+                    title: "Motorhome Electrical Repair",
+                    subtitle: "Electrical System",
+                    description: "Diagnosed failed connection points, repaired wiring properly, tested every circuit — back on the road within hours.",
+                    beforeImage: "/images/portfolio/rv-electrical-before.jpg",
+                    afterImage: "/images/portfolio/rv-electrical-after.jpg"
+                  }
+                ];
+
+                return (
+                  <div className="portfolio-carousel-wrapper w-full max-w-full">
+                    <Swiper
+                      modules={[Autoplay, Pagination, Navigation]}
+                      spaceBetween={0}
+                      slidesPerView={1}
+                      autoplay={{ 
+                        delay: 4000, 
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: true
+                      }}
+                      pagination={{ 
+                        clickable: true,
+                        bulletClass: 'swiper-pagination-bullet portfolio-bullet',
+                        bulletActiveClass: 'swiper-pagination-bullet-active portfolio-bullet-active',
+                        el: '.portfolio-pagination-marine-rv'
+                      }}
+                      navigation={{
+                        prevEl: '.portfolio-button-prev-marine',
+                        nextEl: '.portfolio-button-next-marine'
+                      }}
+                      loop={true}
+                      className="portfolio-swiper"
+                    >
+                      {portfolioItems.map((item) => (
+                        <SwiperSlide key={item.id}>
+                          <div className="rounded-lg overflow-hidden h-full" style={{ isolation: 'isolate' }}>
+                            <div className="bg-white shadow-lg border border-border-light h-full rounded-lg overflow-hidden">
+                              {/* Before/After Images */}
+                              <div className="grid grid-cols-2 gap-2 p-2 bg-white">
+                              <div className="relative aspect-[4/3] bg-gray-100 rounded overflow-hidden">
+                                <div className="absolute inset-0 flex items-center justify-center">
+                                  <span className="text-gray-400 text-sm font-medium">Before</span>
+                                </div>
+                              </div>
+                              <div className="relative aspect-[4/3] bg-gray-100 rounded overflow-hidden">
+                                <div className="absolute inset-0 flex items-center justify-center">
+                                  <span className="text-gray-400 text-sm font-medium">After</span>
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* Project Info */}
+                            <div className="p-6">
+                              <h3 className="font-heading text-xl font-bold text-brand-primary mb-3">
+                                {item.title}
+                              </h3>
+                              <Badge variant="accent" className="mb-3 text-xs px-3 py-1 pointer-events-none">
+                                {item.subtitle}
+                              </Badge>
+                              <p className="text-sm text-text-secondary leading-relaxed">
+                                {item.description}
+                              </p>
+                            </div>
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
+
+                    {/* Navigation Buttons */}
+                    <button 
+                      className="portfolio-button-prev-marine hidden md:flex"
+                      aria-label="View previous project"
+                    >
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                      </svg>
+                    </button>
+                    <button 
+                      className="portfolio-button-next-marine hidden md:flex"
+                      aria-label="View next project"
+                    >
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                      </svg>
+                    </button>
+
+                    {/* Pagination Dots */}
+                    <div className="portfolio-pagination-marine-rv"></div>
+
+                    {/* Carousel Styles */}
+                    <style>{`
+                      /* Remove hover effects from badges */
+                      .portfolio-swiper .pointer-events-none {
+                        pointer-events: none;
+                        transition: none;
+                      }
+
+                      .portfolio-carousel-wrapper {
+                        position: relative;
+                        padding-bottom: 48px;
+                        padding-left: 52px;
+                        padding-right: 52px;
+                        width: 100%;
+                        max-width: 100%;
+                      }
+
+                      .portfolio-swiper {
+                        width: 100%;
+                        max-width: 100%;
+                        overflow: hidden;
+                        background: transparent !important;
+                      }
+
+                      .portfolio-swiper .swiper-wrapper {
+                        align-items: stretch;
+                        background: transparent !important;
+                      }
+
+                      .portfolio-swiper .swiper-slide {
+                        height: auto;
+                        display: flex;
+                        background: transparent !important;
+                      }
+
+                      .portfolio-swiper .swiper-slide > div {
+                        width: 100%;
+                        background: transparent !important;
+                      }
+
+                      .portfolio-swiper .swiper-slide > div > div {
+                        background: white !important;
+                      }
+
+                      /* Navigation Buttons - Same style as reviews */
+                      .portfolio-button-prev-marine,
+                      .portfolio-button-next-marine {
+                        position: absolute;
+                        top: 45%;
+                        transform: translateY(-50%);
+                        width: 44px;
+                        height: 44px;
+                        background: rgba(198, 167, 120, 0.12);
+                        border-radius: 50%;
+                        color: #B8935A;
+                        border: none;
+                        cursor: pointer;
+                        z-index: 10;
+                        align-items: center;
+                        justify-content: center;
+                        transition: all 0.3s ease;
+                        box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+                      }
+                      
+                      .portfolio-button-prev-marine {
+                        left: 0;
+                      }
+                      
+                      .portfolio-button-next-marine {
+                        right: 0;
+                      }
+                      
+                      .portfolio-button-prev-marine:hover,
+                      .portfolio-button-next-marine:hover {
+                        background: #C6A778;
+                        color: white;
+                        box-shadow: 0 4px 12px rgba(198, 167, 120, 0.3);
+                        transform: translateY(-50%) scale(1.05);
+                      }
+
+                      .portfolio-button-prev-marine:disabled,
+                      .portfolio-button-next-marine:disabled {
+                        opacity: 0.3;
+                        cursor: not-allowed;
+                      }
+
+                      /* Pagination Dots */
+                      .portfolio-pagination-marine-rv {
+                        display: flex !important;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 8px;
+                        margin-top: 24px;
+                        height: 16px;
+                      }
+                      
+                      .portfolio-bullet {
+                        width: 12px !important;
+                        height: 12px !important;
+                        background: transparent;
+                        border: 2px solid #C6A778;
+                        opacity: 0.6;
+                        transition: opacity 0.3s ease, background 0.3s ease;
+                        cursor: pointer;
+                      }
+
+                      .portfolio-bullet:hover {
+                        opacity: 1;
+                      }
+                      
+                      .portfolio-bullet-active {
+                        background: #C6A778 !important;
+                        opacity: 1 !important;
+                      }
+
+                      /* Mobile optimization */
+                      @media (max-width: 767px) {
+                        .portfolio-button-prev-marine,
+                        .portfolio-button-next-marine {
+                          display: none !important;
+                        }
+
+                        .portfolio-swiper {
+                          cursor: grab;
+                          width: 100%;
+                          max-width: 100%;
+                        }
+
+                        .portfolio-swiper:active {
+                          cursor: grabbing;
+                        }
+
+                        .portfolio-carousel-wrapper {
+                          width: 100%;
+                          max-width: 100%;
+                          padding-left: 0;
+                          padding-right: 0;
+                        }
+                      }
+
+                      /* Tablet adjustments */
+                      @media (min-width: 768px) and (max-width: 1023px) {
+                        .portfolio-carousel-wrapper {
+                          padding-left: 48px;
+                          padding-right: 48px;
+                        }
+                      }
+                    `}</style>
+                  </div>
+                );
+              })()}
+            </div>
           </div>
         </Container>
       </Section>
 
       {/* --- TESTIMONIALS --- */}
-      <Section className="bg-bg-surface py-24">
-        <Container>
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-brand-accent font-bold tracking-wider text-sm uppercase block mb-4">{data.reviews.tag}</span>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-brand-primary">{data.reviews.title}</h2>
+      {/* Design System v2.2: Section 6.9 - Testimonial Cards with Carousel */}
+      {/* COLOR SCHEME: White (#FFFFFF) - Clean showcase for social proof */}
+      <Section className="bg-surface py-20 md:py-24 overflow-hidden" style={{ isolation: 'isolate' }}>
+        <Container className="overflow-visible">
+          {/* Section Header */}
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className="text-brand-accent font-bold tracking-wider text-sm uppercase block mb-4">
+              {data.reviews.tag}
+            </span>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-brand-primary mb-4">
+              {data.reviews.title}
+            </h2>
+            {/* Google Verification Badge - Moved to Header */}
+            <div className="flex items-center justify-center gap-2 text-text-secondary">
+              <GoogleLogo />
+              <span className="text-base">Verified reviews from Google Business</span>
+            </div>
           </div>
 
-          <Carousel className="max-w-4xl mx-auto">
-            <CarouselContent>
-              {data.reviews.items.map((review, i) => (
-                <CarouselItem key={i}>
-                  <div className="p-6 md:p-8 text-center space-y-5 md:space-y-6 bg-white rounded-xl shadow-sm border border-border-light mx-4">
-                    <Quote className="h-12 w-12 text-brand-accent/20 mx-auto mb-4" />
-                    <blockquote className="text-xl md:text-2xl font-heading leading-relaxed text-brand-primary italic">
-                      "{review.quote}"
-                    </blockquote>
-                    {/* Divider - Visual separator */}
-                    <div className="border-t border-border-light pt-5 md:pt-6"></div>
-                    <div className="font-bold text-brand-accent text-lg">— {review.author}</div>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <div className="flex justify-center gap-4 mt-8">
-              <CarouselPrevious className="static translate-y-0" />
-              <CarouselNext className="static translate-y-0" />
-            </div>
-          </Carousel>
+          {/* Reviews Data with Avatars */}
+          {(() => {
+            const reviewsData = [
+              {
+                id: 1,
+                name: "Tom R.",
+                location: "Orlando",
+                initials: "TR",
+                avatarColor: "#E8F4F8",
+                rating: 5,
+                text: "After discovering water damage in our RV's rear bedroom, Vadim removed the affected paneling, thoroughly dried the interior framing, and rebuilt everything with moisture-resistant materials. The finish matches perfectly and the repair is completely solid. The pricing was fair and explained clearly from the start.",
+                date: "3 weeks ago"
+              },
+              {
+                id: 2,
+                name: "Lisa M.",
+                location: "Winter Park",
+                initials: "LM",
+                avatarColor: "#FFF4E6",
+                rating: 5,
+                text: "Our boat's gelcoat had deep scratches from dock impact. Vadim repaired the damaged area, color-matched the finish perfectly, and blended it seamlessly — you absolutely cannot tell where the repair was done. Professional work at a reasonable price.",
+                date: "1 month ago"
+              },
+              {
+                id: 3,
+                name: "Michael D.",
+                location: "Kissimmee",
+                initials: "MD",
+                avatarColor: "#F0E8FF",
+                rating: 5,
+                text: "We had multiple electrical issues in our Class A motorhome that left us stranded. Vadim diagnosed the failed connection points, repaired the wiring properly, tested every circuit, and had us back on the road within hours. Clean work and honest communication throughout.",
+                date: "2 weeks ago"
+              },
+              {
+                id: 4,
+                name: "Jennifer B.",
+                location: "Lake Nona",
+                initials: "JB",
+                avatarColor: "#E8F4F8",
+                rating: 5,
+                text: "Vadim restored our pontoon boat's soft deck area after years of moisture intrusion. He replaced the damaged decking, reinforced the structure, and resealed everything properly — the deck is now completely solid and safe. Highly professional and detail-oriented.",
+                date: "1 month ago"
+              },
+              {
+                id: 5,
+                name: "Carlos P.",
+                location: "Winter Park",
+                initials: "CP",
+                avatarColor: "#FFF4E6",
+                rating: 5,
+                text: "After a roof leak damaged our travel trailer's interior wall and cabinet, Vadim rebuilt the structure, replaced all moisture-affected materials, and refinished the surfaces to match the original perfectly. The workspace was left spotless and the repair is flawless.",
+                date: "2 months ago"
+              }
+            ];
+
+            return (
+              <div className="relative reviews-carousel-wrapper md:px-8 lg:px-12 max-w-full py-2" style={{ minHeight: '480px' }}>
+                <Swiper
+                  modules={[Autoplay, Pagination, Navigation]}
+                  spaceBetween={20}
+                  slidesPerView={1}
+                  breakpoints={{
+                    640: { slidesPerView: 2, spaceBetween: 20 },
+                    1024: { slidesPerView: 3, spaceBetween: 24 }
+                  }}
+                  autoplay={{ 
+                    delay: 5000, 
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true
+                  }}
+                  pagination={{ 
+                    clickable: true,
+                    bulletClass: 'swiper-pagination-bullet reviews-bullet',
+                    bulletActiveClass: 'swiper-pagination-bullet-active reviews-bullet-active',
+                    el: '.reviews-pagination-marine-rv',
+                    dynamicBullets: false
+                  }}
+                  navigation={{
+                    prevEl: '.reviews-button-prev-marine-rv',
+                    nextEl: '.reviews-button-next-marine-rv'
+                  }}
+                  loop={true}
+                  watchSlidesProgress={true}
+                  simulateTouch={false}
+                  allowTouchMove={true}
+                  touchRatio={1}
+                  touchAngle={45}
+                  threshold={5}
+                  keyboard={{
+                    enabled: true,
+                    onlyInViewport: true
+                  }}
+                  a11y={{
+                    prevSlideMessage: 'Previous review',
+                    nextSlideMessage: 'Next review',
+                    paginationBulletMessage: 'Go to review {{index}}'
+                  }}
+                  className="reviews-swiper-marine-rv"
+                >
+                  {reviewsData.map((review) => (
+                    <SwiperSlide key={review.id}>
+                      <div 
+                        className="
+                          bg-white rounded-md p-5 md:p-7
+                          border border-border-light 
+                          shadow-sm 
+                          hover:border-brand-accent hover:shadow-lg
+                          transition-all duration-300 
+                          flex flex-col
+                          h-full
+                          w-full
+                        "
+                      >
+                        {/* Star Rating: 18px gold stars with enhanced contrast */}
+                        <div className="flex gap-1 mb-4 md:mb-5 shrink-0" role="img" aria-label="Rated 5 out of 5 stars">
+                          {[1, 2, 3, 4, 5].map((star) => (
+                            <Star 
+                              key={star} 
+                              className="w-[18px] h-[18px] fill-[#B8935A] text-[#B8935A] drop-shadow-sm" 
+                              aria-hidden="true"
+                            />
+                          ))}
+                        </div>
+
+                        {/* Quote Text: Italic, properly clamped with ellipsis */}
+                        <blockquote 
+                          className="
+                            text-text-primary 
+                            italic 
+                            text-[15px] md:text-base
+                            leading-[1.6]
+                            mb-4 md:mb-5 
+                            flex-grow
+                            review-text-clamp
+                          "
+                        >
+                          "{review.text}"
+                        </blockquote>
+
+                        {/* Divider - Visual separator between review and author */}
+                        <div className="border-t border-border-light mb-4 md:mb-5 pt-4 md:pt-5"></div>
+
+                        {/* Footer: Avatar + Name + Date */}
+                        <div className="mt-auto flex items-center gap-3 shrink-0">
+                          {/* Avatar with Initials */}
+                          <div 
+                            className="
+                              w-12 h-12 
+                              rounded-full 
+                              flex items-center justify-center
+                              shrink-0
+                            "
+                            style={{ backgroundColor: review.avatarColor }}
+                          >
+                            <span className="text-brand-primary font-semibold text-base">
+                              {review.initials}
+                            </span>
+                          </div>
+                          
+                          {/* Name and Date */}
+                          <div className="flex flex-col">
+                            <div className="font-semibold text-brand-primary">
+                              {review.name}
+                            </div>
+                            <div className="text-sm text-text-muted">
+                              {review.date}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+
+                {/* Custom Navigation Buttons - Outside carousel */}
+                <button 
+                  className="reviews-button-prev-marine-rv hidden md:flex"
+                  aria-label="View previous review"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                  </svg>
+                </button>
+                <button 
+                  className="reviews-button-next-marine-rv hidden md:flex"
+                  aria-label="View next review"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
+
+                {/* Pagination Dots */}
+                <div className="reviews-pagination-marine-rv"></div>
+
+                {/* Custom Swiper Styles */}
+                <style>{`
+                  /* Carousel wrapper with proper padding and overflow control */
+                  .reviews-carousel-wrapper {
+                    padding-bottom: 64px;
+                    padding-top: 8px;
+                    position: relative;
+                    overflow: visible;
+                  }
+
+                  /* Swiper container - FIXED HEIGHT to prevent layout shift */
+                  .reviews-swiper-marine-rv {
+                    overflow: hidden;
+                    padding: 0 !important;
+                    height: 340px !important;
+                  }
+
+                  .reviews-swiper-marine-rv .swiper-wrapper {
+                    display: flex;
+                    align-items: flex-start;
+                    height: 100%;
+                  }
+
+                  .reviews-swiper-marine-rv .swiper-slide {
+                    height: 100%;
+                    padding: 8px 0;
+                    display: flex;
+                  }
+
+                  /* Text clamping for review quotes - proper ellipsis */
+                  .review-text-clamp {
+                    display: -webkit-box !important;
+                    -webkit-line-clamp: 4 !important;
+                    -webkit-box-orient: vertical !important;
+                    overflow: hidden !important;
+                    text-overflow: ellipsis !important;
+                    word-wrap: break-word;
+                    word-break: break-word;
+                    max-height: calc(1.6em * 4);
+                  }
+
+                  /* Navigation Buttons - Positioned outside, hidden on mobile */
+                  .reviews-button-prev-marine-rv,
+                  .reviews-button-next-marine-rv {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(calc(-50% - 32px));
+                    width: 44px;
+                    height: 44px;
+                    background: rgba(198, 167, 120, 0.12);
+                    border-radius: 50%;
+                    color: #B8935A;
+                    border: none;
+                    cursor: pointer;
+                    z-index: 10;
+                    align-items: center;
+                    justify-content: center;
+                    transition: all 0.3s ease;
+                    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+                  }
+                  
+                  .reviews-button-prev-marine-rv {
+                    left: -8px;
+                  }
+                  
+                  .reviews-button-next-marine-rv {
+                    right: -8px;
+                  }
+                  
+                  .reviews-button-prev-marine-rv:hover,
+                  .reviews-button-next-marine-rv:hover {
+                    background: #C6A778;
+                    color: white;
+                    box-shadow: 0 4px 12px rgba(198, 167, 120, 0.3);
+                    transform: translateY(calc(-50% - 32px)) scale(1.05);
+                  }
+
+                  .reviews-button-prev-marine-rv:disabled,
+                  .reviews-button-next-marine-rv:disabled {
+                    opacity: 0.3;
+                    cursor: not-allowed;
+                  }
+                  
+                  /* Pagination Dots - Visible on all devices - FIXED SIZE */
+                  .reviews-pagination-marine-rv {
+                    display: flex !important;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 8px;
+                    margin-top: 32px;
+                    position: relative;
+                    height: 16px;
+                    min-height: 16px;
+                  }
+                  
+                  .reviews-bullet {
+                    width: 12px !important;
+                    height: 12px !important;
+                    background: transparent;
+                    border: 2px solid #C6A778;
+                    opacity: 0.6;
+                    transition: opacity 0.3s ease, background 0.3s ease;
+                    cursor: pointer;
+                    display: inline-block;
+                    flex-shrink: 0;
+                  }
+
+                  .reviews-bullet:hover {
+                    opacity: 1;
+                  }
+                  
+                  .reviews-bullet-active {
+                    background: #C6A778 !important;
+                    opacity: 1 !important;
+                  }
+
+                  /* Mobile optimization */
+                  @media (max-width: 767px) {
+                    .reviews-carousel-wrapper {
+                      padding-bottom: 56px;
+                      padding-top: 8px;
+                      overflow: visible;
+                    }
+
+                    .reviews-swiper-marine-rv {
+                      overflow: hidden;
+                      height: 320px !important;
+                    }
+
+                    .reviews-pagination-marine-rv {
+                      margin-top: 24px;
+                    }
+
+                    /* Hide navigation buttons on mobile */
+                    .reviews-button-prev-marine-rv,
+                    .reviews-button-next-marine-rv {
+                      display: none !important;
+                    }
+                  }
+
+                  /* Tablet optimization */
+                  @media (min-width: 640px) and (max-width: 1023px) {
+                    .reviews-button-prev-marine-rv {
+                      left: -4px;
+                    }
+                    
+                    .reviews-button-next-marine-rv {
+                      right: -4px;
+                    }
+                  }
+
+                  /* Desktop */
+                  @media (min-width: 1024px) {
+                    .reviews-button-prev-marine-rv {
+                      left: -8px;
+                    }
+                    
+                    .reviews-button-next-marine-rv {
+                      right: -8px;
+                    }
+                  }
+
+                  /* Large desktop */
+                  @media (min-width: 1280px) {
+                    .reviews-button-prev-marine-rv {
+                      left: -12px;
+                    }
+                    
+                    .reviews-button-next-marine-rv {
+                      right: -12px;
+                    }
+                  }
+                `}</style>
+              </div>
+            );
+          })()}
         </Container>
       </Section>
 

@@ -86,19 +86,29 @@ send photos and a short message via WhatsApp for fastest help.
 ---
 
 ### WHY IT MATTERS
-# Why Marine & RV Repairs Require Specialized Skill
-Boats and RVs face challenges traditional homes don't:
+# Why Marine & RV Repairs Need Specialized Expertise
 
-- Constant vibration and movement  
-- High exposure to moisture  
-- Tight and complex interior systems  
-- Lightweight structural components  
-- Electrical systems under constant load  
-- Safety-critical parts under stress  
-- Rapid deterioration if repairs are delayed  
+Boats and RVs aren't built like traditional homes — they flex, move, vibrate, and face intense moisture and electrical load. Small issues can quickly turn into costly repairs if not handled correctly.
 
-This is why improper repair methods cause more damage over time.  
-We focus on safe, correct, material-appropriate repair practices.
+**Constant Movement & Vibration**
+
+- Causes loosened fixtures, cracks, and surface stress
+- Requires movement-resistant repair techniques
+
+**High Exposure to Moisture**
+
+- Leads to swelling, soft spots, and water-damage spread
+- Needs moisture-safe materials and diagnostics
+
+**Lightweight, Tight Construction**
+
+- Thin composite panels and compact interior systems
+- Improper repair can cause additional internal damage
+
+**Complex Electrical & Onboard Systems**
+
+- Multi-system wiring under constant vibration
+- Requires careful troubleshooting to ensure safe operation
 
 ---
 
@@ -148,16 +158,22 @@ Staying ahead of wear and moisture issues extends the life of your vehicle and p
 ---
 
 ### CLIENT REVIEWS
-## What Boat & RV Owners Say
+## What Boat & RV Owners Say About Our Work
 
-> "Vadim repaired our RV's water-damaged ceiling after a leak. The work was flawless — you'd never know there was damage. Fair pricing and extremely clean work."  
+> "After discovering water damage in our RV's rear bedroom, Vadim removed the affected paneling, thoroughly dried the interior framing, and rebuilt everything with moisture-resistant materials. The finish matches perfectly and the repair is completely solid. The pricing was fair and explained clearly from the start."  
 > — **Tom R., Orlando**
 
-> "Our boat's gelcoat was badly scratched. Vadim matched the color perfectly and the repair is invisible. Highly recommend!"  
+> "Our boat's gelcoat had deep scratches from dock impact. Vadim repaired the damaged area, color-matched the finish perfectly, and blended it seamlessly — you absolutely cannot tell where the repair was done. Professional work at a reasonable price."  
 > — **Lisa M., Winter Park**
 
-> "Fast, professional RV electrical repair. Diagnosed the problem in minutes and had us back on the road the same day."  
+> "We had multiple electrical issues in our Class A motorhome that left us stranded. Vadim diagnosed the failed connection points, repaired the wiring properly, tested every circuit, and had us back on the road within hours. Clean work and honest communication throughout."  
 > — **Michael D., Kissimmee**
+
+> "Vadim restored our pontoon boat's soft deck area after years of moisture intrusion. He replaced the damaged decking, reinforced the structure, and resealed everything properly — the deck is now completely solid and safe. Highly professional and detail-oriented."  
+> — **Jennifer B., Lake Nona**
+
+> "After a roof leak damaged our travel trailer's interior wall and cabinet, Vadim rebuilt the structure, replaced all moisture-affected materials, and refinished the surfaces to match the original perfectly. The workspace was left spotless and the repair is flawless."  
+> — **Carlos P., Winter Park**
 
 ---
 

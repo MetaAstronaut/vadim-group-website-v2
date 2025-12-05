@@ -3,6 +3,7 @@ import footerContent from '@/content/partials/footer.md?raw';
 import homeContent from '@/content/pages/home.md?raw';
 import homeRepairsContent from '@/content/pages/home-repairs.md?raw';
 import marineRVContent from '@/content/pages/marine-rv.md?raw';
+import blogContent from '@/content/pages/blog.md?raw';
 import yaml from 'js-yaml';
 
 // --- HELPER FUNCTIONS ---
@@ -457,10 +458,10 @@ export function getHomeRepairsPageData(): HomeRepairsPageData {
     }
     return tasks;
   };
-  const monthly = extractTasks('Monthly Tasks:');
-  const quarterly = extractTasks('Quarterly Tasks:');
-  const annual = extractTasks('Annual Tasks:');
-  const periodic = extractTasks('Every 2-3 Years:');
+  const monthly = extractTasks('Monthly:');
+  const quarterly = extractTasks('Quarterly:');
+  const annual = extractTasks('Annual:');
+  const periodic = extractTasks('Every 2–3 Years:');
 
   // 5: Why Choose Us
   const whySection = sections[5];
@@ -565,7 +566,7 @@ export interface MarineRVPageData {
   hero: { title: string; description: string; subtitle: string; };
   services: { tag: string; title: string; description: string; categories: Array<{ title: string; description: string; features: string[]; }>; };
   emergency: { tag: string; title: string; description: string; priorityDescription: string; features: string[]; footer: string; };
-  whyMatters: { tag: string; title: string; description: string; challenges: string[]; };
+  whyMatters: { tag: string; title: string; description: string; blocks: Array<{ title: string; points: string[]; }>; };
   maintenance: { tag: string; title: string; description: string; tasks: { monthly: string[]; quarterly: string[]; seasonal: string[]; annual: string[]; }; };
   whyChooseUs: { tag: string; title: string; bullets: string[]; };
   reviews: { tag: string; title: string; items: Array<{ quote: string; author: string }>; };
@@ -614,7 +615,14 @@ export function getMarineRVPageData(): MarineRVPageData {
   const mattersTag = findLine(mattersSection, '### ');
   const mattersTitle = findLine(mattersSection, '# ');
   const mattersDesc = findParagraph(mattersSection);
-  const mattersChallenges = parseList(mattersSection);
+  // Parse blocks with titles (without numbers) and bullet points
+  const mattersBlocks = mattersSection.match(/\*\*([^*]+?)\*\*\s*\n([\s\S]*?)(?=(?:\*\*[^*]+?\*\*|$))/g)?.map(block => {
+    const lines = block.split('\n');
+    const titleLine = lines[0].match(/\*\*([^*]+?)\*\*/);
+    const title = titleLine?.[1]?.trim() || '';
+    const points = lines.slice(1).filter(l => l.trim().startsWith('-')).map(l => l.replace(/^-\s*/, '').trim());
+    return { title, points };
+  }) || [];
 
   // 4: Maintenance
   const maintSection = sections[4];
@@ -707,7 +715,7 @@ export function getMarineRVPageData(): MarineRVPageData {
     hero: { title: heroTitle, subtitle: heroSubtitle, description: heroDesc },
     services: { tag: servicesTag, title: servicesTitle, description: servicesDesc, categories: servicesCategories },
     emergency: { tag: emergencyTag, title: emergencyTitle, description: emergencyDesc, priorityDescription: emergencyPriorityDesc, features: emergencyFeatures, footer: emergencyFooter },
-    whyMatters: { tag: mattersTag, title: mattersTitle, description: mattersDesc, challenges: mattersChallenges },
+    whyMatters: { tag: mattersTag, title: mattersTitle, description: mattersDesc, blocks: mattersBlocks },
     maintenance: { tag: maintTag, title: maintTitle, description: maintDesc, tasks: { monthly, quarterly, seasonal, annual } },
     whyChooseUs: { tag: whyTag, title: whyTitle, bullets: whyBullets },
     reviews: { tag: reviewsTag, title: reviewsTitle, items: reviewsItems },
@@ -723,5 +731,132 @@ export function getMarineRVPageData(): MarineRVPageData {
       emailText: ctaEmailLine?.[1] || "info@thevadimgroup.com",
       emailLink: ctaEmailLine?.[0] || "#",
     }
+  };
+}
+
+// --- BLOG PAGE PARSER ---
+
+export interface BlogArticle {
+  title: string;
+  description: string;
+  readingTime: string;
+  status: string;
+  category: string;
+}
+
+export interface BlogPageData {
+  seo: { 
+    title: string; 
+    description: string; 
+    keywords: string; 
+    ogTitle: string; 
+    ogDescription: string; 
+    ogImage: string; 
+    canonical: string;
+  };
+  hero: { 
+    title: string; 
+    subtitle: string; 
+    description: string; 
+  };
+  comingSoonTitle: string;
+  comingSoonDescription: string;
+  articles: BlogArticle[];
+  contactEmail: string;
+  contactInfo: string;
+  subscribeTitle: string;
+  subscribeInfo: string;
+}
+
+export function getBlogPageData(): BlogPageData {
+  const parts = blogContent.split(/^---$/m);
+  const attributes = yaml.load(parts[1]) as any;
+  const body = parts.slice(2).join('---');
+  
+  // Parse main sections
+  const lines = body.split('\n');
+  
+  // Hero section
+  const heroTitle = lines.find(l => l.startsWith('# '))?.replace('# ', '').trim() || '';
+  const heroSubtitle = lines.find(l => l.startsWith('## Expert'))?.replace('## ', '').trim() || '';
+  const heroDescription = lines.find(l => l.startsWith('This blog'))?.trim() || '';
+  
+  // Coming Soon section
+  const comingSoonTitle = lines.find(l => l.startsWith('## Coming Soon'))?.replace('## ', '').trim() || '';
+  const comingSoonDescription = lines.find(l => l.includes('preparing comprehensive'))?.trim() || '';
+  
+  // Parse articles by category
+  const articles: BlogArticle[] = [];
+  let currentCategory = '';
+  
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    
+    // Detect category header (### Category Name)
+    if (line.startsWith('### ') && !line.includes('Have a Specific') && !line.includes('Subscribe')) {
+      currentCategory = line.replace('### ', '').trim();
+      continue;
+    }
+    
+    // Detect article title (starts with **)
+    if (line.startsWith('**') && line.endsWith('**') && currentCategory) {
+      const title = line.replace(/\*\*/g, '').trim();
+      
+      // Get description (next line)
+      const description = lines[i + 1]?.trim() || '';
+      
+      // Get reading time (line with "Estimated reading time:")
+      let readingTime = '';
+      let status = 'Coming Soon';
+      
+      for (let j = i + 1; j < i + 5 && j < lines.length; j++) {
+        if (lines[j].includes('Estimated reading time:')) {
+          readingTime = lines[j].replace(/\*Estimated reading time:\s*/i, '').replace('*', '').trim();
+        }
+        if (lines[j].includes('Status:')) {
+          status = lines[j].replace(/Status:\s*/i, '').replace(/\*/g, '').trim();
+        }
+      }
+      
+      articles.push({
+        title,
+        description,
+        readingTime,
+        status,
+        category: currentCategory,
+      });
+    }
+  }
+  
+  // Contact section
+  const contactEmail = 'info@thevadimgroup.com';
+  const contactInfo = lines.find(l => l.includes('typically respond'))?.trim() || '';
+  
+  // Subscribe section
+  const subscribeTitle = lines.find(l => l.startsWith('## Subscribe'))?.replace('## ', '').trim() || '';
+  const subscribeInfo = lines.find(l => l.includes('Want to be notified'))?.trim() || '';
+  
+  return {
+    seo: {
+      title: attributes.title || '',
+      description: attributes.description || '',
+      keywords: attributes.keywords || '',
+      ogTitle: attributes['og:title'] || '',
+      ogDescription: attributes['og:description'] || '',
+      ogImage: attributes['og:image'] || '',
+      canonical: attributes.canonical || '',
+    },
+    hero: { 
+      title: heroTitle, 
+      subtitle: heroSubtitle, 
+      description: heroDescription 
+    },
+    comingSoonTitle,
+    comingSoonDescription,
+    articles,
+    contactEmail,
+    contactInfo,
+    subscribeTitle,
+    subscribeInfo,
   };
 }

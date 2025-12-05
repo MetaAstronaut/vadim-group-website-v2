@@ -564,12 +564,11 @@ export const HomePage = () => {
                   }}
                   loop={true}
                   watchSlidesProgress={true}
-                  grabCursor={true}
+                  simulateTouch={false}
+                  allowTouchMove={true}
                   touchRatio={1}
                   touchAngle={45}
                   threshold={5}
-                  simulateTouch={true}
-                  allowTouchMove={true}
                   keyboard={{
                     enabled: true,
                     onlyInViewport: true
@@ -802,13 +801,8 @@ export const HomePage = () => {
                     }
 
                     .reviews-swiper {
-                      cursor: grab;
                       overflow: hidden;
                       height: 320px !important;
-                    }
-
-                    .reviews-swiper:active {
-                      cursor: grabbing;
                     }
 
                     .reviews-pagination {

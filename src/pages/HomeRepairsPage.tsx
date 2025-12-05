@@ -334,7 +334,7 @@ export const HomeRepairsPage = () => {
                   MozOsxFontSmoothing: 'grayscale'
                 }}
               >
-                <Link to="/our-work">See Our Work</Link>
+                <Link to="/about">See Our Work</Link>
               </Button>
             </div>
           </MotionDiv>
@@ -376,7 +376,7 @@ export const HomeRepairsPage = () => {
                 
                 {/* Description */}
                 <p className="text-white/90 text-sm mb-6 leading-relaxed">
-                  Get a quick, clear quote for any home repair — no pressure, no hidden fees.
+                  Get a quick, clear quote for any home repair — no pressure, no hidden fees
                 </p>
                 
                 {/* Bullet Points */}
@@ -1028,12 +1028,11 @@ export const HomeRepairsPage = () => {
                   }}
                   loop={true}
                   watchSlidesProgress={true}
-                  grabCursor={true}
+                  simulateTouch={false}
+                  allowTouchMove={true}
                   touchRatio={1}
                   touchAngle={45}
                   threshold={5}
-                  simulateTouch={true}
-                  allowTouchMove={true}
                   keyboard={{
                     enabled: true,
                     onlyInViewport: true
@@ -1266,13 +1265,8 @@ export const HomeRepairsPage = () => {
                     }
 
                     .reviews-swiper-home-repairs {
-                      cursor: grab;
                       overflow: hidden;
                       height: 320px !important;
-                    }
-
-                    .reviews-swiper-home-repairs:active {
-                      cursor: grabbing;
                     }
 
                     .reviews-pagination-home-repairs {

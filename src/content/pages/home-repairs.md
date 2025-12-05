@@ -19,7 +19,7 @@ Vadim Group provides high-skill residential repairs and restoration for homeowne
 Explore the main service categories below to quickly find the type of repair you need
 
 ## Interior Repairs & Drywall Services
-Clean, precise interior repair work that restores the look and comfort of your home.
+Clean, precise interior repair work that restores the look and comfort of your home
 
 ### Drywall Repair & Installation
 - Small holes, cracks, texture matching
@@ -47,7 +47,7 @@ Clean, precise interior repair work that restores the look and comfort of your h
 - Light water-damage repair
 
 ## Kitchen & Bathroom Repairs
-Reliable, moisture-safe repair solutions for high-traffic home areas.
+Reliable, moisture-safe repair solutions for high-traffic home areas
 
 ### Plumbing-Related Light Repairs
 - Faucet leaks and loose fixtures
@@ -74,7 +74,7 @@ Reliable, moisture-safe repair solutions for high-traffic home areas.
 - Hookup assistance for built-ins
 
 ## Structural & Safety Repairs (Non-Structural Scope)
-Light, non-structural home repairs that help maintain comfort, stability, and safety.
+Light, non-structural home repairs that help maintain comfort, stability, and safety
 
 ### Wood Rot Repair (Light Scope)
 - Trim, fascia, and small-area wood replacement
@@ -92,7 +92,7 @@ Light, non-structural home repairs that help maintain comfort, stability, and sa
 - General safety improvements
 
 ## Exterior Home Repairs
-Protecting your home from weather wear and everyday damage.
+Protecting your home from weather wear and everyday damage
 
 ### Fence & Gate Repairs
 - Post and panel repairs
@@ -120,7 +120,7 @@ Protecting your home from weather wear and everyday damage.
 - Moisture-prevention touch-ups
 
 ## Water Damage Repairs (Light Scope)
-Small-scale water damage repairs to restore materials and prevent further issues.
+Small-scale water damage repairs to restore materials and prevent further issues
 
 ### Drywall & Trim Water Damage Repair
 - Moisture-affected drywall removal
@@ -239,34 +239,38 @@ Send us a photo — we'll help assess it quickly
 ### MAINTENANCE GUIDE
 # Home Maintenance Checklist for Orlando Homeowners
 
-A simple, year-round checklist to help Orlando homeowners prevent small issues from becoming costly repairs. Following these steps keeps your home in good condition and reduces unexpected repair needs.
+A simple, year-round maintenance checklist designed for Orlando's warm, humid climate. Following these steps helps prevent water damage, mold risk, and costly repairs — keeping your home in good condition throughout the year.
 
-**Monthly Tasks:**
+**Monthly:**
 - Test smoke and carbon monoxide detectors
 - Check for small plumbing leaks under sinks
+- Inspect caulking in kitchens and bathrooms
 - Inspect weatherstripping on doors and windows
 - Test GFCI outlets
-- Check caulking in kitchens and bathrooms
+- Replace HVAC filters (recommended in humid climates)
 
-**Quarterly Tasks:**
+**Quarterly:**
 - Clean gutters and downspouts
 - Inspect roof edges for visible damage
-- Check caulking around tubs and sinks
+- Check caulking around tubs, showers, and sinks
 - Test garage door safety sensors
 - Inspect exterior paint and trim for wear
+- Flush A/C drain line (very important for Florida homes)
 
-**Annual Tasks:**
+**Annual:**
 - Touch up exterior caulking and sealants
-- Inspect attic for moisture signs
-- Check deck and patio for loose boards
-- Flush water heater (non-tankless)
-- Pressure wash exterior walkways (optional)
+- Inspect attic for moisture signs and ventilation issues
+- Check deck and patio boards for loose or damaged sections
+- Service water heater (non-tankless)
+- Pressure wash exterior walkways and siding
+- Inspect home exterior for cracks or gaps
 
-**Every 2-3 Years:**
+**Every 2–3 Years:**
 - Deep clean carpets and upholstery
 - Reseal driveway and walkways
 - Refresh exterior paint touch-ups
 - Inspect and treat exterior wood for pests
+- Clean dryer vent line (to reduce fire risk)
 
 ---
 

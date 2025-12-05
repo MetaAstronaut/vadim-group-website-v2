@@ -9,46 +9,84 @@ og:type: "website"
 canonical: "https://thevadimgroup.com/about"
 ---
 
+### HERO
+
 # About The Vadim Group
+
+Reliable, on-time repair and restoration services for homes, boats, and RVs — delivered with clean workmanship, clear communication, and no surprises
+
+---
+
+### OUR STORY
 
 ## Our Story
 
-The Vadim Group was built on European craftsmanship and a strong sense of responsibility. Vadim brings hands-on expertise and a commitment to quality to every project, whether it’s a home, boat, or RV.
+The Vadim Group was created with one goal: to bring dependable, high-quality repair and restoration services to homeowners, boat owners, and RV owners across the Orlando area.
 
-Clients choose Vadim because he arrives when promised, works efficiently, and delivers clean, precise results.
+Vadim brings years of hands-on experience across multiple fields — from residential repairs to structural marine and RV restoration.
+
+Clients trust us because we arrive when promised, communicate clearly, and deliver long-lasting results with clean, precise workmanship.
 
 ---
+
+### OUR PHILOSOPHY
 
 ## Our Philosophy
 
-We believe repairs should be done correctly the first time. No shortcuts. No temporary patches that create new problems later.
+We believe repairs should be done properly the first time — with no shortcuts, no temporary fixes, and no hidden surprises.
 
-Every project — large or small — is treated with the same level of care, planning, and attention to detail.
+Our work is built on three principles:
 
----
+- **Precision** — clean, detailed workmanship in every environment: home, boat, or RV
+- **Clarity** — honest assessments, straightforward pricing, and proactive communication
+- **Reliability** — accurate timelines and respect for your space and schedule
 
-## What Clients Appreciate Most
-
-Clients consistently mention:
-
-- punctuality and reliability
-- detailed, high-skill workmanship
-- clear, honest communication
-- thoughtful problem-solving
-- long-term trust and relationships
+> _"Repairs should solve the problem — not postpone it"_  
+> **— Vadim, Founder**
 
 ---
 
-## Service Areas
+### TESTIMONIALS
 
-The Vadim Group primarily serves homeowners, marine owners, and RV owners in Orlando and surrounding areas.
+## What Clients Say About Working With Us
 
-If you are not sure whether your location is covered, you can always contact us and ask.
+Real feedback from homeowners, boat owners, and RV travelers who value reliability, clean results, and clear communication.
+
+★★★★★
+
+"Vadim completed our home repair flawlessly — on time, clean, and with great attention to detail. A professional you can trust."  
+— **Jennifer W.**, Home Repair Client
+
+★★★★★
+
+"Exceptional marine repair work. Vadim diagnosed the issue quickly and restored our cabin systems perfectly. Highly recommended."  
+— **Thomas R.**, Marine Client
+
+★★★★★
+
+"We were preparing for a road trip and needed urgent RV help. Vadim responded fast, fixed the issue, and explained everything clearly."  
+— **Jason M.**, RV Owner
 
 ---
+
+### RECENT PROJECTS
+
+## Recent Projects
+
+Explore real repair and restoration work across homes, boats, and RVs.
+
+From water-damage drywall repairs to structural deck restoration and marine interior rebuilds — our portfolio shows the care and precision behind every project.
+
+[View Our Portfolio](/portfolio)
+
+---
+
+### CTA
 
 ## Ready to Work Together?
 
-If you value precision, responsibility, and clear communication, Vadim Group is the right partner for your repair and restoration needs.
+If you value precision, responsibility, and clear communication, The Vadim Group is the right partner for your home, marine, or RV repair needs.
 
-**Get in Touch** to discuss your project.
+[Chat on WhatsApp](https://wa.me/your-number)
+
+**Prefer email?** [info@thevadimgroup.com](mailto:info@thevadimgroup.com)

@@ -10,6 +10,7 @@ import { useLocation } from "react-router-dom";
 import { HomePage } from "@/pages/HomePage";
 import { HomeRepairsPage } from "@/pages/HomeRepairsPage";
 import { MarineRVPage } from "@/pages/MarineRVPage";
+import { BlogPage } from "@/pages/BlogPage";
 import { AboutPage } from "@/pages/AboutPage";
 import { ContactPage } from "@/pages/ContactPage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
@@ -44,6 +45,7 @@ const App = () => {
               <Route path="/" element={<HomePage />} />
               <Route path="/home-repairs" element={<HomeRepairsPage />} />
               <Route path="/marine-rv" element={<MarineRVPage />} />
+              <Route path="/blog" element={<BlogPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/contact" element={<ContactPage />} />
 
