@@ -6,7 +6,7 @@ og:title: "Marine & RV Repair Specialists - Orlando, FL"
 og:description: "Professional repair for boats and RVs. Gelcoat, deck work, interiors, water damage. Precision techniques for marine and RV environments."
 og:image: "/images/og-marine-rv.jpg"
 og:type: "website"
-canonical: "https://thevadimgroup.com/marine-rv"
+canonical: "https://vadimgroup.com/marine-rv"
 ---
 
 # Marine & RV Repair Services in Orlando
@@ -81,7 +81,7 @@ We can help with:
 - Storm-related or impact-related damage
 
 Emergency cases are handled with priority scheduling —  
-send photos and a short message via WhatsApp for fastest help.
+send photos and a short message via Facebook Messenger for fastest help.
 
 ---
 
@@ -236,7 +236,7 @@ Yes — we repair most common RV brands and small-to-mid-size boats, including f
 For large vessels or specialized builds, we’ll confirm scope before scheduling.
 
 **Can I send photos or videos for a repair estimate?**  
-Absolutely — WhatsApp is the fastest way to send photos or short videos.
+Absolutely — Facebook Messenger is the fastest way to send photos or short videos.
 We typically reply with an estimate within a few business hours.
 
 **Do you repair soft spots, floor rot, or delamination?**  
@@ -262,6 +262,6 @@ Yes — we provide diagnostics for mechanical noises, electrical faults, and ope
 
 If your boat or RV needs attention, we can inspect the issue and recommend the right repair plan.
 
-[Get Free Estimate via WhatsApp](https://wa.me/your-number)
+[Get Free Estimate on Facebook](https://m.me/vadimgroup)
 
 **Prefer email?** [info@thevadimgroup.com](mailto:info@thevadimgroup.com?subject=Repair%20Estimate%20Request)

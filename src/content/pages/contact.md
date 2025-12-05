@@ -1,12 +1,12 @@
 ---
 title: "Contact The Vadim Group | Orlando Repair Services"
-description: "Get in touch for expert repair services in Orlando. Email, WhatsApp, or contact form. We respond within 2-4 hours. Licensed, professional, transparent pricing."
-keywords: "contact vadim group, orlando repair services contact, get repair quote orlando, email repair service, whatsapp repair orlando"
+description: "Get in touch for expert repair services in Orlando. Email, phone, or contact form. We respond within 2-4 hours. Professional, transparent pricing."
+keywords: "contact vadim group, orlando repair services contact, get repair quote orlando, email repair service, facebook messenger repair orlando"
 og:title: "Contact Us - The Vadim Group Orlando"
 og:description: "Reach out for expert repair services. Email: info@thevadimgroup.com. Fast response, transparent quotes, professional service."
 og:image: "/images/og-contact.jpg"
 og:type: "website"
-canonical: "https://thevadimgroup.com/contact"
+canonical: "https://vadimgroup.com/contact"
 ---
 
 # Contact

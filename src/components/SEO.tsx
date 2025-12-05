@@ -14,7 +14,7 @@ interface SEOProps {
 
 export function SEO({
   title = 'Expert Home, Marine & RV Repairs | The Vadim Group Orlando',
-  description = 'Professional repair services in Orlando. European craftsmanship, transparent pricing, fast response. Home, marine, RV repairs. Licensed and insured.',
+  description = 'Professional repair services in Orlando. European craftsmanship, transparent pricing, fast response. Home, marine, RV repairs. Expert workmanship.',
   keywords = 'home repair orlando, marine repair orlando, rv repair orlando, emergency repairs',
   ogTitle,
   ogDescription,

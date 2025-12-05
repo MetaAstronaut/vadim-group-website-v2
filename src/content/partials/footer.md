@@ -34,8 +34,8 @@ items:
 
 title: "Contact & Service Area"
 
-whatsapp-label: "WhatsApp: Message Us"
-whatsapp-href: "https://wa.me/YOUR_WHATSAPP_NUMBER"
+messenger-label: "Facebook Messenger"
+messenger-href: "https://m.me/vadimgroup"
 
 email-label: "Email"
 email-href: "mailto:info@thevadimgroup.com"

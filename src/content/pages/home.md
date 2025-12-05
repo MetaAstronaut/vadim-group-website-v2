@@ -1,19 +1,19 @@
 ---
 title: "Home Repair, Marine & RV Services in Orlando | The Vadim Group"
-description: "Fast, high-quality home repair, marine and RV services in Orlando, Lake Nona and Hunters Creek. Professional craftsmanship, transparent pricing, fast response. Drywall, water damage, decks, RV and boat repairs. Get a free WhatsApp estimate."
+description: "Fast, high-quality home repair, marine and RV services in Orlando, Lake Nona and Hunters Creek. Professional craftsmanship, transparent pricing, fast response. Drywall, water damage, decks, RV and boat repairs. Get a free estimate on Facebook."
 keywords: "home repair orlando, marine repair orlando, rv repair orlando, emergency repairs, professional handyman orlando, water damage repair, drywall repair orlando."
 og:title: "The Vadim Group - Expert Repairs Done Right the First Time"
 og:description: "Trusted repair services for homes, boats, and RVs in Orlando. Fast response, transparent pricing, high-quality standards."
 og:image: "/images/og-home.jpg"
 og:type: "website"
-canonical: "https://thevadimgroup.com/"
+canonical: "https://vadimgroup.com/"
 ---
 
 # Home Repair, Marine & RV Services in Orlando
 
 Fast, reliable, high-quality repair and restoration for homes, marine vessels, and RVs in the Orlando area.
 
-**Get a free estimate via WhatsApp**
+**Get a free estimate on Facebook Messenger**
 
 ---
 
@@ -199,7 +199,7 @@ We always provide a clear, itemized estimate before any work begins.
 
 **How quickly can you respond to home, marine, or RV repair requests?**
 Response times depend on current scheduling, but most repair inquiries in the Orlando and Lake Nona areas receive a reply within a few hours during business days.
-Send us photos on WhatsApp for the fastest assessment.
+Send us photos on Facebook Messenger for the fastest assessment.
 
 **Do you offer warranties on your repair work?**
 Yes. All home, marine, and RV repairs include a workmanship warranty.
@@ -224,7 +224,7 @@ We provide clear recommendations based on your budget and goals.
 
 **Do you offer same-day or emergency repair services in Orlando?**
 We offer limited same-day and urgent repair services depending on the project and schedule.
-Send details or photos on WhatsApp for the quickest availability check.
+Send details or photos on Facebook Messenger for the quickest availability check.
 
 **What types of marine repair services do you provide in Orlando?**
 We handle gelcoat repairs, deck and interior restoration, electrical diagnostics, moisture checks, and engine-adjacent troubleshooting.
@@ -244,6 +244,6 @@ If you don’t see your question here, just send a quick message — we’re hap
 
 Send us photos or details — we respond quickly and give a clear estimate.
 
-[Chat on WhatsApp](https://wa.me/your-number)
+[Get a Free Estimate on Messenger](https://m.me/vadimgroup)
 
 **Or email us:** [info@thevadimgroup.com](mailto:info@thevadimgroup.com)

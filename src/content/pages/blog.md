@@ -107,7 +107,7 @@ Status: *Coming Soon*
 
 ## Have a Specific Question?
 
-If you need immediate advice or have a repair question, contact us at **info@thevadimgroup.com** or reach out via **WhatsApp Business**.
+If you need immediate advice or have a repair question, contact us at **info@vadimgroup.com** or reach out via **Facebook Messenger**.
 
 We typically respond within 2–4 business hours during working days.
 

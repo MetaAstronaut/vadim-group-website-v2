@@ -1,7 +1,7 @@
 ---
 title: "About The Vadim Group | European Craftsmanship Orlando"
 description: "Learn about The Vadim Group: European craftsmanship, personal accountability, precision repair work. Serving Orlando homeowners and businesses with reliable, quality service."
-keywords: "about vadim group, european craftsmanship orlando, reliable handyman orlando, professional repair service, licensed contractor orlando"
+keywords: "about vadim group, european craftsmanship orlando, reliable handyman orlando, professional repair service, experienced contractor orlando"
 og:title: "About The Vadim Group - European Quality in Orlando"
 og:description: "Professional repair services built on European craftsmanship and personal accountability. Serving Orlando with precision and care."
 og:image: "/images/og-about.jpg"
@@ -87,6 +87,6 @@ From water-damage drywall repairs to structural deck restoration and marine inte
 
 If you value precision, responsibility, and clear communication, The Vadim Group is the right partner for your home, marine, or RV repair needs.
 
-[Chat on WhatsApp](https://wa.me/your-number)
+[Get a Free Estimate on Messenger](https://m.me/vadimgroup)
 
 **Prefer email?** [info@thevadimgroup.com](mailto:info@thevadimgroup.com)

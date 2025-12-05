@@ -65,7 +65,7 @@ Our goal is always long-lasting, reliable repairs.
 
 We primarily serve **Orlando, Lake Nona, Hunters Creek, and surrounding areas**.
 
-If you're not sure whether we can reach you, contact us at info@thevadimgroup.com or via WhatsApp and we'll confirm coverage.
+If you're not sure whether we can reach you, contact us at info@vadimgroup.com or via Facebook Messenger and we'll confirm coverage.
 
 ---
 
@@ -74,7 +74,7 @@ If you're not sure whether we can reach you, contact us at info@thevadimgroup.co
 You can reach us through:
 
 - **Email:** info@thevadimgroup.com
-- **WhatsApp Business:** [link to be added]
+- **Facebook Messenger:** https://m.me/vadimgroup
 - **Contact Form:** Available on our [Contact page](/contact)
 
 We typically respond within 2–4 business hours during working days.
@@ -95,7 +95,7 @@ All payment terms are clearly communicated before work begins.
 
 Yes! Photos are extremely helpful for understanding the scope and providing accurate estimates.
 
-You can send photos via email (info@thevadimgroup.com) or WhatsApp.
+You can send photos via email (info@vadimgroup.com) or Facebook Messenger.
 
 ---
 
@@ -112,4 +112,4 @@ Our primary service area is Orlando and nearby communities. For projects outside
 ---
 
 **Still have questions?**  
-Contact us at **info@thevadimgroup.com** or via **WhatsApp Business** and we'll be happy to help.
+Contact us at **info@vadimgroup.com** or via **Facebook Messenger** and we'll be happy to help.

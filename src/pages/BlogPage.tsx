@@ -175,7 +175,7 @@ export const BlogPage = () => {
                 rel="noopener noreferrer"
                 className="text-brand-accent hover:text-brand-accent-hover font-medium transition-colors"
               >
-                WhatsApp Business
+                Facebook Messenger
               </a>
               .
             </p>

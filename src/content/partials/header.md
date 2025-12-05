@@ -1,6 +1,6 @@
 ---
 component: "header"
-description: "Global header navigation and primary WhatsApp CTA for The Vadim Group."
+description: "Global header navigation and primary Facebook Messenger CTA for The Vadim Group."
 ---
 
 ## [brand]
@@ -31,14 +31,14 @@ items:
 
 ## [cta]
 
-label: "Free WhatsApp Estimate"
-subLabel: "via WhatsApp"
-type: "whatsapp"
-href: "https://wa.me/YOUR_WHATSAPP_NUMBER"
+label: "Free Estimate on Messenger"
+subLabel: "via Facebook Messenger"
+type: "messenger"
+href: "https://m.me/vadimgroup"
 
 sticky: true
 show-on-scroll: true
-show-whatsapp-icon: true
+show-messenger-icon: true
 
 ---
 

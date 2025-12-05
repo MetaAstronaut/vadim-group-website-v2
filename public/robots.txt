@@ -31,4 +31,4 @@ Allow: /
 # Disallow: /.git/
 
 # Sitemap location
-Sitemap: https://thevadimgroup.com/sitemap.xml
+Sitemap: https://vadimgroup.com/sitemap.xml

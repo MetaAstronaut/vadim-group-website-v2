@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { WhatsAppWidget } from "@/components/WhatsAppWidget";
+import { MessengerWidget } from "@/components/MessengerWidget";
 import { cn } from "@/lib/utils";
 
 interface LayoutProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -34,9 +34,9 @@ export const Layout = ({
 
       {!hideFooter && <Footer />}
       
-      {/* WhatsApp Widget - Available on all pages */}
-      <WhatsAppWidget 
-        phoneNumber="YOUR_PHONE_NUMBER_HERE"
+      {/* Facebook Messenger Widget - Available on all pages */}
+      <MessengerWidget 
+        messengerLink="https://m.me/vadimgroup"
         message="Hi! I'm interested in getting an estimate."
       />
     </div>

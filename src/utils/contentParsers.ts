@@ -45,7 +45,7 @@ export interface HeaderData {
     type: string;
     sticky: boolean;
     showOnScroll: boolean;
-    showWhatsappIcon: boolean;
+    showMessengerIcon: boolean;
   };
   mobileMenu: {
     enabled: boolean;
@@ -83,7 +83,7 @@ export function getHeaderData(): HeaderData {
         type: data.cta?.type || "button",
         sticky: data.cta?.sticky ?? true,
         showOnScroll: data.cta?.['show-on-scroll'] ?? true,
-        showWhatsappIcon: data.cta?.['show-whatsapp-icon'] ?? false,
+        showMessengerIcon: data.cta?.['show-messenger-icon'] ?? false,
     },
     mobileMenu: {
         enabled: data['mobile-menu']?.enabled ?? true,
@@ -107,8 +107,8 @@ export interface FooterData {
   };
   contact: {
     title: string;
-    whatsappLabel: string;
-    whatsappHref: string;
+    messengerLabel: string;
+    messengerHref: string;
     emailLabel: string;
     emailHref: string;
     serviceArea: string[];
@@ -150,8 +150,8 @@ export function getFooterData(): FooterData {
     },
     contact: {
       title: data.contact?.title || "Contact",
-      whatsappLabel: data.contact?.['whatsapp-label'] || "WhatsApp",
-      whatsappHref: data.contact?.['whatsapp-href'] || "#",
+      messengerLabel: data.contact?.['messenger-label'] || "Facebook Messenger",
+      messengerHref: data.contact?.['messenger-href'] || "https://m.me/vadimgroup",
       emailLabel: data.contact?.['email-label'] || "Email",
       emailHref: data.contact?.['email-href'] || "#",
       serviceArea: data.contact?.['service-area'] || [],
@@ -180,7 +180,7 @@ export interface HomePageData {
   reviews: { tag: string; title: string; intro: string; items: Array<{ quote: string; author: string }>; };
   about: { tag: string; title: string; quote: string; description: string; promiseTitle: string; promiseItems: string[]; closing: string; };
   faq: { tag: string; title: string; items: Array<{ question: string; answer: string }>; closing: string; };
-  cta: { tag: string; title: string; description: string; whatsappText: string; whatsappLink: string; emailText: string; emailLink: string; footerText: string; footerSubtext: string; };
+  cta: { tag: string; title: string; description: string; messengerText: string; messengerLink: string; emailText: string; emailLink: string; footerText: string; footerSubtext: string; };
 }
 
 export function getHomePageData(): HomePageData {
@@ -297,7 +297,7 @@ export function getHomePageData(): HomePageData {
   const ctaTag = findLine(ctaSection, '### ');
   const ctaTitle = findLine(ctaSection, '## ').replace(/\[(.*?)\]\(.*?\)/, '');
   const ctaDesc = findParagraph(ctaSection);
-  const ctaWhatsappLine = ctaSection.match(/\[(.*?)\]\((.*?)\)/);
+  const ctaMessengerLine = ctaSection.match(/\[(.*?)\]\((.*?)\)/);
   const ctaEmailLine = ctaSection.match(/\[(.*?)\]\(mailto:(.*?)\)/);
   const ctaFooterLines = ctaSection.split('**Send a message and photos').pop()?.trim().split('\n') || [];
 
@@ -321,11 +321,11 @@ export function getHomePageData(): HomePageData {
       tag: ctaTag,
       title: ctaTitle.replace(/\[.*?\]/, '').trim(),
       description: ctaDesc,
-      whatsappText: ctaWhatsappLine?.[1] || "Get Free Estimate via WhatsApp",
-      whatsappLink: ctaWhatsappLine?.[2] || "#",
-      emailText: ctaEmailLine?.[1] || "info@thevadimgroup.com",
+      messengerText: ctaMessengerLine?.[1] || "Get a Free Estimate on Messenger",
+      messengerLink: ctaMessengerLine?.[2] || "https://m.me/vadimgroup",
+      emailText: ctaEmailLine?.[1] || "info@vadimgroup.com",
       emailLink: ctaEmailLine?.[0] || "#",
-      footerText: "Send a message and photos via WhatsApp to get a free, no-pressure estimate.",
+      footerText: "Send a message and photos via Facebook Messenger to get a free, no-pressure estimate.",
       footerSubtext: ctaFooterLines[0] || "",
     }
   };
@@ -357,7 +357,7 @@ export interface HomeRepairsPageData {
   projects: { tag: string; title: string; items: Array<{ title: string; description: string }> };
   process: { tag: string; title: string; description: string; steps: Array<{ title: string; description: string }> };
   faq: { tag: string; title: string; items: Array<{ question: string; answer: string }> };
-  cta: { tag: string; title: string; description: string; whatsappText: string; whatsappLink: string; emailText: string; emailLink: string; };
+  cta: { tag: string; title: string; description: string; messengerText: string; messengerLink: string; emailText: string; emailLink: string; };
 }
 
 export function getHomeRepairsPageData(): HomeRepairsPageData {
@@ -526,7 +526,7 @@ export function getHomeRepairsPageData(): HomeRepairsPageData {
   const ctaTag = findLine(ctaSection, '### ');
   const ctaTitle = findLine(ctaSection, '# ');
   const ctaDesc = findParagraph(ctaSection);
-  const ctaWhatsappLine = ctaSection.match(/\[(.*?)\]\((.*?)\)/);
+  const ctaMessengerLine = ctaSection.match(/\[(.*?)\]\((.*?)\)/);
   const ctaEmailLine = ctaSection.match(/\[(.*?)\]\(mailto:(.*?)\)/);
 
   return {
@@ -551,9 +551,9 @@ export function getHomeRepairsPageData(): HomeRepairsPageData {
       tag: ctaTag,
       title: ctaTitle,
       description: ctaDesc,
-      whatsappText: ctaWhatsappLine?.[1] || "Get Free Estimate via WhatsApp",
-      whatsappLink: ctaWhatsappLine?.[2] || "#",
-      emailText: ctaEmailLine?.[1] || "info@thevadimgroup.com",
+      messengerText: ctaMessengerLine?.[1] || "Get a Free Estimate on Messenger",
+      messengerLink: ctaMessengerLine?.[2] || "https://m.me/vadimgroup",
+      emailText: ctaEmailLine?.[1] || "info@vadimgroup.com",
       emailLink: ctaEmailLine?.[0] || "#",
     }
   };
@@ -573,7 +573,7 @@ export interface MarineRVPageData {
   projects: { tag: string; title: string; items: Array<{ title: string; description: string }> };
   process: { tag: string; title: string; description: string; steps: Array<{ title: string; description: string }>; };
   faq: { tag: string; title: string; items: Array<{ question: string; answer: string }> };
-  cta: { tag: string; title: string; description: string; whatsappText: string; whatsappLink: string; emailText: string; emailLink: string; };
+  cta: { tag: string; title: string; description: string; messengerText: string; messengerLink: string; emailText: string; emailLink: string; };
 }
 
 export function getMarineRVPageData(): MarineRVPageData {
@@ -700,7 +700,7 @@ export function getMarineRVPageData(): MarineRVPageData {
   const ctaTag = findLine(ctaSection, '### ');
   const ctaTitle = findLine(ctaSection, '# ');
   const ctaDesc = findParagraph(ctaSection);
-  const ctaWhatsappLine = ctaSection.match(/\[(.*?)\]\((.*?)\)/);
+  const ctaMessengerLine = ctaSection.match(/\[(.*?)\]\((.*?)\)/);
   const ctaEmailLine = ctaSection.match(/\[(.*?)\]\(mailto:(.*?)\)/);
 
   return {
@@ -726,9 +726,9 @@ export function getMarineRVPageData(): MarineRVPageData {
       tag: ctaTag,
       title: ctaTitle,
       description: ctaDesc,
-      whatsappText: ctaWhatsappLine?.[1] || "Get Free Estimate via WhatsApp",
-      whatsappLink: ctaWhatsappLine?.[2] || "#",
-      emailText: ctaEmailLine?.[1] || "info@thevadimgroup.com",
+      messengerText: ctaMessengerLine?.[1] || "Get a Free Estimate on Messenger",
+      messengerLink: ctaMessengerLine?.[2] || "https://m.me/vadimgroup",
+      emailText: ctaEmailLine?.[1] || "info@vadimgroup.com",
       emailLink: ctaEmailLine?.[0] || "#",
     }
   };

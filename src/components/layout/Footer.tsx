@@ -117,15 +117,15 @@ export const Footer = () => {
                 </div>
                 <div className="space-y-1">
                   <span className="text-xs font-medium text-white/40 uppercase tracking-wider block">
-                    {contact.whatsappLabel}
+                    Facebook Messenger
                   </span>
                   <a 
-                    href={`${contact.whatsappHref}?text=${encodeURIComponent("Hi, I'd like to get a free estimate for my repair project.")}`}
+                    href="https://m.me/vadimgroup"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white/90 hover:text-accent-500 transition-colors text-sm"
                   >
-                    Get Free Estimate on WhatsApp
+                    Get a Free Estimate on Messenger
                   </a>
                 </div>
               </li>

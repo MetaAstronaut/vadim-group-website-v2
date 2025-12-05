@@ -7,8 +7,8 @@
 **Name:** The Vadim Group  
 **Type:** Professional Repair and Restoration Service  
 **Founded:** [Year]  
-**Location:** Orlando, Florida  
-**Service Area:** Orlando, Lake Nona, Hunters Creek, and surrounding areas
+**Location:** 10201 Rocket Ct, Orlando, FL 32824  
+**Service Area:** Orlando, Lake Nona, Hunters Creek, Winter Park, Lake Mary, Kissimmee, and surrounding areas
 
 ## Core Business
 
@@ -39,16 +39,17 @@ Work is completed correctly the first time, using appropriate materials and prof
 
 ## Contact Information
 
-**Email:** info@thevadimgroup.com  
-**Website:** https://thevadimgroup.com  
-**WhatsApp Business:** [to be added]  
+**Phone:** +1 (424) 436-9115  
+**Email:** info@vadimgroup.com  
+**Website:** https://vadimgroup.com  
+**Facebook Messenger:** [Primary contact method]  
 **Response Time:** 2-4 business hours
 
 ## Service Hours
 
-- Standard scheduling: Monday-Friday, flexible hours
-- Emergency repairs: Priority scheduling available
-- Weekend work: Available depending on project scope
+- Daily: 8:00 AM - 8:00 PM (Monday-Sunday)
+- Emergency repairs: Available 24/7
+- Same-day response for urgent situations
 
 ## Geographic Coverage
 
@@ -60,11 +61,11 @@ Primary service area includes:
 
 For locations outside this area, contact for availability.
 
-## Certifications & Insurance
+## Experience & Quality Standards
 
-- Fully licensed
-- Bonded
-- Insured (general liability and workers' compensation)
+- Years of hands-on experience
+- European craftsmanship techniques
+- Professional-grade workmanship
 
 ## Languages
 

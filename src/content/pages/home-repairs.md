@@ -1,12 +1,12 @@
 ---
 title: "Home Repairs & Priority Services Orlando | The Vadim Group"
-description: "Professional home repair and priority scheduling in Orlando. Interior, exterior, water damage, structural repairs. Urgent response within 24-48 hours. Free WhatsApp estimates."
+description: "Professional home repair and priority scheduling in Orlando. Interior, exterior, water damage, structural repairs. Urgent response within 24-48 hours. Free estimates via Facebook Messenger."
 keywords: "home repairs orlando, priority home repair, urgent home repairs, emergency home repair orlando, water damage repair, structural repair orlando, fast home repair, same-week repair orlando"
 og:title: "Home Repairs & Priority Services - Orlando | The Vadim Group"
 og:description: "Expert home repairs with priority scheduling for urgent situations. Water damage, structural work, interior/exterior repairs. Fast response in Orlando area."
 og:image: "/images/og-home-repairs.jpg"
 og:type: "website"
-canonical: "https://thevadimgroup.com/home-repairs"
+canonical: "https://vadimgroup.com/home-repairs"
 ---
 
 # Professional Home Repairs & Restoration
@@ -193,13 +193,13 @@ Small repairs that prevent bigger problems when handled early.
 
 **Response Times:**
 
-- Priority assessment: within 2-4 hours via WhatsApp
+- Priority assessment: within 2-4 hours via Facebook Messenger
 - Scheduling: within 24-48 hours depending on scope
 - Clear communication throughout the process
 
 **How It Works:**
 
-Send photos and a brief description via WhatsApp. We'll assess urgency, provide timeline, and prioritize your project in our schedule.
+Send photos and a brief description via Facebook Messenger. We'll assess urgency, provide timeline, and prioritize your project in our schedule.
 
 ---
 
@@ -343,7 +343,7 @@ Most standard home repairs in the Orlando and Lake Nona area are scheduled withi
 For urgent issues (leaks, water damage, safety concerns), we offer priority scheduling and aim to respond as quickly as possible.
 
 **Do you provide free home repair estimates?**  
-Yes — free estimates are available. Send photos and a short description via WhatsApp, and we typically respond within a few business hours with a clear estimate.
+Yes — free estimates are available. Send photos and a short description via Facebook Messenger, and we typically respond within a few business hours with a clear estimate.
 
 **Can you help diagnose a home repair issue if we’re not sure what’s wrong?**  
 Yes. Many homeowners contact us unsure of the root cause.
@@ -384,6 +384,6 @@ Priority repairs are situations where fast attention helps prevent additional da
 
 If you have damage, wear, or unfinished repairs, we’re here to help you bring your home back to its best condition.
 
-[Get Free Estimate via WhatsApp](https://wa.me/your-number)
+[Get Free Estimate on Facebook](https://m.me/vadimgroup)
 
 **Prefer email?** [info@thevadimgroup.com](mailto:info@thevadimgroup.com?subject=Repair%20Estimate%20Request)
